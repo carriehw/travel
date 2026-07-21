@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carrie AI Intelligence — Helping marketers filter AI noise into business decisions. Weekly brief with sources, interpretation and clear act-now signals." />
+  <title>Carrie AI Intelligence — Weekly Brief · Issue 001</title>
+  <style>
+    :root {
+      --ink: #101114;
+      --muted: #656a73;
+      --paper: #f7f5ef;
+      --card: #ffffff;
+      --line: #dedbd2;
+      --accent: #5a42f4;
+      --accent-soft: #ebe8ff;
+      --must: #d63b2f;      /* 🔥 MUST KNOW */
+      --must-soft: #fdeceb;
+      --prod: #1763d8;      /* ⚡ PRODUCTIVITY */
+      --prod-soft: #e8f0fd;
+      --mkt: #7a2fd0;       /* 📈 MARKETING IMPACT */
+      --mkt-soft: #f2e9fd;
+      --green: #1e7c5a;
+      --amber: #a45a00;
+      --red: #b3261e;
+      --shadow: 0 16px 45px rgba(16,17,20,.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Noto Sans TC", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 0%, rgba(90,66,244,.11), transparent 30%),
+        var(--paper);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+
+    /* ---- bilingual switching ---- */
+    .zh { display: none; }
+    body.lang-zh .zh { display: revert; }
+    body.lang-zh .en { display: none; }
+
+    .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 20px 0; border-bottom: 1px solid rgba(222,219,210,.8);
+      flex-wrap: wrap;
+    }
+    .brand { font-weight: 800; letter-spacing: -.03em; font-size: 18px; }
+    .brand span { color: var(--accent); }
+    .brand small { display: block; font-weight: 500; font-size: 12px; color: var(--muted); letter-spacing: 0; }
+    .nav-links { display: flex; gap: 16px; align-items: center; font-size: 14px; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: var(--muted); }
+    .nav-links .pill { color: white; background: var(--ink); padding: 9px 14px; border-radius: 999px; }
+    .lang-btn {
+      border: 1.5px solid var(--ink); background: transparent; color: var(--ink);
+      border-radius: 999px; padding: 8px 14px; font-weight: 800; font-size: 13px;
+      cursor: pointer; font-family: inherit;
+    }
+    .lang-btn:hover { background: var(--ink); color: white; }
+
+    /* ---- hero ---- */
+    .hero { padding: 64px 0 48px; display: grid; grid-template-columns: 1.35fr .65fr; gap: 48px; align-items: start; }
+    .eyebrow { color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 13px; letter-spacing: .14em; }
+    h1 { font-size: clamp(42px, 7vw, 84px); line-height: .99; letter-spacing: -.055em; margin: 14px 0 20px; }
+    .hero-sub { font-size: clamp(17px, 2vw, 21px); color: var(--muted); max-width: 640px; margin: 0 0 22px; }
+    .issue-meta { display: flex; flex-wrap: wrap; gap: 10px; }
+    .issue-meta span { border: 1px solid var(--line); background: var(--card); padding: 7px 12px; border-radius: 999px; font-size: 13px; color: var(--muted); }
+
+    /* ---- editor identity card (Personal IP) ---- */
+    .editor-card {
+      background: var(--ink); color: white; border-radius: 24px; padding: 24px;
+      box-shadow: var(--shadow); text-align: center;
+    }
+    .headshot {
+      width: 128px; height: 128px; border-radius: 50%; margin: 4px auto 14px;
+      background: linear-gradient(145deg, #2f3036, #17181c 65%);
+      border: 3px solid var(--accent);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .headshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .headshot .monogram { font-size: 44px; font-weight: 900; color: var(--accent); letter-spacing: -.06em; }
+    .editor-card h3 { margin: 0 0 2px; font-size: 22px; letter-spacing: -.02em; }
+    .editor-card .role { color: #bbbcc2; font-size: 14px; margin: 0 0 4px; }
+    .editor-card .promise { color: #8f92f8; font-size: 13.5px; margin: 8px 0 16px; line-height: 1.5; }
+    .editor-links { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .editor-links a {
+      font-size: 13px; text-decoration: none; border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px; padding: 7px 13px; color: #e8e8ec;
+    }
+    .editor-links a.li { background: var(--accent); border-color: var(--accent); color: white; font-weight: 700; }
+
+    /* ---- weekly signal ---- */
+    .section { padding: 44px 0; }
+    .thesis { background: var(--accent); color: white; border-radius: 28px; padding: clamp(26px, 5vw, 52px); box-shadow: var(--shadow); }
+    .thesis .eyebrow { color: rgba(255,255,255,.75); }
+    .thesis blockquote { font-size: clamp(26px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -.04em; margin: 10px 0 18px; font-weight: 750; }
+    .thesis p { max-width: 820px; margin: 0; color: rgba(255,255,255,.85); font-size: 17px; }
+
+    /* ---- category sections ---- */
+    .cat-head {
+      display: flex; align-items: center; gap: 14px; margin: 0 0 8px;
+      padding: 14px 20px; border-radius: 16px; color: white;
+    }
+    .cat-head h2 { font-size: clamp(22px, 3vw, 30px); letter-spacing: -.03em; margin: 0; line-height: 1.1; }
+    .cat-head .cat-desc { margin: 2px 0 0; font-size: 13.5px; opacity: .85; }
+    .cat-head.must { background: var(--must); }
+    .cat-head.prod { background: var(--prod); }
+    .cat-head.mkt { background: var(--mkt); }
+    .cat-emoji { font-size: 30px; }
+
+    .stories { display: grid; gap: 16px; margin-top: 16px; }
+    .story {
+      background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+      padding: 26px 28px; box-shadow: 0 8px 30px rgba(16,17,20,.035);
+      border-top: 5px solid var(--line);
+    }
+    .story.must { border-top-color: var(--must); }
+    .story.prod { border-top-color: var(--prod); }
+    .story.mkt  { border-top-color: var(--mkt); }
+    .story-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; font-size: 12.5px; }
+    .src { font-weight: 800; padding: 5px 11px; border-radius: 999px; letter-spacing: .02em; }
+    .story.must .src { background: var(--must-soft); color: var(--must); }
+    .story.prod .src { background: var(--prod-soft); color: var(--prod); }
+    .story.mkt  .src { background: var(--mkt-soft);  color: var(--mkt); }
+    .date { color: var(--muted); }
+    .story h3 { font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2; letter-spacing: -.02em; margin: 4px 0 12px; }
+    .story h3 a { text-decoration: none; }
+    .story h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .block { margin: 0 0 12px; }
+    .block b.k { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 3px; }
+    .block p { margin: 0; color: #3c3f45; font-size: 15.5px; }
+    .take {
+      border-left: 4px solid var(--accent); background: var(--accent-soft);
+      border-radius: 0 14px 14px 0; padding: 14px 18px; margin: 14px 0 12px;
+    }
+    .take b.k { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 3px; }
+    .take p { margin: 0; font-size: 15.5px; }
+    .predict { background: #fff8e8; border: 1px dashed #e3c76c; border-radius: 14px; padding: 12px 16px; margin: 0 0 14px; }
+    .predict b.k { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--amber); margin-bottom: 3px; }
+    .predict p { margin: 0; font-size: 14.5px; }
+    .story-foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 14px; }
+    .signal { font-weight: 800; font-size: 13.5px; padding: 8px 14px; border-radius: 999px; }
+    .signal.act   { background: #e2f3ec; color: var(--green); }
+    .signal.watch { background: #fdf3e2; color: var(--amber); }
+    .signal.wait  { background: #fbe9e7; color: var(--red); }
+    .readsrc {
+      text-decoration: none; font-weight: 800; font-size: 14px;
+      background: var(--ink); color: white; padding: 9px 16px; border-radius: 999px;
+    }
+    .readsrc:hover { background: var(--accent); }
+
+    /* ---- actions ---- */
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.02; letter-spacing: -.045em; margin: 0 0 8px; }
+    .section-head p { color: var(--muted); max-width: 560px; margin: 0; }
+    .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .action { background: #ece9df; border-radius: 20px; padding: 22px; }
+    .action b { font-size: 14px; color: var(--accent); }
+    .action h4 { font-size: 19px; line-height: 1.3; margin: 8px 0; }
+    .action p { color: var(--muted); margin: 0; font-size: 14.5px; }
+
+    /* ---- about ---- */
+    .about { display: grid; grid-template-columns: .7fr 1.3fr; gap: 40px; background: var(--ink); color: white; border-radius: 28px; padding: clamp(26px, 5vw, 52px); align-items: center; }
+    .about-portrait { text-align: center; }
+    .about-portrait .headshot { width: 200px; height: 200px; }
+    .about h2 { color: white; font-size: clamp(26px, 3.6vw, 40px); letter-spacing: -.04em; margin: 8px 0 14px; }
+    .about p { color: #c6c7cc; font-size: 16.5px; }
+    .credentials { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0; }
+    .credentials span { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.11); border-radius: 999px; padding: 7px 12px; font-size: 13px; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 17px; border-radius: 999px; text-decoration: none; font-weight: 750; font-size: 14.5px; }
+    .btn.primary { background: var(--accent); color: white; }
+    .btn.secondary { background: white; color: var(--ink); }
+
+    footer { padding: 36px 0 48px; color: var(--muted); display: flex; justify-content: space-between; gap: 18px; font-size: 13.5px; flex-wrap: wrap; }
+
+    @media (max-width: 860px) {
+      .nav-links a:not(.pill) { display: none; }
+      .hero, .about { grid-template-columns: 1fr; }
+      .hero { padding-top: 44px; gap: 28px; }
+      .actions { grid-template-columns: 1fr; }
+      .story { padding: 22px 20px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <div class="brand">
+        Carrie <span>AI Intelligence</span>
+        <small class="en">Helping marketers filter AI noise into business decisions.</small>
+        <small class="zh">幫 marketers 將 AI 噪音過濾成商業決策。</small>
+      </div>
+      <div class="nav-links">
+        <a href="#brief"><span class="en">This Week</span><span class="zh">本週重點</span></a>
+        <a href="#actions"><span class="en">Actions</span><span class="zh">行動清單</span></a>
+        <a href="#about"><span class="en">About Carrie</span><span class="zh">關於 Carrie</span></a>
+        <a class="pill" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer"><span class="en">Follow on LinkedIn</span><span class="zh">LinkedIn 追蹤</span></a>
+        <button class="lang-btn" id="langToggle" type="button">中</button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">
+          <span class="en">Weekly Brief · Issue 001 · 14–20 July 2026</span>
+          <span class="zh">每週簡報 · 第 001 期 · 2026 年 7 月 14–20 日</span>
+        </div>
+        <h1>
+          <span class="en">Less AI noise.<br>More marketing signal.</span>
+          <span class="zh">過濾 AI 噪音，<br>只留 marketing 訊號。</span>
+        </h1>
+        <p class="hero-sub">
+          <span class="en">Every story below answers three questions: what happened, why it matters to marketers, and whether you should act now — with a one-click link to the original source.</span>
+          <span class="zh">以下每一則新聞都答你三個問題：發生咗咩事、對 marketers 有咩影響、而家使唔使跟——每則都可以一 click 跳去原文出處。</span>
+        </p>
+        <div class="issue-meta">
+          <span class="en">9 stories · 3 categories</span><span class="zh">9 則新聞 · 3 大分類</span>
+          <span class="en">Every story sourced</span><span class="zh">每則附原文來源</span>
+          <span class="en">6-minute read</span><span class="zh">6 分鐘讀完</span>
+        </div>
+      </div>
+
+      <!-- Personal IP card: replace assets/carrie.jpg with a professional headshot.
+           If the image is missing, the CH monogram shows automatically. -->
+      <aside class="editor-card">
+        <div class="headshot">
+          <img src="assets/carrie.jpg" alt="Carrie Hui" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+          <div class="monogram" style="display:none">CH</div>
+        </div>
+        <h3>Carrie Hui</h3>
+        <p class="role">
+          <span class="en">AI Marketing Strategist · Associate Director</span>
+          <span class="zh">AI Marketing 策略師 · Associate Director</span>
+        </p>
+        <p class="promise">
+          <span class="en">Helping marketers stay ahead of AI.</span>
+          <span class="zh">幫 marketers 喺 AI 浪潮企喺前面。</span>
+        </p>
+        <div class="editor-links">
+          <a class="li" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:huiwun2@gmail.com">Email</a>
+          <a href="https://carriehw.github.io/ai-marketing-daily/" target="_blank" rel="noreferrer"><span class="en">Daily Site</span><span class="zh">每日網站</span></a>
+        </div>
+      </aside>
+    </header>
+  </div>
+
+  <main>
+    <section class="section" id="brief">
+      <div class="shell">
+        <div class="thesis">
+          <div class="eyebrow"><span class="en">This week's signal</span><span class="zh">本週核心訊號</span></div>
+          <blockquote>
+            <span class="en">"AI platforms stopped being tools this week — they started acting like media owners."</span>
+            <span class="zh">「呢個星期，AI 平台唔再只係工具——佢哋開始用媒體平台嘅身份同你做生意。」</span>
+          </blockquote>
+          <p>
+            <span class="en">ChatGPT ads gained first-party audience targeting, Google's AI Mode is now serving ads on a third of commercial queries, and Meta put an AI assistant inside every Ads Manager. The question is no longer "should we use AI" — it's "who controls the customer interface".</span>
+            <span class="zh">ChatGPT 廣告開放咗 first-party 受眾定向、Google AI Mode 已經喺三分一商業搜尋展示廣告、Meta 將 AI 助手放入咗每一個 Ads Manager。問題已經唔係「用唔用 AI」，而係「邊個控制緊客戶接觸點」。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 🔥 MUST KNOW ================= -->
+    <section class="section" id="must-know" style="padding-top:8px">
+      <div class="shell">
+        <div class="cat-head must">
+          <div class="cat-emoji">🔥</div>
+          <div>
+            <h2>MUST KNOW</h2>
+            <p class="cat-desc">
+              <span class="en">The biggest moves in the AI industry — the things you can't afford not to know.</span>
+              <span class="zh">AI 行業最大嘅動向——你唔可以唔知嘅大事。</span>
+            </p>
+          </div>
+        </div>
+        <div class="stories">
+
+          <article class="story must">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: Tech Startups</span><span class="zh">來源：Tech Startups</span></span>
+              <span class="date">17 Jul 2026</span>
+            </div>
+            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer">
+              <span class="en">Andrej Karpathy joins Anthropic as it preps an IPO as early as October</span>
+              <span class="zh">Andrej Karpathy 加盟 Anthropic，公司最快 10 月 IPO</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">Former Tesla AI director and OpenAI founding member Andrej Karpathy has reportedly joined Anthropic. In the same week, Anthropic was reported to be in talks with Samsung on a custom Claude chip and preparing an S-1 for an IPO as early as October 2026, after a Series H valuing it at $965B.</span>
+              <span class="zh">前 Tesla AI 總監、OpenAI 創始成員 Andrej Karpathy 據報加盟 Anthropic。同一星期，Anthropic 據報同 Samsung 商討訂製 Claude 晶片，並準備最快 2026 年 10 月 IPO——公司喺 Series H 融資後估值已達 9,650 億美元。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">Top talent, custom compute and public-market capital are consolidating around two or three frontier labs. Whoever your martech stack depends on, its roadmap is being decided now.</span>
+              <span class="zh">頂級人才、訂製算力同上市資金正集中喺兩三間 frontier labs 手上。無論你嘅 martech stack 依賴邊間公司，佢嘅未來路線圖而家就係決定緊。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">Most people will read this as an AI-industry story. I read it as a procurement story: the enterprise AI market is becoming a two-horse race, and agencies that build on only one platform are taking on concentration risk their clients never signed off on.</span>
+              <span class="zh">大部分人會當呢單係 AI 行業新聞。我當佢係採購新聞：企業 AI 市場正變成兩強競賽，只押注一個平台嘅 agency，其實係替客戶承擔咗佢哋從未同意過嘅集中風險。</span></p>
+            </div>
+            <div class="predict"><b class="k"><span class="en">My Prediction</span><span class="zh">我嘅預測</span></b>
+              <p><span class="en">By mid-2027, "multi-model strategy" will appear in agency RFPs the same way "multi-cloud" appeared in IT RFPs five years ago.</span>
+              <span class="zh">到 2027 年中，「multi-model strategy」會好似五年前 IT 界嘅「multi-cloud」咁，開始出現喺 agency RFP 入面。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal watch">🟡 <span class="en">Watch</span><span class="zh">觀察</span></span>
+              <a class="readsrc" href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+          <article class="story must">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: TechCrunch</span><span class="zh">來源：TechCrunch</span></span>
+              <span class="date">15 Jul 2026</span>
+            </div>
+            <h3><a href="https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/" target="_blank" rel="noreferrer">
+              <span class="en">Microsoft is training its salespeople to talk down OpenAI and Anthropic</span>
+              <span class="zh">Microsoft 訓練銷售團隊「唱衰」OpenAI 同 Anthropic</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">Microsoft executives have reportedly instructed sales teams to position its in-house AI models as more efficient and economical than OpenAI's, Anthropic's and Google's — a notable shift given Microsoft remains OpenAI's biggest backer.</span>
+              <span class="zh">據報 Microsoft 高層指示銷售團隊，將自家 AI 模型定位為比 OpenAI、Anthropic 同 Google 更高效、更抵用——考慮到 Microsoft 仍然係 OpenAI 最大金主，呢個轉向相當矚目。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">The AI platform alliance era is ending and the competition era has begun. Pricing, bundling and platform lock-in tactics will reach enterprise buyers — including marketing departments — within months.</span>
+              <span class="zh">AI 平台嘅「結盟時代」正在結束，「競爭時代」開始。價格戰、捆綁銷售同平台鎖定策略，幾個月內就會殺到企業買家——包括 marketing 部門——面前。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">When vendors start selling against their own partners, buyers gain leverage. This is the moment to renegotiate your AI tooling contracts — not when the lock-in tactics arrive next quarter.</span>
+              <span class="zh">當供應商開始同自己嘅夥伴打對台，買家嘅議價能力就上升。而家先係重新傾 AI 工具合約嘅最佳時機——唔好等下一季鎖定策略殺到先算。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal watch">🟡 <span class="en">Watch</span><span class="zh">觀察</span></span>
+              <a class="readsrc" href="https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+          <article class="story must">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: Future of Life Institute</span><span class="zh">來源：Future of Life Institute</span></span>
+              <span class="date">15 Jul 2026</span>
+            </div>
+            <h3><a href="https://futureoflife.org/ai-safety-index/" target="_blank" rel="noreferrer">
+              <span class="en">2026 AI Safety Index: the best grade any frontier lab earned was a C+</span>
+              <span class="zh">2026 AI 安全指數出爐：最高分嘅 frontier lab 都只攞到 C+</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">The Future of Life Institute's 2026 AI Safety Index graded the frontier labs: Anthropic topped the class at C+, OpenAI and Google DeepMind got C, Meta D+, while xAI, DeepSeek and Mistral effectively failed.</span>
+              <span class="zh">Future of Life Institute 發表 2026 年 AI 安全指數：Anthropic 以 C+ 排第一，OpenAI 同 Google DeepMind 攞 C，Meta D+，而 xAI、DeepSeek 同 Mistral 基本上不合格。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">Safety scores are becoming procurement criteria. Regulated clients — finance, insurance, healthcare — will start asking which models power your deliverables, and "we didn't check" won't be an acceptable answer.</span>
+              <span class="zh">安全評分正變成採購準則。受監管嘅客戶——金融、保險、醫療——會開始問你嘅 deliverables 背後用緊咩模型，「我哋冇檢查過」唔會再係可接受嘅答案。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">Agencies love talking about AI capability; almost none can talk about AI governance. A one-page "which models we use and why" policy is now a genuine pitch differentiator — I've seen it decide shortlists.</span>
+              <span class="zh">Agency 個個都識講 AI 能力，但幾乎冇人講得出 AI 治理。一頁紙嘅「我哋用咩模型、點解」政策，而家已經係真正嘅 pitch 差異化武器——我見過佢直接影響 shortlist 結果。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal act">🟢 <span class="en">Act now</span><span class="zh">立即行動</span></span>
+              <a class="readsrc" href="https://futureoflife.org/ai-safety-index/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ⚡ PRODUCTIVITY ================= -->
+    <section class="section" id="productivity" style="padding-top:8px">
+      <div class="shell">
+        <div class="cat-head prod">
+          <div class="cat-emoji">⚡</div>
+          <div>
+            <h2>PRODUCTIVITY</h2>
+            <p class="cat-desc">
+              <span class="en">New features, tools and tips that change how you use AI day to day.</span>
+              <span class="zh">改變你日常使用 AI 方式嘅新功能、工具同技巧。</span>
+            </p>
+          </div>
+        </div>
+        <div class="stories">
+
+          <article class="story prod">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: TechCrunch</span><span class="zh">來源：TechCrunch</span></span>
+              <span class="date">9 Jul 2026 <span class="en">· confirmed retiring 14 Jul</span><span class="zh">· 7 月 14 日確認棄用時間表</span></span>
+            </div>
+            <h3><a href="https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/" target="_blank" rel="noreferrer">
+              <span class="en">OpenAI is shutting down the Atlas browser — agentic browsing moves into ChatGPT</span>
+              <span class="zh">OpenAI 停運 Atlas 瀏覽器——agentic 瀏覽功能併入 ChatGPT</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">OpenAI is sunsetting its standalone Atlas browser less than nine months after launch, with a targeted deprecation date of 9 August. Its agentic browsing features are being folded into the ChatGPT desktop app and a new Chrome extension.</span>
+              <span class="zh">OpenAI 宣布停運獨立嘅 Atlas 瀏覽器，距離推出不足九個月，目標棄用日期係 8 月 9 日。佢嘅 agentic 瀏覽功能會併入 ChatGPT 桌面 app 同一個新嘅 Chrome extension。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">If your team built research or reporting workflows on Atlas, you have three weeks to migrate. Bigger picture: OpenAI is consolidating everything into one ChatGPT super-app — expect more standalone tools to be absorbed.</span>
+              <span class="zh">如果你團隊喺 Atlas 上面建立咗 research 或報告 workflow，你哋只有三個星期時間搬遷。更大格局係：OpenAI 正將所有嘢整合入一個 ChatGPT 超級 app——預期更多獨立工具會被吸收。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">The lesson isn't about Atlas. It's that building critical workflows on a lab's experimental product is a bet, not a plan. Standardise your team's workflows on the platform layer (ChatGPT, Claude, Gemini apps), not on the side projects.</span>
+              <span class="zh">教訓唔係 Atlas 本身，而係：將關鍵 workflow 起喺 AI lab 嘅實驗性產品上面，係賭博唔係計劃。團隊嘅 workflow 應該標準化喺平台層（ChatGPT、Claude、Gemini apps），唔係喺 side projects 上面。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal act">🟢 <span class="en">Act now — migrate before 9 Aug</span><span class="zh">立即行動——8 月 9 日前搬遷</span></span>
+              <a class="readsrc" href="https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+          <article class="story prod">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: LLM Stats</span><span class="zh">來源：LLM Stats</span></span>
+              <span class="date">14 Jul 2026</span>
+            </div>
+            <h3><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noreferrer">
+              <span class="en">GPT-5.6 is now the ChatGPT default — 1M-token context in three sizes</span>
+              <span class="zh">GPT-5.6 成為 ChatGPT 預設模型——三個型號、100 萬 token context</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">OpenAI's GPT-5.6 family (Luna, Terra, Sol) is now the default in ChatGPT. All three sizes carry a 1M-token context window; Terra targets GPT-5.5-level quality at half the cost, and Sol handles high-end reasoning.</span>
+              <span class="zh">OpenAI 嘅 GPT-5.6 系列（Luna、Terra、Sol）已成為 ChatGPT 預設模型。三個型號都有 100 萬 token context window；Terra 以一半成本做到 GPT-5.5 級數質素，Sol 就主打高階推理。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">A 1M-token context means you can drop an entire campaign history, brand guideline pack or year of performance reports into one conversation. Long-document workflows that needed workarounds last month now just work.</span>
+              <span class="zh">100 萬 token context 意味住你可以將成個 campaign 歷史、整份 brand guideline 或者一年嘅成效報告放入同一個對話。上個月仲要用 workaround 嘅長文件 workflow，而家直接做到。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">Every model upgrade quietly changes your prompt behaviour. Re-run your team's standard prompts against the new default this week — I've seen agencies discover their "tuned" prompts were tuned for a model that no longer exists.</span>
+              <span class="zh">每次模型升級都會靜靜哋改變 prompt 嘅表現。今個星期用新預設模型重跑一次團隊嘅標準 prompts——我見過有 agency 發現佢哋「調校好」嘅 prompts，原來係為一個已經唔存在嘅模型調校嘅。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal act">🟢 <span class="en">Act now — re-test your prompts</span><span class="zh">立即行動——重測你嘅 prompts</span></span>
+              <a class="readsrc" href="https://llm-stats.com/llm-updates" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+          <article class="story prod">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: Tech Startups</span><span class="zh">來源：Tech Startups</span></span>
+              <span class="date">17 Jul 2026</span>
+            </div>
+            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer">
+              <span class="en">Moonshot AI's Kimi K3: an open-weight model that rivals the frontier on agent tasks</span>
+              <span class="zh">Moonshot AI 推出 Kimi K3：open-weight 模型喺 agent 任務上迫近 frontier 水平</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">Beijing-based Moonshot AI released Kimi K3, a new open-weight model that immediately ranks among the strongest systems for coding and agent-based tasks — at a fraction of frontier-model pricing.</span>
+              <span class="zh">北京嘅 Moonshot AI 發布 Kimi K3，呢個新 open-weight 模型一推出就躋身最強 coding 同 agent 任務模型之列——而價錢只係 frontier 模型嘅一小部分。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">Open-weight models keep closing the gap, which pushes API prices down across the board. For high-volume, low-risk tasks (tagging, drafting, translation at scale), the cheapest capable model keeps changing.</span>
+              <span class="zh">Open-weight 模型不斷收窄差距，令整體 API 價格持續下跌。對於大量、低風險嘅任務（打 tag、初稿、大規模翻譯），「最平又夠用」嘅模型會不斷轉換。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">Most marketing teams don't need to switch models — they need to know switching is possible. That knowledge alone is negotiating leverage with every AI vendor on your stack.</span>
+              <span class="zh">大部分 marketing team 唔需要即刻轉模型——但需要知道「轉得」呢件事。單係呢個認知，已經係你同 stack 上每一個 AI 供應商談判嘅籌碼。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal wait">🔴 <span class="en">Wait — note it, don't migrate</span><span class="zh">暫緩——記低佢，唔使搬</span></span>
+              <a class="readsrc" href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 📈 MARKETING IMPACT ================= -->
+    <section class="section" id="marketing-impact" style="padding-top:8px">
+      <div class="shell">
+        <div class="cat-head mkt">
+          <div class="cat-emoji">📈</div>
+          <div>
+            <h2>MARKETING IMPACT</h2>
+            <p class="cat-desc">
+              <span class="en">What changes for agencies, brands and media plans — through a digital agency lens.</span>
+              <span class="zh">對 agency、品牌同 media plan 嘅實際影響——以 digital agency 視角解讀。</span>
+            </p>
+          </div>
+        </div>
+        <div class="stories">
+
+          <article class="story mkt">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: AdTech Radar</span><span class="zh">來源：AdTech Radar</span></span>
+              <span class="date">15 Jul 2026</span>
+            </div>
+            <h3><a href="https://adtechradar.com/2026/07/15/openai-chatgpt-ads-custom-audiences/" target="_blank" rel="noreferrer">
+              <span class="en">OpenAI launches Custom Audiences for ChatGPT Ads</span>
+              <span class="zh">OpenAI 為 ChatGPT 廣告推出 Custom Audiences</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">Advertisers can now upload first-party customer lists (emails / phone numbers) to ChatGPT Ads, include or exclude matched audiences at campaign level, and apply bid adjustments — the clearest sign yet that OpenAI is building a full ad platform.</span>
+              <span class="zh">廣告商而家可以上載 first-party 客戶名單（電郵／電話）到 ChatGPT Ads，喺 campaign 層面 include / exclude 已配對受眾，仲可以做 bid adjustment——係 OpenAI 認真起緊一個完整廣告平台嘅最明確訊號。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">This is Meta's ad-platform playbook, replayed at 4× speed: contextual ads in February, self-serve manager in May, custom audiences in July. A major new paid channel is forming while most media plans still ignore it.</span>
+              <span class="zh">呢個係 Meta 廣告平台嘅劇本，以四倍速重演：2 月 contextual ads、5 月 self-serve manager、7 月 custom audiences。一個重要嘅新付費渠道正在成形，而大部分 media plan 仲當佢唔存在。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">Early-platform CPCs are historically the cheapest they will ever be. The agencies that ran early Facebook and TikTok tests owned those channels for years. ChatGPT Ads is that moment again — run a small test with a low-risk client budget now.</span>
+              <span class="zh">歷史證明，新平台早期嘅 CPC 係佢一生人最平嘅時候。當年早入場測試 Facebook 同 TikTok 嘅 agency，之後幾年都主導咗嗰啲渠道。ChatGPT Ads 就係嗰個時刻——而家就用低風險嘅客戶預算跑個小測試。</span></p>
+            </div>
+            <div class="predict"><b class="k"><span class="en">My Prediction</span><span class="zh">我嘅預測</span></b>
+              <p><span class="en">OpenAI ships lookalike audiences within six months, and ChatGPT Ads becomes a standard line item on Hong Kong media plans by mid-2027.</span>
+              <span class="zh">OpenAI 六個月內會推出 lookalike audiences，而 ChatGPT Ads 會喺 2027 年中前成為香港 media plan 嘅標準項目。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal act">🟢 <span class="en">Act now — run a test campaign</span><span class="zh">立即行動——跑個測試 campaign</span></span>
+              <a class="readsrc" href="https://adtechradar.com/2026/07/15/openai-chatgpt-ads-custom-audiences/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+          <article class="story mkt">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: B2the7 Weekly</span><span class="zh">來源：B2the7 Weekly</span></span>
+              <span class="date"><span class="en">Week of 20 Jul 2026</span><span class="zh">2026 年 7 月 20 日當週</span></span>
+            </div>
+            <h3><a href="https://www.b2the7.com/news-blog/marketing-trends-july-2026-ai-mode-ads-ga4-ai-traffic" target="_blank" rel="noreferrer">
+              <span class="en">Google AI Mode now shows ads on ~1 in 3 commercial queries — and paying doesn't get you cited</span>
+              <span class="zh">Google AI Mode 已喺約三分一商業搜尋展示廣告——但落廣告唔等於被引用</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">New tracking shows Google's AI Mode returns a text ad on nearly one in three commercial queries. Crucially, buying those ads does not earn your site citations inside the AI answer — organic AI visibility and paid presence are separate games. Google is also generating images directly inside AI Overviews.</span>
+              <span class="zh">最新追蹤數據顯示，Google AI Mode 喺接近三分一商業搜尋會展示 text ad。關鍵係：買廣告並唔會令你嘅網站喺 AI 答案入面被引用——organic AI 可見度同付費曝光係兩場獨立嘅遊戲。Google 亦開始直接喺 AI Overviews 入面生成圖片。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">Your clients' search budgets are already flowing into AI surfaces, but their content may be invisible in the answers themselves. "How do AI assistants describe this brand?" is now a reporting line, not a curiosity.</span>
+              <span class="zh">客戶嘅 search budget 已經流入 AI 介面，但佢哋嘅內容喺 AI 答案入面可能完全隱形。「AI 助手點樣描述呢個品牌？」而家係一條 reporting line，唔再係得意嘅冷知識。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">SEO, PR and paid search can no longer be three separate meetings. AI answers pull from authority and structured content — the brands winning citations are the ones treating those three disciplines as one visibility strategy.</span>
+              <span class="zh">SEO、PR 同 paid search 唔可以再係三個獨立嘅會議。AI 答案係由 authority 同 structured content 驅動——贏到 citation 嘅品牌，都係將三個範疇當成同一個 visibility strategy 嚟做嘅。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal act">🟢 <span class="en">Act now — audit AI visibility</span><span class="zh">立即行動——審核 AI 可見度</span></span>
+              <a class="readsrc" href="https://www.b2the7.com/news-blog/marketing-trends-july-2026-ai-mode-ads-ga4-ai-traffic" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+          <article class="story mkt">
+            <div class="story-meta">
+              <span class="src"><span class="en">Source: Boot Camp Digital</span><span class="zh">來源：Boot Camp Digital</span></span>
+              <span class="date"><span class="en">Jul 2026</span><span class="zh">2026 年 7 月</span></span>
+            </div>
+            <h3><a href="https://bootcampdigital.com/blog/july-2026-digital-news-updates/" target="_blank" rel="noreferrer">
+              <span class="en">Meta's AI business assistant reaches every Ads Manager; Threads ads go global</span>
+              <span class="zh">Meta AI 商業助手全面登陸 Ads Manager；Threads 廣告全球開放</span>
+            </a></h3>
+            <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
+              <p><span class="en">Meta's AI business assistant in Ads Manager has rolled out to every advertiser and agency worldwide. Instagram Reels added post-view ad formats, and Threads opened static carousels and video ads globally. TikTok is pushing agentic AI campaign tools in parallel.</span>
+              <span class="zh">Meta 喺 Ads Manager 嘅 AI 商業助手已推送到全球每一個廣告商同 agency。Instagram Reels 新增 post-view 廣告格式，Threads 嘅 static carousel 同 video ads 亦全球開放。TikTok 同步力推 agentic AI campaign 工具。</span></p>
+            </div>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+              <p><span class="en">Platforms are automating exactly the work junior media traffickers do today. The agency margin on manual campaign operations is going to zero; the margin on strategy, governance and interpretation is going up.</span>
+              <span class="zh">平台正在自動化嘅，正正係今日 junior media trafficker 做緊嘅工作。人手操作 campaign 嘅 agency margin 正走向零；但策略、治理同解讀嘅 margin 正在上升。</span></p>
+            </div>
+            <div class="take"><b class="k">Carrie's Take</b>
+              <p><span class="en">Don't fight the automation — reprice around it. Agencies should be moving fees from execution hours to decision value now, before clients ask why they're paying for hours the platform does free.</span>
+              <span class="zh">唔好同自動化鬥——圍繞佢重新定價。Agency 而家就應該將收費由執行工時轉移到決策價值，唔好等客戶問「點解平台免費做到嘅嘢我仲要俾錢」先諗。</span></p>
+            </div>
+            <div class="story-foot">
+              <span class="signal watch">🟡 <span class="en">Watch — review your pricing model</span><span class="zh">觀察——檢視你嘅收費模式</span></span>
+              <a class="readsrc" href="https://bootcampdigital.com/blog/july-2026-digital-news-updates/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACTIONS ================= -->
+    <section class="section" id="actions">
+      <div class="shell">
+        <div class="section-head">
+          <h2><span class="en">Don't curate news.<br>Curate decisions.</span><span class="zh">唔係整理新聞，<br>係整理決策。</span></h2>
+          <p><span class="en">Three moves for your team this week — drawn from the stories above.</span><span class="zh">根據以上新聞，你團隊今個星期嘅三個行動。</span></p>
+        </div>
+        <div class="actions">
+          <div class="action"><b>01 · <span class="en">TEST</span><span class="zh">測試</span></b>
+            <h4><span class="en">Open a ChatGPT Ads test with one low-risk client budget.</span><span class="zh">用一個低風險客戶預算，開個 ChatGPT Ads 測試。</span></h4>
+            <p><span class="en">Custom Audiences just landed. Early CPCs won't stay this cheap. Benchmark against your Meta and Google baselines.</span><span class="zh">Custom Audiences 啱啱推出，早期 CPC 唔會平得耐。同你嘅 Meta 同 Google baseline 做個比較。</span></p></div>
+          <div class="action"><b>02 · <span class="en">AUDIT</span><span class="zh">審核</span></b>
+            <h4><span class="en">Check how AI assistants describe your top 3 clients.</span><span class="zh">檢查 AI 助手點樣描述你最重要嘅三個客戶。</span></h4>
+            <p><span class="en">Ask ChatGPT, Gemini and Claude the buying questions their customers ask. Screenshot the answers. That's your new baseline report.</span><span class="zh">用客戶嘅顧客會問嘅購買問題，去問 ChatGPT、Gemini 同 Claude。Screenshot 啲答案——嗰個就係你嘅新 baseline report。</span></p></div>
+          <div class="action"><b>03 · <span class="en">GOVERN</span><span class="zh">治理</span></b>
+            <h4><span class="en">Write your one-page "which AI models we use and why" policy.</span><span class="zh">寫好你嗰頁「我哋用咩 AI 模型、點解」政策。</span></h4>
+            <p><span class="en">Safety indices are becoming procurement criteria. Being able to answer this in a pitch is now a differentiator.</span><span class="zh">安全指數正變成採購準則。喺 pitch 入面答到呢條問題，已經係差異化優勢。</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="about">
+          <div class="about-portrait">
+            <div class="headshot">
+              <img src="assets/carrie.jpg" alt="Carrie Hui" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+              <div class="monogram" style="display:none">CH</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow"><span class="en">About the editor</span><span class="zh">關於主編</span></div>
+            <h2><span class="en">AI insight through a marketer's lens — not another news feed.</span><span class="zh">用 marketer 視角解讀 AI——唔係另一個 news feed。</span></h2>
+            <p><span class="en">I'm Carrie Hui, a digital agency leader in Hong Kong. Every week I filter the AI firehose down to what actually changes decisions for marketers, agencies and business owners across Hong Kong, China and global markets — every story sourced, interpreted, and tagged with whether you should act.</span>
+            <span class="zh">我係 Carrie Hui，香港 digital agency leader。每個星期，我將海量 AI 資訊過濾到只剩低真正影響決策嘅部分——為香港、中國同全球市場嘅 marketers、agencies 同企業主而寫。每一則都有來源、有解讀、有「使唔使跟」嘅明確訊號。</span></p>
+            <div class="credentials">
+              <span><span class="en">Digital Agency Leadership</span><span class="zh">Digital Agency 領導經驗</span></span>
+              <span>AI × Marketing</span>
+              <span><span class="en">HK / China Market</span><span class="zh">香港／中國市場</span></span>
+              <span><span class="en">Business Translation</span><span class="zh">商業轉譯</span></span>
+            </div>
+            <div class="cta">
+              <a class="btn primary" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer"><span class="en">Follow Carrie on LinkedIn</span><span class="zh">喺 LinkedIn 追蹤 Carrie</span></a>
+              <a class="btn secondary" href="mailto:?subject=Carrie%20AI%20Intelligence%20%E2%80%94%20Weekly%20Brief"><span class="en">Share this brief</span><span class="zh">分享呢份簡報</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="shell">
+    <footer>
+      <span>© 2026 Carrie Hui · Carrie AI Intelligence</span>
+      <span class="en">Every story links to its original source. Interpretations and predictions are Carrie's own.</span>
+      <span class="zh">每則新聞均連結至原文出處。解讀同預測為 Carrie 個人觀點。</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('langToggle');
+      function apply(lang) {
+        document.body.classList.toggle('lang-zh', lang === 'zh');
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+        btn.textContent = lang === 'zh' ? 'EN' : '中';
+        try { localStorage.setItem('cai-lang', lang); } catch (e) {}
+      }
+      var saved = 'en';
+      try { saved = localStorage.getItem('cai-lang') || 'en'; } catch (e) {}
+      apply(saved);
+      btn.addEventListener('click', function () {
+        apply(document.body.classList.contains('lang-zh') ? 'en' : 'zh');
+      });
+    })();
+  </script>
+</body>
+</html>
