@@ -14,7 +14,7 @@ AI platforms stopped being tools this week — they started acting like media ow
 I read the week's AI news so you don't have to. Three things marketers in Hong Kong actually need to know:
 
 🟢 ACT NOW — ChatGPT Ads quietly gained Custom Audiences.
-First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (US, Japan and Korea only). So my play this quarter is readiness, not spend: get first-party lists and consent in shape now, and if you have a client with a US or Japan footprint, test there first.
+First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (live so far in the US, Canada, UK, Australia, New Zealand, Japan and Korea). So my play this quarter is readiness, not spend: get first-party lists and consent in shape now, and if you have a client with a footprint in an open market, test there first.
 
 🟢 ACT NOW — Google's AI Mode shows ads on ~29% of commercial queries.
 And here's the part most people miss: on 88% of keywords showing a brand's ad, that brand is absent from the AI answer's cited sources (SE Ranking, 50k keywords). Paid presence and organic AI visibility are two separate games. If you haven't checked how AI assistants describe your brand, that's the first thing I'd look at this week.
@@ -41,7 +41,7 @@ I publish this every week: what changed, why it matters, and whether you should 
 我替你讀完了整週的 AI 新聞，香港營銷人真正需要知道的是這三件事：
 
 🟢 立即行動 — ChatGPT Ads 悄悄開放了 Custom Audiences
-可上載 first-party 名單（最少配對 25,000 名用戶）、include/exclude 受眾、調整 bid——這是 Meta 廣告平台的劇本，以四倍速重演。但注意：香港尚未開放投放（目前僅限美國、日本、南韓）。所以我本季會選擇準備而非投放：先把 first-party 名單和用戶同意準備好，如客戶有美國或日本業務，可藉此先行測試。
+可上載 first-party 名單（最少配對 25,000 名用戶）、include/exclude 受眾、調整 bid——這是 Meta 廣告平台的劇本，以四倍速重演。但注意：香港尚未開放投放（已開放市場：美國、加拿大、英國、澳洲、新西蘭、日本、南韓）。所以我本季會選擇準備而非投放：先把 first-party 名單和用戶同意準備好，如客戶在已開放市場有業務，可藉此先行測試。
 
 🟢 立即行動 — Google AI Mode 已在約 29% 的商業搜尋中展示廣告
 但最多人忽略的一點是：在展示某品牌廣告的關鍵字中，有 88% 該品牌並未出現在 AI 答案的引用來源裏（SE Ranking，5 萬個關鍵字研究）。付費曝光與 organic AI 可見度是兩場獨立的競賽。如果你還未看過 AI 助手如何描述你的品牌——這會是我本週第一件想查的事。
@@ -93,7 +93,7 @@ Personal project — views mine, not any employer's or client's.
 2. **「公司知唔知？」（多數係 DM）** — *「知呀，出之前已經同公司打過招呼。呢個係我個人 project，唔代表公司或者任何客戶，內容全部來自公開資料。」*（⚠️ 呢句要係真話先講得——出 post 前記得真係同上司打招呼）
 3. **「點解讀你唔讀 Ben's Bites？」** — *"You probably shouldn't read mine instead — read mine after. They tell you what happened globally; I tell you what a marketer in Hong Kong should do about it. That last mile is the whole product."*
 4. **技術黨挑錯（例：GPT-5.6 tier 細節）** — *"Fair challenge — my source is OpenAI's own announcement (linked in the brief). If you're seeing something different in practice, send it over and I'll correct the brief today — I'd rather be corrected in public than wrong in private."*（網站係 living page，錯咗即日改＋標明 Corrected，係 Issue 001 儲信譽嘅機會）
-5. **「香港都落唔到 ChatGPT Ads，關我咩事？」** — *「正正因為未開放，訊號先係『準備』唔係『投放』。Custom Audiences 要 25,000 個配對用戶——好多香港品牌今日根本拎唔出呢張名單。建名單要成個 quarter；開放香港，OpenAI 一個公告就得。」*
+5. **「香港都落唔到 ChatGPT Ads，關我咩事？」** — *「正正因為未開放，訊號先係『準備』唔係『投放』。Custom Audiences 要 25,000 個配對用戶——好多香港品牌今日根本拎唔出呢張名單。建名單要成個 quarter；開放香港，OpenAI 一個公告就得（英國、澳洲啱啱先開，速度好快）。」*
 6. **Junior 同事：「即係話我哋冇得撈？」** — *「唔係。決定自動化嘅係平台，唔係我——扮睇唔到先係對 junior 最唔負責任。未來兩年升得最快嘅 junior，會係最早學識指揮呢啲 AI agents 嘅人。」*
 7. **潛在客戶 DM 想搵你私下做 audit** — 唔好接私活（利益衝突）：*「方法我已經寫咗喺 brief（Action 02），自己團隊都做到。想認真做大規模嘅，行正式渠道搵我哋 agency 傾。」*
 
