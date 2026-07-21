@@ -33,3 +33,29 @@
 - [ ] Archive 結構：Issue 002 起考慮 `/issues/001.html` 存檔制，首頁永遠最新一期
 - [ ] 預測記錄頁（公開追蹤估中／估錯）——panel 認為係建立 authority 嘅最強手段
 - [ ] LinkedIn headline 建議同 tagline 統一（已向用戶提出，未確認）
+
+## Issue 001 出街前最終審核（2026-07-21，Editor + 行業專家三席 + 風險審計）
+
+### 新增規則（Issue 002 起生效）
+
+1. **日期窗口誠實**：hero 唔好寫「14–20 July」呢類窗口（一定有新聞跌出窗外俾人捉）——改用出刊日期「Issue 00X · 21 July」
+2. **雙語完整性 checklist**：所有 label（包括 Carrie's Take→Carrie 觀點）、所有日期都要有 .zh span；簡體字殘留（着→著）要 grep 一次
+3. **標題都要 hedge**：內文有「據報」唔夠，標題先係被 screenshot 嘅嘢——「reportedly／據報」要出現喺標題
+4. **產品歸屬要準**：Reels 係 Instagram 唔係 TikTok——平台產品名前面加返公司名
+5. **閱讀時間唔好報細數**；訊號圖例（🟢🟡🔴）要有解釋
+6. **僱主風險語氣**：行業經濟評論用觀察式（「行業正面對…」）唔用指令式（「agency 應該…」）；footer 常設「個人出版物，不代表僱主」+ AI 協作聲明
+
+### 行業專家評分同 Issue 002 方向
+
+- Agency 讀者 7/10、in-house 讀者 4/10。**最高影響改善：大中華視角要結構化**——每期至少 2–3 則 GC/HK 原生新聞（WeChat／RED／Douyin／travel retail AI），每則全球新聞加「香港角度」一句。呢個係 Carrie IP 嘅 moat，冇咗佢就只係另一份美國科技摘要
+- 每則新聞加「Say this to your client」一句（客戶 email 直接用得），係 agency 讀者轉發嘅誘因
+- 🟢 每期上限三個（Issue 001 有五個——訊號通脹）；發布 Act/Watch/Wait 準則
+- 預測 scorecard 由 Issue 002 開始（上期預測回顧：中／唔中／點解）——冇 scorecard 唔好叫人「Screenshot this」
+- In-house 讀者：每個 🟢 加「細團隊版本」動作（無 agency、低預算做法）
+
+### 風險清單（需 Carrie 本人行動，唔係網站改到）
+
+- [ ] **出街前同上司／comms 打招呼**（email，留低回覆）——唯一 career 級風險
+- [ ] 換走網站上嘅私人 Gmail（開專用 alias），私人帳戶全部開 2FA
+- [ ] LinkedIn About 加「Views are my own」
+- [ ] 定期 search 自己名+職銜，望下有冇假冒 profile

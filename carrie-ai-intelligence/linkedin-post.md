@@ -20,7 +20,7 @@ First-party list uploads (25,000-match minimum), include/exclude, bid adjustment
 And here's the part most people miss: on 88% of keywords showing a brand's ad, that brand is absent from the AI answer's cited sources (SE Ranking, 50k keywords). Paid presence and organic AI visibility are two separate games. If you haven't audited how AI assistants describe your brand, that's this week's homework.
 
 🟡 WATCH — TikTok opened its Ads Manager to third-party AI agents.
-An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. The agency margin on execution is going to zero; the margin on strategy, governance and interpretation is going up. Reprice around the automation before your clients ask why they're paying for hours the platforms are learning to do free.
+An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. Across the industry, execution economics are being compressed while the value of strategy, governance and interpretation rises. The fee conversation is coming either way — better to open it with clients on your own terms than to wait to be asked.
 
 My prediction: OpenAI ships lookalike audiences for ChatGPT Ads within six months. Screenshot this.
 
@@ -47,7 +47,7 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 但最多人忽略的一點是：在展示某品牌廣告的關鍵字中，有 88% 該品牌並未出現在 AI 答案的引用來源裏（SE Ranking，5 萬個關鍵字研究）。付費曝光與 organic AI 可見度是兩場獨立的競賽。如果你還未審視過 AI 助手如何描述你的品牌——這就是你本週的功課。
 
 🟡 觀察 — TikTok 向第三方 AI agents 開放了 Ads Manager
-「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。執行的 margin 正走向零，策略與解讀的 margin 正在上升。在客戶質疑「平台正逐步免費做到的事為何還要收費」之前，先重新設計你的收費模式。
+「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。放眼整個行業，執行工作的經濟價值正被壓縮，策略、治理與解讀的價值持續上升。收費模式這場對話遲早要發生——與其等客戶先開口，不如由自己主動開展。
 
 我的預測：OpenAI 會在六個月內為 ChatGPT Ads 推出 lookalike audiences。先把這段截圖存起來。
 

@@ -35,10 +35,10 @@
 
 已放咗喺 `assets/carrie.jpg`（800×800，以面部為中心裁切）。想換相就直接覆蓋呢個檔案。
 
-## Subscribe 連結
+## Follow / Subscribe 連結
 
-而家 nav 同 About 嘅「Subscribe / 訂閱」按鈕暫時指去 LinkedIn profile。
-開通 LinkedIn Newsletter 之後，search `Subscribe:` 註釋，將兩個連結換成 newsletter URL。
+Nav 同 About 嘅按鈕暫時叫「Follow for weekly issues / 追蹤每週更新」，指去 LinkedIn profile（未有 newsletter 前唔可以叫 Subscribe——訂閱唔到嘅 Subscribe 掣係信譽炸彈）。
+開通 LinkedIn Newsletter 之後：search `Subscribe:` 註釋，兩個連結換成 newsletter URL，文字改返「Subscribe / 訂閱」。
 
 ## Deploy 去 GitHub Pages（已揀：新 repo）
 
