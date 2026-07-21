@@ -98,7 +98,7 @@
 ## Step 8 — LinkedIn post
 
 - 更新 `linkedin-post.md`：EN 版 + 書面中文版 + first comment
-- 結構：hook（本週訊號一句）→ 3 個 takeaway（🟢🟡🔴 開頭）→ 1 個預測（"Screenshot this"）→ CTA
+- 結構：hook（本週訊號一句）→ 3 個 takeaway（🟢🟡🔴 開頭）→ 1 個預測（第一身＋寫明依據＋"check back on me" 式收尾）→ CTA
 - 規則：brief 連結放 first comment；香港時間週二／三 8:30–9:30am 出；hashtags 6–8 個
 
 ## Step 9 — 記錄 learnings（收工前必做）
