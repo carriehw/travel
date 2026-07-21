@@ -109,6 +109,6 @@ Personal project — views mine, not any employer's or client's.
 
 ### 呢個 post 令你揹上身嘅承諾（按失約成本排）
 
-1. **每星期出**（已改做 "every week"，唔綁死星期一）——最貴嘅承諾。緩衝策略：Issue N 出街時 Issue N+1 應有七成稿；準備定一個「趕工週」精簡格式（3 則,唔更新網站）
+1. **每星期出**（已改做 "every week"，唔綁死星期一）——最貴嘅承諾。緩衝策略：Issue N 出街時 Issue N+1 應有七成稿；準備定一個「趕工週」精簡格式（3 則、唔更新網站）
 2. **一月覆盤預測**——而家就喺 calendar 記低 2027 年 1 月第一個星期一「Prediction reckoning post」；如果 lookalikes 提早推出，仲係免費 victory-lap post
 3. **雙語質素**——每次出中文版前朗讀一次（「緊／咗／嘅」讀出嚟即刻現形）；真係趕，社交 post 可以淨出英文，但網站永遠保持雙語
