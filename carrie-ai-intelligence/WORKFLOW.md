@@ -44,18 +44,17 @@
 |---|---|
 | Source badge + 日期 | 真實日期；來源寫實際出處 |
 | 標題 | 可 click 去原文 |
-| Summary | 約 100 字，數字要具體 |
-| Why it matters | 對 marketer／agency 嘅含義 |
-| Carrie's Take | 反直覺解讀（「大部分人會點睇，我點睇」），見寫作規則 |
+| Key Highlights／重點摘要 | 2–3 粒 bullet（`<ul class="kh">`），事實＋重要性融埋寫，數字要具體 |
+| Industry Insight／行業洞察 | 1–2 句**中性行文**——冇「我／I」、冇個人掛名（Carrie 2026-07-21 決定：「我嘅觀點唔一定啱，費事講錯嘢俾人周」），保留 hedge（「趨勢看來」「usually」） |
 | 行動訊號 | 🟢 Act now / 🟡 Watch / 🔴 Wait，加一句具體動作 |
-| My Prediction | 每期揀 1–2 則加，見寫作規則 |
+| Pattern Watch／趨勢觀察 | 有實據 pattern 先寫（見預測準則），中性行文，唔用「我預期」 |
 
 - 語言：EN + 書面中文（`.en`/`.zh` span 兩版都要寫）
 - 同步更新：hero 嘅 Issue 號/日期、This week's signal、三個 Actions（PREPARE/AUDIT/GOVERN 主題可每期轉）
 
 ### 寫作規則（違反過先寫低，唔好再犯）
 
-1. **「I read it as…」可以，「I've seen…」唔可以**——解讀性第一身安全；親歷式聲稱除非 Carrie 真有其事，一律禁止
+1. **網站唔用第一身、唔用個人掛名觀點**（2026-07-21 Carrie 決定）：行業洞察用中性觀察行文；「I've seen…」親歷式聲稱一律禁止；LinkedIn post 係個人發言可用第一身，但預測都用 pattern-watch 式（「值得留意」）唔用斷言
 2. **香港執行度檢查**：每個 🟢 Act now 問一次「香港讀者聽日返工做唔做到？」做唔到就改成 readiness 動作或者註明市場限制
 3. **預測要單一、有日期、可驗證**——唔好將兩個預測綁埋一齊（命中率減半，錯一半就當你全錯）
 4. **絕對化字眼收斂**：「cheapest they will ever be」呢類必然句改做「usually／historically」

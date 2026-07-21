@@ -86,3 +86,17 @@ Issue 001 應用結果：三個預測刪剩一個（lookalike audiences——有
 - Post 承諾寫 "every week" 唔寫 "every Monday"（出 post 日係週二／三，唔好自己打倒自己）
 - LinkedIn post 嘅 first comment 加常設一句「Personal project — views mine, not any employer's or client's」
 - 出街日應對小抄同 24 小時 playbook 已存喺 linkedin-post.md 尾段，每期出 post 前重溫
+
+## 編輯方針改版（2026-07-21 Carrie 決定，永久生效）
+
+**網站唔用個人掛名觀點。** Carrie 原話：「我想個網站資訊性要夠強，而我嘅觀點又唔一定啱，所以我會採取資料性、重要性、行業洞察，唔用 Carrie's take，費事講錯嘢俾人周。」
+
+新卡片結構（Issue 001 已重造，之後照跟）：
+1. **Key Highlights／重點摘要**：2–3 粒 bullet，事實＋重要性融埋寫（取代 Summary + Why it matters 兩段）
+2. **Industry Insight／行業洞察**：1–2 句中性行文——冇「我／I」、冇個人掛名，保留 hedge
+3. **Pattern Watch／趨勢觀察**（取代 My Prediction）：有實據 pattern 先寫，中性行文（「值得留意」），冇個人承諾式收尾
+4. LinkedIn post 係個人發言可用第一身，但預測同樣用 pattern-watch 式
+
+其他當日決定：
+- **WAICO 補入 Issue 001 做第 10 則**（29 國 7 月 16 日上海簽署、政府間組織、已 fact-check：gov.cn + Al Jazeera + Sixth Tone 三源核實）——Issue 001 由此有咗第一則 GC 原生新聞
+- 漏網新聞覆盤：Thinking Machines Inkling（975B open-weight）同 Kimi K3 撞主題冇入；小紅書聚光「爆文拆解／簡單投」+ 蒲公英新規來源未夠實（搜狐/網易級數），列入 Issue 002 候選待驗證

@@ -18,7 +18,7 @@ description: Produce a new issue of "Carrie AI Intelligence" — the bilingual (
 ## 流程摘要（詳細見 WORKFLOW.md）
 
 1. **研究**：WebSearch 為主（proxy 封鎖大部分 WebFetch）；每分類 2–3 條 query，**另加中文 query 搜大中華線**（微信 AI／小紅書聚光／巨量引擎／騰訊廣告／AIGC 監管／travel retail AI）；每則新聞必須核實**原始公布日期**係當週——roundup 成日將舊聞包裝成新聞
-2. **起草**：3 分類 × 3 則（🔥 MUST KNOW／⚡ PRODUCTIVITY／📈 MARKETING IMPACT），每則齊：來源＋日期＋一 click 原文連結＋Summary＋Why it matters＋Carrie's Take＋🟢🟡🔴 訊號；每期揀 1–2 則加 My Prediction；EN 同書面中文兩版都要寫
+2. **起草**：3 分類共 9–10 則（🔥 MUST KNOW／⚡ PRODUCTIVITY／📈 MARKETING IMPACT），每則齊：來源＋日期＋一 click 原文連結＋**Key Highlights（2–3 粒 bullet，事實＋重要性融埋）**＋**Industry Insight（中性行文，冇「我」、冇個人掛名）**＋🟢🟡🔴 訊號；有實據 pattern 先加 Pattern Watch；EN 同書面中文兩版都要寫
 3. **審核（必做，唔可以跳過）**：三個 agent 並行——兩個 fact-check（逐 claim VERIFIED/PARTLY WRONG/CANNOT CONFIRM＋證據 URL），一個專家 panel（總編／agency director／personal branding 三視角，判 KEEP/TWEAK/RETHINK）
 4. **修正 → 驗證**：headless chromium（`/opt/pw-browsers/chromium` + playwright-core）check render、全部原文連結、JS error、中英 toggle
 5. **發布**：push `carriehw/carrie-ai-intelligence` main（GitHub Pages 自動 deploy）＋開發 branch；更新 `linkedin-post.md`（EN＋書面中文＋first comment）
@@ -29,7 +29,7 @@ description: Produce a new issue of "Carrie AI Intelligence" — the bilingual (
 呢啲規則全部係 Issue 001 實戰中俾 fact-check／專家 panel 揪出嚟嘅，每條背後都有一次真實失誤：
 
 - **來源要一手**（官方 blog／CNBC／TechCrunch／Search Engine Land 級數），aggregator 只可以用嚟搵線索
-- **「I've seen…」親歷聲稱禁用**（除非 Carrie 親自提供）；「I read it as…」解讀式第一身係佢嘅招牌，多用
+- **網站唔用第一身、唔用個人掛名觀點**（Carrie 決定：「我嘅觀點唔一定啱，費事講錯嘢俾人周」）——行業洞察中性行文；「I've seen…」親歷聲稱一律禁用
 - **每個 🟢 Act now 要通過香港執行度測試**：香港讀者聽日返工做唔做到？做唔到就改 readiness 或註明市場限制
 - **大中華視角係結構性要求**：每期至少 2–3 則 GC/HK 原生新聞（散落三個分類，唔另設分區）；每則全球新聞必須答到「香港/GC marketer 有咩關係」——呢個係本 brief 嘅 moat，冇咗就只係另一份美國科技摘要
 - **預測單一、有日期、可驗證**；產品狀態字眼（default／GA／beta／rolling out）逐隻核實

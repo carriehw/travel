@@ -22,7 +22,7 @@ And here's the part most people miss: on 88% of keywords showing a brand's ad, t
 🟡 WATCH — TikTok opened its Ads Manager to third-party AI agents.
 An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. Across the industry, execution economics are being compressed while the value of strategy, governance and interpretation rises. My bet is the fee conversation arrives either way — better for the industry to open it on its own terms than to wait to be asked.
 
-My prediction: ChatGPT Ads adds lookalike audiences within six months. The pattern behind it: OpenAI has run Meta's playbook step by step — contextual ads in February, self-serve manager in May, custom audiences now — and lookalikes are the next page, built on exactly this feature. Check back on me in January — I'll own it either way.
+One pattern worth watching: OpenAI has run Meta's ad playbook step by step — contextual ads in February, self-serve manager in May, custom audiences now. If it continues, lookalike audiences are the logical next page, built on exactly this feature. I'm watching for them over the next six months.
 
 Every story above links to its original source in my full weekly brief — link in the first comment.
 
@@ -49,7 +49,7 @@ I publish this every week: what changed, why it matters, and whether you should 
 🟡 觀察 — TikTok 向第三方 AI agents 開放了 Ads Manager
 「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。放眼整個行業，執行工作的經濟價值正被壓縮，策略、治理與解讀的價值持續上升。我的判斷是，收費模式這場對話遲早會來——與其等客戶先開口，不如業界自己主動。
 
-我的預測：ChatGPT Ads 會在六個月內推出 lookalike audiences。依據是這個 pattern：OpenAI 正一步一步重演 Meta 的廣告劇本——2 月 contextual ads、5 月 self-serve manager、如今 custom audiences——而 lookalikes 正是建基於此功能的下一步。明年一月歡迎回來對答案——中與不中，我都認。
+一個值得留意的 pattern：OpenAI 正一步一步重演 Meta 的廣告劇本——2 月 contextual ads、5 月 self-serve manager、如今 custom audiences。如果劇本繼續，下一步就是建基於此功能的 lookalike audiences——未來六個月我會密切留意。
 
 以上每一則新聞，都可以在我的 weekly brief 一鍵跳轉至原文——連結在第一則留言。
 
@@ -63,12 +63,12 @@ I publish this every week: what changed, why it matters, and whether you should 
 ## 第一個 comment（放 link 用）
 
 ```
-Full brief with all 9 stories, sources and act/watch/wait signals 👇
+Full brief with all 10 stories, sources and act/watch/wait signals 👇
 https://carriehw.github.io/carrie-ai-intelligence/
 
 Personal project — views mine, not any employer's or client's.
 
-🔥 Must Know: Anthropic lines up an October IPO · Microsoft's AI sales pivot · 2026 AI Safety Index (best grade: C+)
+🔥 Must Know: Anthropic lines up an October IPO · Microsoft's AI sales pivot · 2026 AI Safety Index (best grade: C+) · China launches WAICO (29-country AI body in Shanghai)
 ⚡ Productivity: Atlas browser sunset (migrate by 9 Aug) · GPT-5.6 lands in ChatGPT · Kimi K3 (2.8T open-weight)
 📈 Marketing Impact: ChatGPT Ads custom audiences · Google AI Mode ads study · TikTok's Agentic Hub
 ```
