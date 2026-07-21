@@ -22,7 +22,7 @@ And here's the part most people miss: on 88% of keywords showing a brand's ad, t
 🟡 WATCH — TikTok opened its Ads Manager to third-party AI agents.
 An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. Across the industry, execution economics are being compressed while the value of strategy, governance and interpretation rises. My bet is the fee conversation arrives either way — I'd rather open it with clients on my own terms than wait to be asked.
 
-My prediction: I expect OpenAI to ship lookalike audiences for ChatGPT Ads within six months. Check back on me in January — I'll own it either way.
+My prediction, and the basis for it: OpenAI has followed Meta's ad playbook step by step — contextual ads in February, self-serve manager in May, custom audiences now. Lookalikes are the next step in that playbook, built on exactly this feature. So I expect them within six months. Check back on me in January — I'll own it either way.
 
 Every story above links to its original source in my full weekly brief — link in the first comment.
 
@@ -49,7 +49,7 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 🟡 觀察 — TikTok 向第三方 AI agents 開放了 Ads Manager
 「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。放眼整個行業，執行工作的經濟價值正被壓縮，策略、治理與解讀的價值持續上升。我的判斷是，收費模式這場對話遲早會來——與其等客戶先開口，我寧願自己主動。
 
-我的預測：我預期 OpenAI 會在六個月內為 ChatGPT Ads 推出 lookalike audiences。明年一月歡迎回來對答案——估中估錯我都認。
+我的預測，以及背後依據：OpenAI 一步一步重演緊 Meta 的廣告劇本——2 月 contextual ads、5 月 self-serve manager、如今 custom audiences。Lookalike audiences 正是這套劇本中建基於此功能的下一步，所以我預期六個月內會推出。明年一月歡迎回來對答案——估中估錯我都認。
 
 以上每一則新聞，都可以在我的 weekly brief 一鍵跳轉至原文——連結在第一則留言。
 
@@ -77,6 +77,6 @@ Full brief with all 9 stories, sources and act/watch/wait signals 👇
 
 1. **Hook（1 句）**：本週核心訊號，講轉變唔好講新聞（"X stopped being Y this week"）
 2. **3 個 takeaway**：每個以 🟢/🟡/🔴 訊號開頭，格式係「事實（1–2 句）→ 大部分人點睇 → 我點睇/你應該點做」
-3. **1 個 prediction**：夠具體、有日期、可以驗證——但用第一身講（"I expect… / 我預期…"），收尾用 accountability hook（"check back on me / 到時對答案"），唔好用先知口吻斷言（"X ships Y. Screenshot this." 呢類唔要）
+3. **1 個 prediction**：夠具體、有日期、可以驗證——但必須寫明依據（觀察到嘅 pattern／數據），冇實在支持嘅推測寧願唔出。用第一身講（"I expect… / 我預期…"），收尾用 accountability hook（"check back on me / 到時對答案"），唔好用先知口吻斷言
 4. **CTA**：full brief link 喺 first comment + follow 理由（"one brief, not fifty headlines"）
 5. 正文唔好放外部 link；hashtags 6–8 個，混合大 tag 同 niche tag
