@@ -23,11 +23,18 @@
   - 🔥 MUST KNOW：`biggest AI news [當週日期] OpenAI Google Anthropic`
   - ⚡ PRODUCTIVITY：`ChatGPT Claude Gemini new feature [月份] 2026`
   - 📈 MARKETING IMPACT：`AI marketing advertising news [月份] Meta Google ads`
+- **大中華線（必搜，中文 query）**：
+  - `微信 AI 功能 更新 [月份]`／`小紅書 聚光 AI 商業化`／`巨量引擎 智能投放 AI`
+  - `騰訊廣告 AI [月份]`／`AIGC 標識 新規 備案`／`阿里 字節 大模型 [月份]`
+  - `旅遊零售 AI 營銷`（Carrie 主場，有料必用）
+  - 來源：平台官方公告、36氪、晚點 LatePost、界面——同樣要一手
 - 大型研究可調用 `deep-research` skill
 - 揀每類 3 則，標準：
   - **必須係當週新聞**（用 roundup 搵料，但要核實原始日期——roundup 成日炒冷飯）
   - 對香港 marketer 有實際意義
   - 有可連結嘅一手來源（官方 blog／CNBC／TechCrunch 級數，唔要 aggregator）
+  - **全期至少 2–3 則 GC/HK 原生新聞**（WeChat／RED／Douyin／騰訊／字節／中國 AI 監管／travel retail AI），散落喺三個分類，唔另設分區——呢個係本 brief 對比美國 newsletter 嘅 moat
+  - **每則全球新聞必須答到「香港/GC marketer 有咩關係」**（喺 Why it matters 或 Take 入面）——答唔到嘅新聞唔夠格入選
 
 ## Step 2 — 起草
 
