@@ -13,16 +13,16 @@ AI platforms stopped being tools this week — they started acting like media ow
 
 I read the week's AI news so you don't have to. Three things marketers in Hong Kong actually need to know:
 
-🟢 ACT NOW — OpenAI launched Custom Audiences for ChatGPT Ads (15 Jul).
-First-party list uploads, include/exclude, bid adjustments. This is Meta's ad-platform playbook replayed at 4x speed. Early-platform CPCs are the cheapest they will ever be — the agencies that tested Facebook and TikTok early owned those channels for years. Run a small test now.
+🟢 ACT NOW — ChatGPT Ads quietly gained Custom Audiences.
+First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (US, Japan and Korea only). So this quarter's move is readiness, not spend: get your first-party lists and consent ready, and test through a client's US or Japan footprint if you have one.
 
-🟢 ACT NOW — Google's AI Mode now shows ads on ~1 in 3 commercial queries.
-And here's the part most people miss: paying for those ads does NOT get your site cited inside the AI answer. Organic AI visibility and paid presence are two separate games. If you haven't audited how AI assistants describe your brand, that's this week's homework.
+🟢 ACT NOW — Google's AI Mode shows ads on ~29% of commercial queries.
+And here's the part most people miss: on 88% of keywords showing a brand's ad, that brand is absent from the AI answer's cited sources (SE Ranking, 50k keywords). Paid presence and organic AI visibility are two separate games. If you haven't audited how AI assistants describe your brand, that's this week's homework.
 
-🟡 WATCH — Meta's AI assistant reached every Ads Manager worldwide.
-Platforms are automating exactly the work junior traffickers do today. The agency margin on execution is going to zero; the margin on strategy, governance and interpretation is going up. Reprice around the automation before your clients ask why they're paying for hours the platform does free.
+🟡 WATCH — TikTok opened its Ads Manager to third-party AI agents.
+An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. The agency margin on execution is going to zero; the margin on strategy, governance and interpretation is going up. Reprice around the automation before your clients ask why they're paying for hours the platforms are learning to do free.
 
-My prediction: ChatGPT Ads becomes a standard line item on Hong Kong media plans by mid-2027. Screenshot this.
+My prediction: OpenAI ships lookalike audiences for ChatGPT Ads within six months. Screenshot this.
 
 Every story above links to its original source in my full weekly brief — link in the first comment.
 
@@ -40,16 +40,16 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 
 我替你讀完了整週的 AI 新聞，香港營銷人真正需要知道的是這三件事：
 
-🟢 立即行動 — OpenAI 為 ChatGPT Ads 推出 Custom Audiences（7月15日）
-可上載 first-party 名單、include/exclude 受眾、調整 bid。這是 Meta 廣告平台的劇本，以四倍速重演。新平台早期的 CPC 是它整個生命週期中最便宜的階段——當年率先測試 Facebook 和 TikTok 的 agency，往後多年都主導了那些渠道。現在就用一個低風險預算進行測試。
+🟢 立即行動 — ChatGPT Ads 悄悄開放了 Custom Audiences
+可上載 first-party 名單（最少配對 25,000 名用戶）、include/exclude 受眾、調整 bid——這是 Meta 廣告平台的劇本，以四倍速重演。但注意：香港尚未開放投放（目前僅限美國、日本、南韓）。所以本季的正確動作是準備而非投放：先把 first-party 名單和用戶同意準備好，如客戶有美國或日本業務，可藉此先行測試。
 
-🟢 立即行動 — Google AI Mode 已在三分之一的商業搜尋中展示廣告
-但最多人忽略的一點是：投放廣告並不會令你的網站在 AI 答案中被引用。Organic AI 可見度與付費曝光是兩場獨立的競賽。如果你還未審視過 AI 助手如何描述你的品牌——這就是你本週的功課。
+🟢 立即行動 — Google AI Mode 已在約 29% 的商業搜尋中展示廣告
+但最多人忽略的一點是：在展示某品牌廣告的關鍵字中，有 88% 該品牌並未出現在 AI 答案的引用來源裏（SE Ranking，5 萬個關鍵字研究）。付費曝光與 organic AI 可見度是兩場獨立的競賽。如果你還未審視過 AI 助手如何描述你的品牌——這就是你本週的功課。
 
-🟡 觀察 — Meta AI 助手已推送至全球每一個 Ads Manager
-平台正在自動化的，正是今天 junior trafficker 的日常工作。執行的 margin 正走向零，策略與解讀的 margin 正在上升。在客戶質疑「平台免費做到的事為何還要收費」之前，先重新設計你的收費模式。
+🟡 觀察 — TikTok 向第三方 AI agents 開放了 Ads Manager
+「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。執行的 margin 正走向零，策略與解讀的 margin 正在上升。在客戶質疑「平台正逐步免費做到的事為何還要收費」之前，先重新設計你的收費模式。
 
-我的預測：ChatGPT Ads 會在 2027 年中之前，成為香港 media plan 的標準項目。先把這段截圖存起來。
+我的預測：OpenAI 會在六個月內為 ChatGPT Ads 推出 lookalike audiences。先把這段截圖存起來。
 
 以上每一則新聞，都可以在我的 weekly brief 一鍵跳轉至原文——連結在第一則留言。
 
@@ -66,9 +66,9 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 Full brief with all 9 stories, sources and act/watch/wait signals 👇
 [你嘅 weekly brief URL]
 
-🔥 Must Know: Karpathy joins Anthropic · Microsoft's AI sales pivot · 2026 AI Safety Index
-⚡ Productivity: Atlas browser sunset (migrate by 9 Aug) · GPT-5.6 is the new ChatGPT default · Kimi K3
-📈 Marketing Impact: ChatGPT Ads custom audiences · Google AI Mode ads · Meta AI assistant global rollout
+🔥 Must Know: Anthropic lines up an October IPO · Microsoft's AI sales pivot · 2026 AI Safety Index (best grade: C+)
+⚡ Productivity: Atlas browser sunset (migrate by 9 Aug) · GPT-5.6 lands in ChatGPT · Kimi K3 (2.8T open-weight)
+📈 Marketing Impact: ChatGPT Ads custom audiences · Google AI Mode ads study · TikTok's Agentic Hub
 ```
 
 ---
