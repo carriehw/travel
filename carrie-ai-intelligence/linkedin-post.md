@@ -14,15 +14,15 @@ AI platforms stopped being tools this week — they started acting like media ow
 I read the week's AI news so you don't have to. Three things marketers in Hong Kong actually need to know:
 
 🟢 ACT NOW — ChatGPT Ads quietly gained Custom Audiences.
-First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (US, Japan and Korea only). So this quarter's move is readiness, not spend: get your first-party lists and consent ready, and test through a client's US or Japan footprint if you have one.
+First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (US, Japan and Korea only). So my play this quarter is readiness, not spend: I'd get first-party lists and consent in shape now, and test through a client's US or Japan footprint if you have one.
 
 🟢 ACT NOW — Google's AI Mode shows ads on ~29% of commercial queries.
-And here's the part most people miss: on 88% of keywords showing a brand's ad, that brand is absent from the AI answer's cited sources (SE Ranking, 50k keywords). Paid presence and organic AI visibility are two separate games. If you haven't audited how AI assistants describe your brand, that's this week's homework.
+And here's the part most people miss: on 88% of keywords showing a brand's ad, that brand is absent from the AI answer's cited sources (SE Ranking, 50k keywords). Paid presence and organic AI visibility are two separate games. If you haven't checked how AI assistants describe your brand, that's the first thing I'd look at this week.
 
 🟡 WATCH — TikTok opened its Ads Manager to third-party AI agents.
-An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. Across the industry, execution economics are being compressed while the value of strategy, governance and interpretation rises. The fee conversation is coming either way — better to open it with clients on your own terms than to wait to be asked.
+An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. Across the industry, execution economics are being compressed while the value of strategy, governance and interpretation rises. My bet is the fee conversation arrives either way — I'd rather open it with clients on my own terms than wait to be asked.
 
-My prediction: OpenAI ships lookalike audiences for ChatGPT Ads within six months. Screenshot this.
+My prediction: I expect OpenAI to ship lookalike audiences for ChatGPT Ads within six months. Check back on me in January — I'll own it either way.
 
 Every story above links to its original source in my full weekly brief — link in the first comment.
 
@@ -41,15 +41,15 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 我替你讀完了整週的 AI 新聞，香港營銷人真正需要知道的是這三件事：
 
 🟢 立即行動 — ChatGPT Ads 悄悄開放了 Custom Audiences
-可上載 first-party 名單（最少配對 25,000 名用戶）、include/exclude 受眾、調整 bid——這是 Meta 廣告平台的劇本，以四倍速重演。但注意：香港尚未開放投放（目前僅限美國、日本、南韓）。所以本季的正確動作是準備而非投放：先把 first-party 名單和用戶同意準備好，如客戶有美國或日本業務，可藉此先行測試。
+可上載 first-party 名單（最少配對 25,000 名用戶）、include/exclude 受眾、調整 bid——這是 Meta 廣告平台的劇本，以四倍速重演。但注意：香港尚未開放投放（目前僅限美國、日本、南韓）。所以我本季會選擇準備而非投放：先把 first-party 名單和用戶同意準備好，如客戶有美國或日本業務，可藉此先行測試。
 
 🟢 立即行動 — Google AI Mode 已在約 29% 的商業搜尋中展示廣告
-但最多人忽略的一點是：在展示某品牌廣告的關鍵字中，有 88% 該品牌並未出現在 AI 答案的引用來源裏（SE Ranking，5 萬個關鍵字研究）。付費曝光與 organic AI 可見度是兩場獨立的競賽。如果你還未審視過 AI 助手如何描述你的品牌——這就是你本週的功課。
+但最多人忽略的一點是：在展示某品牌廣告的關鍵字中，有 88% 該品牌並未出現在 AI 答案的引用來源裏（SE Ranking，5 萬個關鍵字研究）。付費曝光與 organic AI 可見度是兩場獨立的競賽。如果你還未看過 AI 助手如何描述你的品牌——這會是我本週第一件想查的事。
 
 🟡 觀察 — TikTok 向第三方 AI agents 開放了 Ads Manager
-「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。放眼整個行業，執行工作的經濟價值正被壓縮，策略、治理與解讀的價值持續上升。收費模式這場對話遲早要發生——與其等客戶先開口，不如由自己主動開展。
+「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。放眼整個行業，執行工作的經濟價值正被壓縮，策略、治理與解讀的價值持續上升。我的判斷是，收費模式這場對話遲早會來——與其等客戶先開口，我寧願自己主動。
 
-我的預測：OpenAI 會在六個月內為 ChatGPT Ads 推出 lookalike audiences。先把這段截圖存起來。
+我的預測：我預期 OpenAI 會在六個月內為 ChatGPT Ads 推出 lookalike audiences。明年一月歡迎回來對答案——估中估錯我都認。
 
 以上每一則新聞，都可以在我的 weekly brief 一鍵跳轉至原文——連結在第一則留言。
 
@@ -77,6 +77,6 @@ Full brief with all 9 stories, sources and act/watch/wait signals 👇
 
 1. **Hook（1 句）**：本週核心訊號，講轉變唔好講新聞（"X stopped being Y this week"）
 2. **3 個 takeaway**：每個以 🟢/🟡/🔴 訊號開頭，格式係「事實（1–2 句）→ 大部分人點睇 → 我點睇/你應該點做」
-3. **1 個 prediction**：夠具體、有日期、可以驗證（"Screenshot this" 係 engagement hook，估中咗大家會翻舊帳讚你）
+3. **1 個 prediction**：夠具體、有日期、可以驗證——但用第一身講（"I expect… / 我預期…"），收尾用 accountability hook（"check back on me / 到時對答案"），唔好用先知口吻斷言（"X ships Y. Screenshot this." 呢類唔要）
 4. **CTA**：full brief link 喺 first comment + follow 理由（"one brief, not fifty headlines"）
 5. 正文唔好放外部 link；hashtags 6–8 個，混合大 tag 同 niche tag

@@ -59,3 +59,13 @@
 - [ ] 換走網站上嘅私人 Gmail（開專用 alias），私人帳戶全部開 2FA
 - [ ] LinkedIn About 加「Views are my own」
 - [ ] 定期 search 自己名+職銜，望下有冇假冒 profile
+
+## Voice 規則（2026-07-21 語氣審核後定立，永久生效）
+
+Carrie 明確指示：呢個網站係「市場 News + 我嘅觀察」，冇超然或必定嘅 comment。
+
+1. **過去用事實寫，未來用第一身寫**：已發生嘅嘢可以直述（「TikTok 開放咗 Ads Manager」）；未發生嘅一律「I expect／my read is／my bet is／我預期／我的觀察是」，日期保留（accountability），但唔可以斷言（prophecy）
+2. **以同行身份建議，唔好做老師**：命令句（「Run a test」「本週請重跑」）改「here's what I'd do」（「我本週會重跑自己嘅 prompts，也建議你照做」）；淨係 Actions 清單同 🟢🟡🔴 label 可以用祈使句（讀者已 opt-in 接受指示）
+3. **招牌對比句式保留**：「Most people read X, I read Y」「a bet, not a plan」係品牌——自信來自觀察嘅銳利，唔係動詞嘅必然
+4. Prediction 收尾用 accountability hook（「Check back on me in January — I'll own it either way」），唔用「Screenshot this」先知式
+5. **Footer 一句搞掂**：全部聲明壓縮做一行 muted 細字（© · 個人觀點 · AI 輔助經審閱 · 附原文出處），詳細版放 About——結尾唔可以累贅
