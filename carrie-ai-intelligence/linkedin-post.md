@@ -33,27 +33,27 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 
 ---
 
-## 中文版（廣東話，適合 IG/Threads 或第二日 LinkedIn）
+## 中文版（書面中文，適合 LinkedIn 第二日出 post 或 IG/Threads，兼顧大灣區與台灣讀者）
 
 ```
-呢個星期，AI 平台唔再只係工具——佢哋開始用媒體平台嘅身份同你做生意。
+本週，AI 平台不再只是工具——它們開始以媒體平台的身份與你做生意。
 
-我幫你睇晒成個星期嘅 AI 新聞，香港 marketers 真正需要知嘅係呢三件事：
+我替你讀完了整週的 AI 新聞，香港營銷人真正需要知道的是這三件事：
 
 🟢 立即行動 — OpenAI 為 ChatGPT Ads 推出 Custom Audiences（7月15日）
-可以上載 first-party 名單、include/exclude、調整 bid。呢個係 Meta 廣告平台嘅劇本，以四倍速重演。新平台早期嘅 CPC 係佢一生人最平嘅時候——當年早測 Facebook 同 TikTok 嘅 agency，之後幾年都贏晒。而家就用個低風險 budget 跑個測試。
+可上載 first-party 名單、include/exclude 受眾、調整 bid。這是 Meta 廣告平台的劇本，以四倍速重演。新平台早期的 CPC 是它整個生命週期中最便宜的階段——當年率先測試 Facebook 和 TikTok 的 agency，往後多年都主導了那些渠道。現在就用一個低風險預算進行測試。
 
-🟢 立即行動 — Google AI Mode 已經喺三分一商業搜尋展示廣告
-但最多人忽略嘅一點係：落廣告並唔會令你個網站喺 AI 答案入面被引用。Organic AI 可見度同付費曝光係兩場獨立嘅遊戲。如果你未 audit 過 AI 助手點樣描述你個品牌——呢個就係你今個星期嘅功課。
+🟢 立即行動 — Google AI Mode 已在三分之一的商業搜尋中展示廣告
+但最多人忽略的一點是：投放廣告並不會令你的網站在 AI 答案中被引用。Organic AI 可見度與付費曝光是兩場獨立的競賽。如果你還未審視過 AI 助手如何描述你的品牌——這就是你本週的功課。
 
-🟡 觀察 — Meta AI 助手已推送到全球每一個 Ads Manager
-平台自動化緊嘅，正正係今日 junior trafficker 做緊嘅嘢。執行嘅 margin 走緊向零，策略同解讀嘅 margin 就上緊。喺客戶問「點解平台免費做到嘅嘢我仲要俾錢」之前，先重新設計你嘅收費模式。
+🟡 觀察 — Meta AI 助手已推送至全球每一個 Ads Manager
+平台正在自動化的，正是今天 junior trafficker 的日常工作。執行的 margin 正走向零，策略與解讀的 margin 正在上升。在客戶質疑「平台免費做到的事為何還要收費」之前，先重新設計你的收費模式。
 
-我嘅預測：ChatGPT Ads 會喺 2027 年中前，成為香港 media plan 嘅標準項目。Screenshot 定佢。
+我的預測：ChatGPT Ads 會在 2027 年中之前，成為香港 media plan 的標準項目。先把這段截圖存起來。
 
-以上每一則新聞都可以喺我嘅 weekly brief 一 click 跳去原文——link 喺第一個 comment。
+以上每一則新聞，都可以在我的 weekly brief 一鍵跳轉至原文——連結在第一則留言。
 
-我逢星期一出呢份簡報：發生咗咩事、點解重要、使唔使跟。想每星期只讀一份簡報而唔係五十條 headline，就 follow 我啦。
+我逢星期一發布這份簡報：發生了甚麼、為何重要、是否需要行動。與其每週追五十條 headline，不如只讀一份簡報——歡迎 follow。
 
 #AIMarketing #香港Marketing #DigitalMarketing #AgencyLife #ChatGPT #MarTech
 ```

@@ -55,6 +55,7 @@
     .nav-links { display: flex; gap: 16px; align-items: center; font-size: 14px; flex-wrap: wrap; }
     .nav-links a { text-decoration: none; color: var(--muted); }
     .nav-links .pill { color: white; background: var(--ink); padding: 9px 14px; border-radius: 999px; }
+    .nav-links .pill.sub { background: var(--accent); }
     .lang-btn {
       border: 1.5px solid var(--ink); background: transparent; color: var(--ink);
       border-radius: 999px; padding: 8px 14px; font-weight: 800; font-size: 13px;
@@ -194,12 +195,14 @@
       <div class="brand">
         Carrie <span>AI Intelligence</span>
         <small class="en">Helping marketers filter AI noise into business decisions.</small>
-        <small class="zh">幫 marketers 將 AI 噪音過濾成商業決策。</small>
+        <small class="zh">協助營銷人將 AI 噪音轉化為商業決策。</small>
       </div>
       <div class="nav-links">
         <a href="#brief"><span class="en">This Week</span><span class="zh">本週重點</span></a>
         <a href="#actions"><span class="en">Actions</span><span class="zh">行動清單</span></a>
         <a href="#about"><span class="en">About Carrie</span><span class="zh">關於 Carrie</span></a>
+        <!-- Subscribe: 開通 LinkedIn Newsletter 之後，將以下連結換成 newsletter 訂閱頁 URL -->
+        <a class="pill sub" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer"><span class="en">Subscribe</span><span class="zh">訂閱</span></a>
         <a class="pill" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer"><span class="en">Follow on LinkedIn</span><span class="zh">LinkedIn 追蹤</span></a>
         <button class="lang-btn" id="langToggle" type="button">中</button>
       </div>
@@ -213,11 +216,11 @@
         </div>
         <h1>
           <span class="en">Less AI noise.<br>More marketing signal.</span>
-          <span class="zh">過濾 AI 噪音，<br>只留 marketing 訊號。</span>
+          <span class="zh">過濾 AI 噪音，<br>只留營銷訊號。</span>
         </h1>
         <p class="hero-sub">
           <span class="en">Every story below answers three questions: what happened, why it matters to marketers, and whether you should act now — with a one-click link to the original source.</span>
-          <span class="zh">以下每一則新聞都答你三個問題：發生咗咩事、對 marketers 有咩影響、而家使唔使跟——每則都可以一 click 跳去原文出處。</span>
+          <span class="zh">以下每一則新聞都回答三個問題：發生了甚麼、對營銷人有何影響、現在是否需要行動——每則均可一鍵跳轉至原文出處。</span>
         </p>
         <div class="issue-meta">
           <span class="en">9 stories · 3 categories</span><span class="zh">9 則新聞 · 3 大分類</span>
@@ -226,8 +229,6 @@
         </div>
       </div>
 
-      <!-- Personal IP card: replace assets/carrie.jpg with a professional headshot.
-           If the image is missing, the CH monogram shows automatically. -->
       <aside class="editor-card">
         <div class="headshot">
           <img src="assets/carrie.jpg" alt="Carrie Hui" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
@@ -235,12 +236,12 @@
         </div>
         <h3>Carrie Hui</h3>
         <p class="role">
-          <span class="en">AI Marketing Strategist · Associate Director</span>
-          <span class="zh">AI Marketing 策略師 · Associate Director</span>
+          <span class="en">AI Marketing Strategist · Travel Retail &amp; Greater China</span>
+          <span class="zh">AI 營銷策略專家 · 旅遊零售 × 大中華市場</span>
         </p>
         <p class="promise">
           <span class="en">Helping marketers stay ahead of AI.</span>
-          <span class="zh">幫 marketers 喺 AI 浪潮企喺前面。</span>
+          <span class="zh">助營銷人在 AI 浪潮中保持領先。</span>
         </p>
         <div class="editor-links">
           <a class="li" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -258,11 +259,11 @@
           <div class="eyebrow"><span class="en">This week's signal</span><span class="zh">本週核心訊號</span></div>
           <blockquote>
             <span class="en">"AI platforms stopped being tools this week — they started acting like media owners."</span>
-            <span class="zh">「呢個星期，AI 平台唔再只係工具——佢哋開始用媒體平台嘅身份同你做生意。」</span>
+            <span class="zh">「本週，AI 平台不再只是工具——它們開始以媒體平台的身份與你做生意。」</span>
           </blockquote>
           <p>
             <span class="en">ChatGPT ads gained first-party audience targeting, Google's AI Mode is now serving ads on a third of commercial queries, and Meta put an AI assistant inside every Ads Manager. The question is no longer "should we use AI" — it's "who controls the customer interface".</span>
-            <span class="zh">ChatGPT 廣告開放咗 first-party 受眾定向、Google AI Mode 已經喺三分一商業搜尋展示廣告、Meta 將 AI 助手放入咗每一個 Ads Manager。問題已經唔係「用唔用 AI」，而係「邊個控制緊客戶接觸點」。</span>
+            <span class="zh">ChatGPT 廣告開放了 first-party 受眾定向、Google AI Mode 已在三分之一的商業搜尋中展示廣告、Meta 將 AI 助手植入了每一個 Ads Manager。問題已經不是「要不要用 AI」，而是「誰在控制客戶接觸點」。</span>
           </p>
         </div>
       </div>
@@ -277,7 +278,7 @@
             <h2>MUST KNOW</h2>
             <p class="cat-desc">
               <span class="en">The biggest moves in the AI industry — the things you can't afford not to know.</span>
-              <span class="zh">AI 行業最大嘅動向——你唔可以唔知嘅大事。</span>
+              <span class="zh">AI 行業最重大的動向——你不能不知道的大事。</span>
             </p>
           </div>
         </div>
@@ -290,27 +291,27 @@
             </div>
             <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer">
               <span class="en">Andrej Karpathy joins Anthropic as it preps an IPO as early as October</span>
-              <span class="zh">Andrej Karpathy 加盟 Anthropic，公司最快 10 月 IPO</span>
+              <span class="zh">Andrej Karpathy 加盟 Anthropic，公司最快 10 月啟動 IPO</span>
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">Former Tesla AI director and OpenAI founding member Andrej Karpathy has reportedly joined Anthropic. In the same week, Anthropic was reported to be in talks with Samsung on a custom Claude chip and preparing an S-1 for an IPO as early as October 2026, after a Series H valuing it at $965B.</span>
-              <span class="zh">前 Tesla AI 總監、OpenAI 創始成員 Andrej Karpathy 據報加盟 Anthropic。同一星期，Anthropic 據報同 Samsung 商討訂製 Claude 晶片，並準備最快 2026 年 10 月 IPO——公司喺 Series H 融資後估值已達 9,650 億美元。</span></p>
+              <span class="zh">前 Tesla AI 總監、OpenAI 創始成員 Andrej Karpathy 據報加盟 Anthropic。同一星期，Anthropic 據報正與 Samsung 商討訂製 Claude 晶片，並準備最快於 2026 年 10 月啟動 IPO——公司在 Series H 融資後估值已達 9,650 億美元。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">Top talent, custom compute and public-market capital are consolidating around two or three frontier labs. Whoever your martech stack depends on, its roadmap is being decided now.</span>
-              <span class="zh">頂級人才、訂製算力同上市資金正集中喺兩三間 frontier labs 手上。無論你嘅 martech stack 依賴邊間公司，佢嘅未來路線圖而家就係決定緊。</span></p>
+              <span class="zh">頂尖人才、訂製算力與公開市場資金，正集中在兩三間 frontier labs 手上。無論你的 martech stack 依賴哪一間公司，它的未來路線圖此刻正在被決定。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">Most people will read this as an AI-industry story. I read it as a procurement story: the enterprise AI market is becoming a two-horse race, and agencies that build on only one platform are taking on concentration risk their clients never signed off on.</span>
-              <span class="zh">大部分人會當呢單係 AI 行業新聞。我當佢係採購新聞：企業 AI 市場正變成兩強競賽，只押注一個平台嘅 agency，其實係替客戶承擔咗佢哋從未同意過嘅集中風險。</span></p>
+              <span class="zh">大部分人會把這則當成 AI 行業新聞。我把它視為採購新聞：企業 AI 市場正演變成兩強競賽，只押注單一平台的 agency，其實是替客戶承擔了他們從未同意過的集中風險。</span></p>
             </div>
-            <div class="predict"><b class="k"><span class="en">My Prediction</span><span class="zh">我嘅預測</span></b>
+            <div class="predict"><b class="k"><span class="en">My Prediction</span><span class="zh">我的預測</span></b>
               <p><span class="en">By mid-2027, "multi-model strategy" will appear in agency RFPs the same way "multi-cloud" appeared in IT RFPs five years ago.</span>
-              <span class="zh">到 2027 年中，「multi-model strategy」會好似五年前 IT 界嘅「multi-cloud」咁，開始出現喺 agency RFP 入面。</span></p>
+              <span class="zh">到 2027 年中，「multi-model strategy」將如同五年前 IT 界的「multi-cloud」一樣，開始出現在 agency 的 RFP 之中。</span></p>
             </div>
             <div class="story-foot">
               <span class="signal watch">🟡 <span class="en">Watch</span><span class="zh">觀察</span></span>
-              <a class="readsrc" href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <a class="readsrc" href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -321,23 +322,23 @@
             </div>
             <h3><a href="https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/" target="_blank" rel="noreferrer">
               <span class="en">Microsoft is training its salespeople to talk down OpenAI and Anthropic</span>
-              <span class="zh">Microsoft 訓練銷售團隊「唱衰」OpenAI 同 Anthropic</span>
+              <span class="zh">Microsoft 訓練銷售團隊「唱淡」OpenAI 與 Anthropic</span>
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">Microsoft executives have reportedly instructed sales teams to position its in-house AI models as more efficient and economical than OpenAI's, Anthropic's and Google's — a notable shift given Microsoft remains OpenAI's biggest backer.</span>
-              <span class="zh">據報 Microsoft 高層指示銷售團隊，將自家 AI 模型定位為比 OpenAI、Anthropic 同 Google 更高效、更抵用——考慮到 Microsoft 仍然係 OpenAI 最大金主，呢個轉向相當矚目。</span></p>
+              <span class="zh">據報 Microsoft 高層指示銷售團隊，把自家 AI 模型定位為比 OpenAI、Anthropic 及 Google 更高效、更具成本效益——考慮到 Microsoft 仍是 OpenAI 最大的投資者，這一轉向相當矚目。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">The AI platform alliance era is ending and the competition era has begun. Pricing, bundling and platform lock-in tactics will reach enterprise buyers — including marketing departments — within months.</span>
-              <span class="zh">AI 平台嘅「結盟時代」正在結束，「競爭時代」開始。價格戰、捆綁銷售同平台鎖定策略，幾個月內就會殺到企業買家——包括 marketing 部門——面前。</span></p>
+              <span class="zh">AI 平台的「結盟時代」正在結束，「競爭時代」已經開始。價格戰、捆綁銷售與平台鎖定策略，數月內就會來到企業買家——包括 marketing 部門——面前。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">When vendors start selling against their own partners, buyers gain leverage. This is the moment to renegotiate your AI tooling contracts — not when the lock-in tactics arrive next quarter.</span>
-              <span class="zh">當供應商開始同自己嘅夥伴打對台，買家嘅議價能力就上升。而家先係重新傾 AI 工具合約嘅最佳時機——唔好等下一季鎖定策略殺到先算。</span></p>
+              <span class="zh">當供應商開始與自己的夥伴打對台，買方的議價能力便會上升。現在才是重新洽談 AI 工具合約的最佳時機——不要等下一季鎖定策略出現才行動。</span></p>
             </div>
             <div class="story-foot">
               <span class="signal watch">🟡 <span class="en">Watch</span><span class="zh">觀察</span></span>
-              <a class="readsrc" href="https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <a class="readsrc" href="https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -348,23 +349,23 @@
             </div>
             <h3><a href="https://futureoflife.org/ai-safety-index/" target="_blank" rel="noreferrer">
               <span class="en">2026 AI Safety Index: the best grade any frontier lab earned was a C+</span>
-              <span class="zh">2026 AI 安全指數出爐：最高分嘅 frontier lab 都只攞到 C+</span>
+              <span class="zh">2026 AI 安全指數出爐：頂尖 frontier lab 最高只獲 C+</span>
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">The Future of Life Institute's 2026 AI Safety Index graded the frontier labs: Anthropic topped the class at C+, OpenAI and Google DeepMind got C, Meta D+, while xAI, DeepSeek and Mistral effectively failed.</span>
-              <span class="zh">Future of Life Institute 發表 2026 年 AI 安全指數：Anthropic 以 C+ 排第一，OpenAI 同 Google DeepMind 攞 C，Meta D+，而 xAI、DeepSeek 同 Mistral 基本上不合格。</span></p>
+              <span class="zh">Future of Life Institute 發表 2026 年 AI 安全指數：Anthropic 以 C+ 位列榜首，OpenAI 與 Google DeepMind 獲 C，Meta 獲 D+，而 xAI、DeepSeek 及 Mistral 基本上不合格。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">Safety scores are becoming procurement criteria. Regulated clients — finance, insurance, healthcare — will start asking which models power your deliverables, and "we didn't check" won't be an acceptable answer.</span>
-              <span class="zh">安全評分正變成採購準則。受監管嘅客戶——金融、保險、醫療——會開始問你嘅 deliverables 背後用緊咩模型，「我哋冇檢查過」唔會再係可接受嘅答案。</span></p>
+              <span class="zh">安全評分正逐漸成為採購準則。受監管行業的客戶——金融、保險、醫療——將開始詢問你的 deliverables 背後使用甚麼模型，「我們沒有檢查過」不會再是可接受的答案。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">Agencies love talking about AI capability; almost none can talk about AI governance. A one-page "which models we use and why" policy is now a genuine pitch differentiator — I've seen it decide shortlists.</span>
-              <span class="zh">Agency 個個都識講 AI 能力，但幾乎冇人講得出 AI 治理。一頁紙嘅「我哋用咩模型、點解」政策，而家已經係真正嘅 pitch 差異化武器——我見過佢直接影響 shortlist 結果。</span></p>
+              <span class="zh">Agency 都擅長談論 AI 能力，卻幾乎沒有人談得出 AI 治理。一頁「我們使用甚麼模型、為甚麼」的政策文件，如今已是真正的 pitch 差異化武器——我見過它直接左右 shortlist 結果。</span></p>
             </div>
             <div class="story-foot">
               <span class="signal act">🟢 <span class="en">Act now</span><span class="zh">立即行動</span></span>
-              <a class="readsrc" href="https://futureoflife.org/ai-safety-index/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <a class="readsrc" href="https://futureoflife.org/ai-safety-index/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -381,7 +382,7 @@
             <h2>PRODUCTIVITY</h2>
             <p class="cat-desc">
               <span class="en">New features, tools and tips that change how you use AI day to day.</span>
-              <span class="zh">改變你日常使用 AI 方式嘅新功能、工具同技巧。</span>
+              <span class="zh">改變你日常使用 AI 方式的新功能、工具與技巧。</span>
             </p>
           </div>
         </div>
@@ -398,19 +399,19 @@
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">OpenAI is sunsetting its standalone Atlas browser less than nine months after launch, with a targeted deprecation date of 9 August. Its agentic browsing features are being folded into the ChatGPT desktop app and a new Chrome extension.</span>
-              <span class="zh">OpenAI 宣布停運獨立嘅 Atlas 瀏覽器，距離推出不足九個月，目標棄用日期係 8 月 9 日。佢嘅 agentic 瀏覽功能會併入 ChatGPT 桌面 app 同一個新嘅 Chrome extension。</span></p>
+              <span class="zh">OpenAI 宣布停運獨立的 Atlas 瀏覽器，距離推出不足九個月，目標棄用日期為 8 月 9 日。其 agentic 瀏覽功能將併入 ChatGPT 桌面應用程式及一個新的 Chrome extension。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">If your team built research or reporting workflows on Atlas, you have three weeks to migrate. Bigger picture: OpenAI is consolidating everything into one ChatGPT super-app — expect more standalone tools to be absorbed.</span>
-              <span class="zh">如果你團隊喺 Atlas 上面建立咗 research 或報告 workflow，你哋只有三個星期時間搬遷。更大格局係：OpenAI 正將所有嘢整合入一個 ChatGPT 超級 app——預期更多獨立工具會被吸收。</span></p>
+              <span class="zh">如果你的團隊在 Atlas 上建立了 research 或報告 workflow，你們只有三星期時間遷移。更大的格局是：OpenAI 正將所有功能整合為一個 ChatGPT 超級應用——預期會有更多獨立工具被吸收。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">The lesson isn't about Atlas. It's that building critical workflows on a lab's experimental product is a bet, not a plan. Standardise your team's workflows on the platform layer (ChatGPT, Claude, Gemini apps), not on the side projects.</span>
-              <span class="zh">教訓唔係 Atlas 本身，而係：將關鍵 workflow 起喺 AI lab 嘅實驗性產品上面，係賭博唔係計劃。團隊嘅 workflow 應該標準化喺平台層（ChatGPT、Claude、Gemini apps），唔係喺 side projects 上面。</span></p>
+              <span class="zh">教訓不在 Atlas 本身，而在於：把關鍵 workflow 建立在 AI lab 的實驗性產品上，是賭博而不是計劃。團隊的 workflow 應該標準化在平台層（ChatGPT、Claude、Gemini 應用程式），而非 side projects 之上。</span></p>
             </div>
             <div class="story-foot">
-              <span class="signal act">🟢 <span class="en">Act now — migrate before 9 Aug</span><span class="zh">立即行動——8 月 9 日前搬遷</span></span>
-              <a class="readsrc" href="https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <span class="signal act">🟢 <span class="en">Act now — migrate before 9 Aug</span><span class="zh">立即行動——8 月 9 日前完成遷移</span></span>
+              <a class="readsrc" href="https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -425,19 +426,19 @@
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">OpenAI's GPT-5.6 family (Luna, Terra, Sol) is now the default in ChatGPT. All three sizes carry a 1M-token context window; Terra targets GPT-5.5-level quality at half the cost, and Sol handles high-end reasoning.</span>
-              <span class="zh">OpenAI 嘅 GPT-5.6 系列（Luna、Terra、Sol）已成為 ChatGPT 預設模型。三個型號都有 100 萬 token context window；Terra 以一半成本做到 GPT-5.5 級數質素，Sol 就主打高階推理。</span></p>
+              <span class="zh">OpenAI 的 GPT-5.6 系列（Luna、Terra、Sol）已成為 ChatGPT 的預設模型。三個型號均配備 100 萬 token context window；Terra 以一半成本達到 GPT-5.5 級數的質素，Sol 則主打高階推理。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">A 1M-token context means you can drop an entire campaign history, brand guideline pack or year of performance reports into one conversation. Long-document workflows that needed workarounds last month now just work.</span>
-              <span class="zh">100 萬 token context 意味住你可以將成個 campaign 歷史、整份 brand guideline 或者一年嘅成效報告放入同一個對話。上個月仲要用 workaround 嘅長文件 workflow，而家直接做到。</span></p>
+              <span class="zh">100 萬 token context 意味着你可以把整個 campaign 歷史、整套 brand guideline 或一年的成效報告放進同一個對話。上個月還需要 workaround 的長文件 workflow，現在可以直接完成。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">Every model upgrade quietly changes your prompt behaviour. Re-run your team's standard prompts against the new default this week — I've seen agencies discover their "tuned" prompts were tuned for a model that no longer exists.</span>
-              <span class="zh">每次模型升級都會靜靜哋改變 prompt 嘅表現。今個星期用新預設模型重跑一次團隊嘅標準 prompts——我見過有 agency 發現佢哋「調校好」嘅 prompts，原來係為一個已經唔存在嘅模型調校嘅。</span></p>
+              <span class="zh">每次模型升級都會悄悄改變 prompt 的表現。本週請用新的預設模型重跑一次團隊的標準 prompts——我見過有 agency 發現他們「調校好」的 prompts，原來是為一個已經不存在的模型而調校的。</span></p>
             </div>
             <div class="story-foot">
-              <span class="signal act">🟢 <span class="en">Act now — re-test your prompts</span><span class="zh">立即行動——重測你嘅 prompts</span></span>
-              <a class="readsrc" href="https://llm-stats.com/llm-updates" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <span class="signal act">🟢 <span class="en">Act now — re-test your prompts</span><span class="zh">立即行動——重新測試你的 prompts</span></span>
+              <a class="readsrc" href="https://llm-stats.com/llm-updates" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -448,23 +449,23 @@
             </div>
             <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer">
               <span class="en">Moonshot AI's Kimi K3: an open-weight model that rivals the frontier on agent tasks</span>
-              <span class="zh">Moonshot AI 推出 Kimi K3：open-weight 模型喺 agent 任務上迫近 frontier 水平</span>
+              <span class="zh">Moonshot AI 發布 Kimi K3：open-weight 模型在 agent 任務上逼近 frontier 水平</span>
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">Beijing-based Moonshot AI released Kimi K3, a new open-weight model that immediately ranks among the strongest systems for coding and agent-based tasks — at a fraction of frontier-model pricing.</span>
-              <span class="zh">北京嘅 Moonshot AI 發布 Kimi K3，呢個新 open-weight 模型一推出就躋身最強 coding 同 agent 任務模型之列——而價錢只係 frontier 模型嘅一小部分。</span></p>
+              <span class="zh">北京的 Moonshot AI 發布 Kimi K3，這個新 open-weight 模型一經推出便躋身最強 coding 及 agent 任務模型之列——而價格僅為 frontier 模型的一小部分。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">Open-weight models keep closing the gap, which pushes API prices down across the board. For high-volume, low-risk tasks (tagging, drafting, translation at scale), the cheapest capable model keeps changing.</span>
-              <span class="zh">Open-weight 模型不斷收窄差距，令整體 API 價格持續下跌。對於大量、低風險嘅任務（打 tag、初稿、大規模翻譯），「最平又夠用」嘅模型會不斷轉換。</span></p>
+              <span class="zh">Open-weight 模型持續收窄差距，令整體 API 價格不斷下調。對於大量而低風險的任務（標籤、初稿、大規模翻譯），「最便宜又夠用」的模型會不斷轉換。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">Most marketing teams don't need to switch models — they need to know switching is possible. That knowledge alone is negotiating leverage with every AI vendor on your stack.</span>
-              <span class="zh">大部分 marketing team 唔需要即刻轉模型——但需要知道「轉得」呢件事。單係呢個認知，已經係你同 stack 上每一個 AI 供應商談判嘅籌碼。</span></p>
+              <span class="zh">大部分 marketing 團隊不需要立即轉換模型——但需要知道「可以轉換」這個事實。單是這個認知，已經是你與 stack 上每一個 AI 供應商談判的籌碼。</span></p>
             </div>
             <div class="story-foot">
-              <span class="signal wait">🔴 <span class="en">Wait — note it, don't migrate</span><span class="zh">暫緩——記低佢，唔使搬</span></span>
-              <a class="readsrc" href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <span class="signal wait">🔴 <span class="en">Wait — note it, don't migrate</span><span class="zh">暫緩——記下即可，毋須遷移</span></span>
+              <a class="readsrc" href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -481,7 +482,7 @@
             <h2>MARKETING IMPACT</h2>
             <p class="cat-desc">
               <span class="en">What changes for agencies, brands and media plans — through a digital agency lens.</span>
-              <span class="zh">對 agency、品牌同 media plan 嘅實際影響——以 digital agency 視角解讀。</span>
+              <span class="zh">對 agency、品牌及 media plan 的實際影響——以 digital agency 視角解讀。</span>
             </p>
           </div>
         </div>
@@ -498,23 +499,23 @@
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">Advertisers can now upload first-party customer lists (emails / phone numbers) to ChatGPT Ads, include or exclude matched audiences at campaign level, and apply bid adjustments — the clearest sign yet that OpenAI is building a full ad platform.</span>
-              <span class="zh">廣告商而家可以上載 first-party 客戶名單（電郵／電話）到 ChatGPT Ads，喺 campaign 層面 include / exclude 已配對受眾，仲可以做 bid adjustment——係 OpenAI 認真起緊一個完整廣告平台嘅最明確訊號。</span></p>
+              <span class="zh">廣告主現可上載 first-party 客戶名單（電郵／電話）至 ChatGPT Ads，在 campaign 層面 include / exclude 已配對受眾，並可作 bid adjustment——這是 OpenAI 正認真建立完整廣告平台的最明確訊號。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">This is Meta's ad-platform playbook, replayed at 4× speed: contextual ads in February, self-serve manager in May, custom audiences in July. A major new paid channel is forming while most media plans still ignore it.</span>
-              <span class="zh">呢個係 Meta 廣告平台嘅劇本，以四倍速重演：2 月 contextual ads、5 月 self-serve manager、7 月 custom audiences。一個重要嘅新付費渠道正在成形，而大部分 media plan 仲當佢唔存在。</span></p>
+              <span class="zh">這是 Meta 廣告平台的劇本，以四倍速重演：2 月 contextual ads、5 月 self-serve manager、7 月 custom audiences。一個重要的新付費渠道正在成形，而大部分 media plan 仍然視而不見。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">Early-platform CPCs are historically the cheapest they will ever be. The agencies that ran early Facebook and TikTok tests owned those channels for years. ChatGPT Ads is that moment again — run a small test with a low-risk client budget now.</span>
-              <span class="zh">歷史證明，新平台早期嘅 CPC 係佢一生人最平嘅時候。當年早入場測試 Facebook 同 TikTok 嘅 agency，之後幾年都主導咗嗰啲渠道。ChatGPT Ads 就係嗰個時刻——而家就用低風險嘅客戶預算跑個小測試。</span></p>
+              <span class="zh">歷史證明，新平台早期的 CPC 是它整個生命週期中最便宜的階段。當年率先測試 Facebook 和 TikTok 的 agency，往後多年都主導了那些渠道。ChatGPT Ads 正是同一個時刻——現在就用一個低風險的客戶預算進行小型測試。</span></p>
             </div>
-            <div class="predict"><b class="k"><span class="en">My Prediction</span><span class="zh">我嘅預測</span></b>
+            <div class="predict"><b class="k"><span class="en">My Prediction</span><span class="zh">我的預測</span></b>
               <p><span class="en">OpenAI ships lookalike audiences within six months, and ChatGPT Ads becomes a standard line item on Hong Kong media plans by mid-2027.</span>
-              <span class="zh">OpenAI 六個月內會推出 lookalike audiences，而 ChatGPT Ads 會喺 2027 年中前成為香港 media plan 嘅標準項目。</span></p>
+              <span class="zh">OpenAI 將於六個月內推出 lookalike audiences，而 ChatGPT Ads 會在 2027 年中之前成為香港 media plan 的標準項目。</span></p>
             </div>
             <div class="story-foot">
-              <span class="signal act">🟢 <span class="en">Act now — run a test campaign</span><span class="zh">立即行動——跑個測試 campaign</span></span>
-              <a class="readsrc" href="https://adtechradar.com/2026/07/15/openai-chatgpt-ads-custom-audiences/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <span class="signal act">🟢 <span class="en">Act now — run a test campaign</span><span class="zh">立即行動——開展測試 campaign</span></span>
+              <a class="readsrc" href="https://adtechradar.com/2026/07/15/openai-chatgpt-ads-custom-audiences/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -525,23 +526,23 @@
             </div>
             <h3><a href="https://www.b2the7.com/news-blog/marketing-trends-july-2026-ai-mode-ads-ga4-ai-traffic" target="_blank" rel="noreferrer">
               <span class="en">Google AI Mode now shows ads on ~1 in 3 commercial queries — and paying doesn't get you cited</span>
-              <span class="zh">Google AI Mode 已喺約三分一商業搜尋展示廣告——但落廣告唔等於被引用</span>
+              <span class="zh">Google AI Mode 已在約三分之一商業搜尋展示廣告——但投放廣告不等於被引用</span>
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">New tracking shows Google's AI Mode returns a text ad on nearly one in three commercial queries. Crucially, buying those ads does not earn your site citations inside the AI answer — organic AI visibility and paid presence are separate games. Google is also generating images directly inside AI Overviews.</span>
-              <span class="zh">最新追蹤數據顯示，Google AI Mode 喺接近三分一商業搜尋會展示 text ad。關鍵係：買廣告並唔會令你嘅網站喺 AI 答案入面被引用——organic AI 可見度同付費曝光係兩場獨立嘅遊戲。Google 亦開始直接喺 AI Overviews 入面生成圖片。</span></p>
+              <span class="zh">最新追蹤數據顯示，Google AI Mode 在接近三分之一的商業搜尋中會展示 text ad。關鍵在於：購買廣告並不會令你的網站在 AI 答案中被引用——organic AI 可見度與付費曝光是兩場獨立的競賽。Google 亦開始直接在 AI Overviews 中生成圖片。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">Your clients' search budgets are already flowing into AI surfaces, but their content may be invisible in the answers themselves. "How do AI assistants describe this brand?" is now a reporting line, not a curiosity.</span>
-              <span class="zh">客戶嘅 search budget 已經流入 AI 介面，但佢哋嘅內容喺 AI 答案入面可能完全隱形。「AI 助手點樣描述呢個品牌？」而家係一條 reporting line，唔再係得意嘅冷知識。</span></p>
+              <span class="zh">客戶的 search budget 已經流入 AI 介面，但他們的內容在 AI 答案中可能完全隱形。「AI 助手如何描述這個品牌？」如今是一條 reporting line，而不再是趣味話題。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">SEO, PR and paid search can no longer be three separate meetings. AI answers pull from authority and structured content — the brands winning citations are the ones treating those three disciplines as one visibility strategy.</span>
-              <span class="zh">SEO、PR 同 paid search 唔可以再係三個獨立嘅會議。AI 答案係由 authority 同 structured content 驅動——贏到 citation 嘅品牌，都係將三個範疇當成同一個 visibility strategy 嚟做嘅。</span></p>
+              <span class="zh">SEO、PR 與 paid search 不能再是三個獨立的會議。AI 答案由 authority 與 structured content 驅動——贏得 citation 的品牌，都是把三個範疇當作同一個 visibility strategy 來經營的。</span></p>
             </div>
             <div class="story-foot">
               <span class="signal act">🟢 <span class="en">Act now — audit AI visibility</span><span class="zh">立即行動——審核 AI 可見度</span></span>
-              <a class="readsrc" href="https://www.b2the7.com/news-blog/marketing-trends-july-2026-ai-mode-ads-ga4-ai-traffic" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <a class="readsrc" href="https://www.b2the7.com/news-blog/marketing-trends-july-2026-ai-mode-ads-ga4-ai-traffic" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -556,19 +557,19 @@
             </a></h3>
             <div class="block"><b class="k"><span class="en">Summary</span><span class="zh">摘要</span></b>
               <p><span class="en">Meta's AI business assistant in Ads Manager has rolled out to every advertiser and agency worldwide. Instagram Reels added post-view ad formats, and Threads opened static carousels and video ads globally. TikTok is pushing agentic AI campaign tools in parallel.</span>
-              <span class="zh">Meta 喺 Ads Manager 嘅 AI 商業助手已推送到全球每一個廣告商同 agency。Instagram Reels 新增 post-view 廣告格式，Threads 嘅 static carousel 同 video ads 亦全球開放。TikTok 同步力推 agentic AI campaign 工具。</span></p>
+              <span class="zh">Meta 在 Ads Manager 的 AI 商業助手已推送至全球每一個廣告主及 agency。Instagram Reels 新增 post-view 廣告格式，Threads 的 static carousel 及 video ads 亦已全球開放。TikTok 同步力推 agentic AI campaign 工具。</span></p>
             </div>
-            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">點解重要</span></b>
+            <div class="block"><b class="k"><span class="en">Why it matters</span><span class="zh">為何重要</span></b>
               <p><span class="en">Platforms are automating exactly the work junior media traffickers do today. The agency margin on manual campaign operations is going to zero; the margin on strategy, governance and interpretation is going up.</span>
-              <span class="zh">平台正在自動化嘅，正正係今日 junior media trafficker 做緊嘅工作。人手操作 campaign 嘅 agency margin 正走向零；但策略、治理同解讀嘅 margin 正在上升。</span></p>
+              <span class="zh">平台正在自動化的，正是今天 junior media trafficker 的日常工作。人手操作 campaign 的 agency margin 正走向零；而策略、治理與解讀的 margin 正在上升。</span></p>
             </div>
             <div class="take"><b class="k">Carrie's Take</b>
               <p><span class="en">Don't fight the automation — reprice around it. Agencies should be moving fees from execution hours to decision value now, before clients ask why they're paying for hours the platform does free.</span>
-              <span class="zh">唔好同自動化鬥——圍繞佢重新定價。Agency 而家就應該將收費由執行工時轉移到決策價值，唔好等客戶問「點解平台免費做到嘅嘢我仲要俾錢」先諗。</span></p>
+              <span class="zh">不要與自動化對抗——圍繞它重新定價。Agency 現在就應把收費從執行工時轉移到決策價值，不要等到客戶質疑「平台免費做到的事為何還要收費」才開始思考。</span></p>
             </div>
             <div class="story-foot">
-              <span class="signal watch">🟡 <span class="en">Watch — review your pricing model</span><span class="zh">觀察——檢視你嘅收費模式</span></span>
-              <a class="readsrc" href="https://bootcampdigital.com/blog/july-2026-digital-news-updates/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">睇原文 →</span></a>
+              <span class="signal watch">🟡 <span class="en">Watch — review your pricing model</span><span class="zh">觀察——檢視你的收費模式</span></span>
+              <a class="readsrc" href="https://bootcampdigital.com/blog/july-2026-digital-news-updates/" target="_blank" rel="noreferrer"><span class="en">Read original →</span><span class="zh">閱讀原文 →</span></a>
             </div>
           </article>
 
@@ -580,19 +581,19 @@
     <section class="section" id="actions">
       <div class="shell">
         <div class="section-head">
-          <h2><span class="en">Don't curate news.<br>Curate decisions.</span><span class="zh">唔係整理新聞，<br>係整理決策。</span></h2>
-          <p><span class="en">Three moves for your team this week — drawn from the stories above.</span><span class="zh">根據以上新聞，你團隊今個星期嘅三個行動。</span></p>
+          <h2><span class="en">Don't curate news.<br>Curate decisions.</span><span class="zh">不只整理新聞，<br>更整理決策。</span></h2>
+          <p><span class="en">Three moves for your team this week — drawn from the stories above.</span><span class="zh">根據以上新聞，你的團隊本週可執行的三個行動。</span></p>
         </div>
         <div class="actions">
           <div class="action"><b>01 · <span class="en">TEST</span><span class="zh">測試</span></b>
-            <h4><span class="en">Open a ChatGPT Ads test with one low-risk client budget.</span><span class="zh">用一個低風險客戶預算，開個 ChatGPT Ads 測試。</span></h4>
-            <p><span class="en">Custom Audiences just landed. Early CPCs won't stay this cheap. Benchmark against your Meta and Google baselines.</span><span class="zh">Custom Audiences 啱啱推出，早期 CPC 唔會平得耐。同你嘅 Meta 同 Google baseline 做個比較。</span></p></div>
+            <h4><span class="en">Open a ChatGPT Ads test with one low-risk client budget.</span><span class="zh">以一個低風險客戶預算，開展 ChatGPT Ads 測試。</span></h4>
+            <p><span class="en">Custom Audiences just landed. Early CPCs won't stay this cheap. Benchmark against your Meta and Google baselines.</span><span class="zh">Custom Audiences 剛剛推出，早期 CPC 不會長期維持低位。與你的 Meta 及 Google baseline 作對比。</span></p></div>
           <div class="action"><b>02 · <span class="en">AUDIT</span><span class="zh">審核</span></b>
-            <h4><span class="en">Check how AI assistants describe your top 3 clients.</span><span class="zh">檢查 AI 助手點樣描述你最重要嘅三個客戶。</span></h4>
-            <p><span class="en">Ask ChatGPT, Gemini and Claude the buying questions their customers ask. Screenshot the answers. That's your new baseline report.</span><span class="zh">用客戶嘅顧客會問嘅購買問題，去問 ChatGPT、Gemini 同 Claude。Screenshot 啲答案——嗰個就係你嘅新 baseline report。</span></p></div>
+            <h4><span class="en">Check how AI assistants describe your top 3 clients.</span><span class="zh">檢查 AI 助手如何描述你最重要的三個客戶。</span></h4>
+            <p><span class="en">Ask ChatGPT, Gemini and Claude the buying questions their customers ask. Screenshot the answers. That's your new baseline report.</span><span class="zh">以客戶的顧客會提出的購買問題，詢問 ChatGPT、Gemini 及 Claude。將答案截圖存檔——那就是你的新 baseline report。</span></p></div>
           <div class="action"><b>03 · <span class="en">GOVERN</span><span class="zh">治理</span></b>
-            <h4><span class="en">Write your one-page "which AI models we use and why" policy.</span><span class="zh">寫好你嗰頁「我哋用咩 AI 模型、點解」政策。</span></h4>
-            <p><span class="en">Safety indices are becoming procurement criteria. Being able to answer this in a pitch is now a differentiator.</span><span class="zh">安全指數正變成採購準則。喺 pitch 入面答到呢條問題，已經係差異化優勢。</span></p></div>
+            <h4><span class="en">Write your one-page "which AI models we use and why" policy.</span><span class="zh">撰寫一頁「我們使用甚麼 AI 模型、為甚麼」的政策。</span></h4>
+            <p><span class="en">Safety indices are becoming procurement criteria. Being able to answer this in a pitch is now a differentiator.</span><span class="zh">安全指數正成為採購準則。能在 pitch 中回答這條問題，已經是差異化優勢。</span></p></div>
         </div>
       </div>
     </section>
@@ -609,18 +610,22 @@
           </div>
           <div>
             <div class="eyebrow"><span class="en">About the editor</span><span class="zh">關於主編</span></div>
-            <h2><span class="en">AI insight through a marketer's lens — not another news feed.</span><span class="zh">用 marketer 視角解讀 AI——唔係另一個 news feed。</span></h2>
-            <p><span class="en">I'm Carrie Hui, a digital agency leader in Hong Kong. Every week I filter the AI firehose down to what actually changes decisions for marketers, agencies and business owners across Hong Kong, China and global markets — every story sourced, interpreted, and tagged with whether you should act.</span>
-            <span class="zh">我係 Carrie Hui，香港 digital agency leader。每個星期，我將海量 AI 資訊過濾到只剩低真正影響決策嘅部分——為香港、中國同全球市場嘅 marketers、agencies 同企業主而寫。每一則都有來源、有解讀、有「使唔使跟」嘅明確訊號。</span></p>
+            <h2><span class="en">AI insight through a marketer's lens — not another news feed.</span><span class="zh">以營銷人視角解讀 AI——而非另一個 news feed。</span></h2>
+            <p><span class="en">I'm Carrie Hui, an award-winning marketing leader based in Hong Kong, specialising in travel retail marketing and Greater China consumer marketing. My work has been recognised with a Gold Stevie® Award for Innovation in Paid Media Planning &amp; Management and an HKIM Market Leadership Award, and I've co-authored industry whitepapers on Chinese outbound travellers.</span>
+            <span class="zh">我是 Carrie Hui，香港的得獎營銷領袖，專注旅遊零售營銷及大中華消費市場。曾獲亞太 Stevie® 大獎（Gold Stevie®：Innovation in Paid Media Planning &amp; Management）及 HKIM Market Leadership Award，並參與撰寫多份中國出境旅客行業白皮書。</span></p>
+            <p><span class="en">Every week I filter the AI firehose down to what actually changes decisions for marketers, agencies and business owners — every story sourced, interpreted, and tagged with whether you should act.</span>
+            <span class="zh">每個星期，我把海量的 AI 資訊過濾成真正影響決策的內容——為營銷人、agency 及企業決策者而寫。每一則都有來源、有解讀、有「是否需要行動」的明確訊號。</span></p>
             <div class="credentials">
-              <span><span class="en">Digital Agency Leadership</span><span class="zh">Digital Agency 領導經驗</span></span>
+              <span><span class="en">Travel Retail Marketing</span><span class="zh">旅遊零售營銷</span></span>
+              <span><span class="en">Greater China Market</span><span class="zh">大中華市場</span></span>
               <span>AI × Marketing</span>
-              <span><span class="en">HK / China Market</span><span class="zh">香港／中國市場</span></span>
-              <span><span class="en">Business Translation</span><span class="zh">商業轉譯</span></span>
+              <span>Gold Stevie® Awards 2022</span>
+              <span><span class="en">Xiaohongshu Marketing Certified</span><span class="zh">小紅書營銷認證</span></span>
             </div>
             <div class="cta">
-              <a class="btn primary" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer"><span class="en">Follow Carrie on LinkedIn</span><span class="zh">喺 LinkedIn 追蹤 Carrie</span></a>
-              <a class="btn secondary" href="mailto:?subject=Carrie%20AI%20Intelligence%20%E2%80%94%20Weekly%20Brief"><span class="en">Share this brief</span><span class="zh">分享呢份簡報</span></a>
+              <!-- Subscribe: 開通 LinkedIn Newsletter 之後，將以下連結換成 newsletter 訂閱頁 URL -->
+              <a class="btn primary" href="https://www.linkedin.com/in/carriehuiww" target="_blank" rel="noreferrer"><span class="en">Subscribe to the weekly brief</span><span class="zh">訂閱每週簡報</span></a>
+              <a class="btn secondary" href="mailto:?subject=Carrie%20AI%20Intelligence%20%E2%80%94%20Weekly%20Brief"><span class="en">Share this brief</span><span class="zh">分享本簡報</span></a>
             </div>
           </div>
         </div>
@@ -632,7 +637,7 @@
     <footer>
       <span>© 2026 Carrie Hui · Carrie AI Intelligence</span>
       <span class="en">Every story links to its original source. Interpretations and predictions are Carrie's own.</span>
-      <span class="zh">每則新聞均連結至原文出處。解讀同預測為 Carrie 個人觀點。</span>
+      <span class="zh">每則新聞均連結至原文出處。解讀與預測為 Carrie 的個人觀點。</span>
     </footer>
   </div>
 

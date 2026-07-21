@@ -31,17 +31,21 @@
 4. 改底部三個 action（TEST / AUDIT / GOVERN 可以每週轉主題）
 5. 用 `linkedin-post.md` 嘅模板寫當週 LinkedIn post
 
-## 放 headshot
+## Headshot
 
-將一張正方形 professional headshot 放喺 `assets/carrie.jpg`。
-未放相之前，網頁會自動顯示 "CH" monogram，唔會爛圖。
+已放咗喺 `assets/carrie.jpg`（800×800，以面部為中心裁切）。想換相就直接覆蓋呢個檔案。
 
-## Deploy 去 GitHub Pages
+## Subscribe 連結
 
-呢個 folder 係 self-contained，最簡單做法：
+而家 nav 同 About 嘅「Subscribe / 訂閱」按鈕暫時指去 LinkedIn profile。
+開通 LinkedIn Newsletter 之後，search `Subscribe:` 註釋，將兩個連結換成 newsletter URL。
 
-1. 開一個新 repo（例如 `carrie-ai-intelligence`），將 folder 內容放喺 root
-2. Repo Settings → Pages → Source 揀 `main` branch `/` root
-3. 網址會係 `https://carriehw.github.io/carrie-ai-intelligence/`
+## Deploy 去 GitHub Pages（已揀：新 repo）
 
-或者直接放入你現有 `ai-marketing-daily` repo 嘅 `/weekly/` folder，網址就係 `.../ai-marketing-daily/weekly/`。
+網站已 push 去 `carriehw/carrie-ai-intelligence` repo。啟用 Pages 只需一步：
+
+1. 去 https://github.com/carriehw/carrie-ai-intelligence/settings/pages
+2. Source 揀 **Deploy from a branch** → Branch 揀 `main` / `(root)` → Save
+3. 一兩分鐘後網址就會生效：`https://carriehw.github.io/carrie-ai-intelligence/`
+
+之後每週更新：改完 `index.html` push 上 `main`，Pages 會自動重新 deploy。
