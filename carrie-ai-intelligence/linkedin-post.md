@@ -14,7 +14,7 @@ AI platforms stopped being tools this week — they started acting like media ow
 I read the week's AI news so you don't have to. Three things marketers in Hong Kong actually need to know:
 
 🟢 ACT NOW — ChatGPT Ads quietly gained Custom Audiences.
-First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (US, Japan and Korea only). So my play this quarter is readiness, not spend: I'd get first-party lists and consent in shape now, and test through a client's US or Japan footprint if you have one.
+First-party list uploads (25,000-match minimum), include/exclude, bid adjustments — Meta's ad-platform playbook replayed at 4x speed. One catch: it's not bookable from Hong Kong yet (US, Japan and Korea only). So my play this quarter is readiness, not spend: get first-party lists and consent in shape now, and if you have a client with a US or Japan footprint, test there first.
 
 🟢 ACT NOW — Google's AI Mode shows ads on ~29% of commercial queries.
 And here's the part most people miss: on 88% of keywords showing a brand's ad, that brand is absent from the AI answer's cited sources (SE Ranking, 50k keywords). Paid presence and organic AI visibility are two separate games. If you haven't checked how AI assistants describe your brand, that's the first thing I'd look at this week.
@@ -22,7 +22,7 @@ And here's the part most people miss: on 88% of keywords showing a brand's ad, t
 🟡 WATCH — TikTok opened its Ads Manager to third-party AI agents.
 An "Agentic Hub" of AI skills that plan and operate campaigns — automating exactly the work junior traffickers do today. Across the industry, execution economics are being compressed while the value of strategy, governance and interpretation rises. My bet is the fee conversation arrives either way — I'd rather open it with clients on my own terms than wait to be asked.
 
-My prediction, and the basis for it: OpenAI has followed Meta's ad playbook step by step — contextual ads in February, self-serve manager in May, custom audiences now. Lookalikes are the next step in that playbook, built on exactly this feature. So I expect them within six months. Check back on me in January — I'll own it either way.
+My prediction: ChatGPT Ads adds lookalike audiences within six months. The pattern behind it: OpenAI has run Meta's playbook step by step — contextual ads in February, self-serve manager in May, custom audiences now — and lookalikes are the next page, built on exactly this feature. Check back on me in January — I'll own it either way.
 
 Every story above links to its original source in my full weekly brief — link in the first comment.
 
@@ -36,7 +36,7 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 ## 中文版（書面中文，適合 LinkedIn 第二日出 post 或 IG/Threads，兼顧大灣區與台灣讀者）
 
 ```
-本週，AI 平台不再只是工具——它們開始以媒體平台的身份與你做生意。
+本週，AI 平台不再只是工具——它們開始以媒體主（media owner）的身份與你做生意。
 
 我替你讀完了整週的 AI 新聞，香港營銷人真正需要知道的是這三件事：
 
@@ -49,7 +49,7 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 🟡 觀察 — TikTok 向第三方 AI agents 開放了 Ads Manager
 「Agentic Hub」內的 AI skills 可以規劃及操作 campaign——自動化的正是今天 junior trafficker 的日常工作。放眼整個行業，執行工作的經濟價值正被壓縮，策略、治理與解讀的價值持續上升。我的判斷是，收費模式這場對話遲早會來——與其等客戶先開口，我寧願自己主動。
 
-我的預測，以及背後依據：OpenAI 一步一步重演緊 Meta 的廣告劇本——2 月 contextual ads、5 月 self-serve manager、如今 custom audiences。Lookalike audiences 正是這套劇本中建基於此功能的下一步，所以我預期六個月內會推出。明年一月歡迎回來對答案——估中估錯我都認。
+我的預測：ChatGPT Ads 會在六個月內推出 lookalike audiences。依據是這個 pattern：OpenAI 正一步一步重演 Meta 的廣告劇本——2 月 contextual ads、5 月 self-serve manager、如今 custom audiences——而 lookalikes 正是建基於此功能的下一步。明年一月歡迎回來對答案——中與不中，我都認。
 
 以上每一則新聞，都可以在我的 weekly brief 一鍵跳轉至原文——連結在第一則留言。
 
@@ -64,7 +64,7 @@ I publish this every Monday: what changed, why it matters, and whether you shoul
 
 ```
 Full brief with all 9 stories, sources and act/watch/wait signals 👇
-[你嘅 weekly brief URL]
+https://carriehw.github.io/carrie-ai-intelligence/
 
 🔥 Must Know: Anthropic lines up an October IPO · Microsoft's AI sales pivot · 2026 AI Safety Index (best grade: C+)
 ⚡ Productivity: Atlas browser sunset (migrate by 9 Aug) · GPT-5.6 lands in ChatGPT · Kimi K3 (2.8T open-weight)
