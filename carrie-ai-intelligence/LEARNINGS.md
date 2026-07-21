@@ -100,3 +100,12 @@ Issue 001 應用結果：三個預測刪剩一個（lookalike audiences——有
 其他當日決定：
 - **WAICO 補入 Issue 001 做第 10 則**（29 國 7 月 16 日上海簽署、政府間組織、已 fact-check：gov.cn + Al Jazeera + Sixth Tone 三源核實）——Issue 001 由此有咗第一則 GC 原生新聞
 - 漏網新聞覆盤：Thinking Machines Inkling（975B open-weight）同 Kimi K3 撞主題冇入；小紅書聚光「爆文拆解／簡單投」+ 蒲公英新規來源未夠實（搜狐/網易級數），列入 Issue 002 候選待驗證
+
+## 清晰度規則（2026-07-21 Carrie feedback 後定立，永久生效）
+
+Carrie 指出洞察段「表達唔清晰、前文後理難以理解」（例：Atlas 嗰段「賭博而不是計劃／平台層／side projects」）。問題根源係**壓縮式寫法**。新規則：
+
+1. **每段洞察要自足**——一個冇睇過前文嘅讀者都要即刻明；指涉要明確（「教訓」係咩教訓？「平台層」即係邊啲產品？）
+2. **少用壓縮比喻**（「賭博而不是計劃」呢類）——直接講清楚因果：「呢類產品隨時會被叫停，所以唔好依賴」
+3. **術語節制**：marketer 圈通用術語（SEO、prompt、lookalike audiences）可以用；含糊嘅抽象詞（平台層、visibility strategy、stack、決策價值）要換做具體講法或者即場解釋
+4. **寫完自測一次**：「唔知前文嘅讀者，單睇呢段明唔明？」唔明就重寫
