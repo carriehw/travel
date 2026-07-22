@@ -151,3 +151,17 @@ Carrie 指出部分中文「唔夠 native」（例：「面對這些新廣告平
 5. **動賓搭配唔啱**（準備好+冇賓語、留下決策）→ 補返賓語或換講法
 6. **英文詞直譯**（「一頁答案」= one-page answer）→ 「一份一頁紙的答覆」
 **自測**：每句中文問「一個母語讀者會唔會咁講？」——起草後、以及任何後加/重寫段落，都要再過一次（翻譯腔最常喺趕住補寫嘅段落出現）。
+
+## LinkedIn post 語氣：平實分享，唔扮野（2026-07-22 Carrie 決定，永久生效）
+
+Carrie 明確：post 唔想「扮野」，只想「sharing news with all of you」。原本嘅 post 太長（~290 字）＋太 thought-leader（manifesto hook、"I read the news so you don't have to"、"my bet／my play"、"one brief not fifty headlines" flex）。
+
+新語氣（Issue 001 已改，之後照跟）：
+1. **平實開場**（「呢星期有幾則 AI 新聞我覺得值得留意，分享畀大家」），唔用 manifesto/hot-take
+2. 3 則 takeaway，每則一句事實＋一句**輕解讀**（"worth knowing"／"a good nudge"／"one to watch"）——唔用「my bet／我預期」權威口吻
+3. **連結直接放正文**（Carrie 決定唔玩「first comment 谷 reach」嗰套；出街嗰次佢用咗 link-in-comment 版，兩者都得，going forward 用正文）
+4. 平實收尾（"just sharing what I've been reading, hope it's useful"）＋短免責（"Personal project — views my own"）
+5. 長度 ~170 字；hashtags 5–6 個
+6. **唔搞 engagement 谷數**：唔夾人留言、唔 DM 谷 comment（Carrie 明確唔要）——真心分享，出咗就算
+
+紅線：唔扮權威、唔 sales flex、唔高高在上。係「同行分享」，唔係「專家指點」。

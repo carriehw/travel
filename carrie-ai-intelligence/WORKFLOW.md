@@ -102,9 +102,10 @@
 
 ## Step 8 — LinkedIn post
 
-- 更新 `linkedin-post.md`：EN 版 + 書面中文版 + first comment
-- 結構：hook（本週訊號一句）→ 3 個 takeaway（🟢🟡🔴 開頭）→ 1 個 pattern watch（「One pattern worth watching」式，寫明依據，唔用斷言）→ CTA（"one brief, not fifty headlines"）
-- 規則：brief 連結＋「Personal project — views mine, not any employer's or client's」放 first comment（60 秒內貼＋pin）；當期頭圖做 post 附圖；香港時間週二／三 8:30–9:30am 出；hashtags 6–8 個；出 post 前重溫 linkedin-post.md 尾段嘅應對小抄同 24 小時 playbook
+- 更新 `linkedin-post.md`：EN 版 + 書面中文版
+- **語氣（Carrie 硬性規定）**：「分享新聞畀大家」嘅平實 tone——唔用 manifesto/hot-take 開場、唔用「my bet／my play／我預期」權威口吻、唔用 sales flex（"one brief not fifty headlines" 類刪）、唔用「I read the news so you don't have to」高高在上。係同行分享，唔係專家指點
+- 結構：平實開場（1 句）→ 3 則 takeaway（🟢🟡🔴＋一句輕解讀 "worth knowing"/"a good nudge"/"one to watch"）→ 完整簡報連結**直接放正文**→ 平實收尾＋短免責（"Personal project — views my own"）
+- 規則：連結放正文（唔玩 first-comment 谷 reach）；**唔搞 engagement 谷數**（唔夾人留言/唔 DM 谷 comment）；當期頭圖做 post 附圖；香港時間週二／三 8:30–9:30am 出；hashtags 5–6 個；tricky 留言參考 linkedin-post.md 尾段小抄
 
 ## Step 9 — 記錄 learnings（收工前必做）
 
