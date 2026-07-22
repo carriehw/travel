@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1350px;
+    font-family: Inter, "Noto Sans TC", -apple-system, "Segoe UI", "PingFang TC", sans-serif;
+    background:
+      radial-gradient(circle at 88% 0%, rgba(90,66,244,.13), transparent 34%),
+      radial-gradient(circle at 0% 100%, rgba(90,66,244,.07), transparent 30%),
+      #f7f5ef;
+    color: #101114;
+    display: flex; flex-direction: column;
+    padding: 64px 76px 56px;
+  }
+  .brand-row { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-size: 34px; font-weight: 800; letter-spacing: -.03em; }
+  .brand span { color: #5a42f4; }
+  .issue-pill {
+    border: 2px solid #101114; border-radius: 999px; padding: 10px 22px;
+    font-size: 21px; font-weight: 800; letter-spacing: .02em;
+  }
+  .tagline { margin-top: 10px; font-size: 21px; color: #656a73; }
+
+  h1 {
+    margin-top: 48px;
+    font-size: 82px; line-height: 1.02; letter-spacing: -.045em; font-weight: 800;
+  }
+  h1 .em { color: #5a42f4; }
+  .hook-zh { margin-top: 22px; font-size: 30px; color: #3c3f45; line-height: 1.5; }
+
+  .cats { margin-top: 44px; display: flex; flex-direction: column; gap: 18px; }
+  .cat {
+    display: flex; align-items: center; gap: 20px;
+    background: #ffffff; border: 1px solid #dedbd2; border-radius: 20px;
+    padding: 24px 28px; box-shadow: 0 8px 26px rgba(16,17,20,.05);
+    border-left: 10px solid #dedbd2;
+  }
+  .cat.must { border-left-color: #d63b2f; }
+  .cat.prod { border-left-color: #1763d8; }
+  .cat.mkt  { border-left-color: #7a2fd0; }
+  .cat .emoji { font-size: 40px; }
+  .cat .name { font-size: 27px; font-weight: 800; letter-spacing: .01em; }
+  .cat .desc { font-size: 21px; color: #656a73; margin-top: 4px; }
+
+  .meta-row { margin-top: 34px; display: flex; gap: 14px; }
+  .chip {
+    background: #ece9df; border-radius: 999px; padding: 12px 22px;
+    font-size: 21px; font-weight: 700; color: #3c3f45;
+  }
+
+  .footer {
+    margin-top: 34px; display: flex; align-items: center; justify-content: space-between;
+    background: #101114; border-radius: 24px; padding: 26px 32px; color: white;
+  }
+  .who { display: flex; align-items: center; gap: 22px; }
+  .headshot {
+    width: 92px; height: 92px; border-radius: 50%; overflow: hidden;
+    border: 4px solid #5a42f4; flex-shrink: 0;
+  }
+  .headshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .who .name { font-size: 27px; font-weight: 800; }
+  .who .role { font-size: 18px; max-width: 560px; color: #bbbcc2; margin-top: 3px; }
+  .cta { text-align: right; }
+  .cta .go { font-size: 22px; font-weight: 800; color: #8f92f8; }
+  .cta .sub { font-size: 18px; color: #bbbcc2; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="brand-row">
+      <div class="brand">Carrie <span>AI Intelligence</span></div>
+      <div class="issue-pill">ISSUE 001 · 21 JUL 2026</div>
+    </div>
+    <div class="tagline">Helping marketers filter AI noise into business decisions · 協助營銷人將 AI 噪音轉化為商業決策</div>
+  </div>
+
+  <h1>AI platforms stopped being tools.<br>They started acting like <span class="em">media owners</span>.</h1>
+  <div class="hook-zh">本週，AI 平台不再只是工具——它們開始以媒體主的身份與你做生意。</div>
+
+  <div class="cats">
+    <div class="cat must">
+      <div class="emoji">🔥</div>
+      <div>
+        <div class="name">MUST KNOW</div>
+        <div class="desc">Anthropic's October IPO · Microsoft's AI sales pivot · AI Safety Index · China launches WAICO</div>
+      </div>
+    </div>
+    <div class="cat prod">
+      <div class="emoji">⚡</div>
+      <div>
+        <div class="name">PRODUCTIVITY</div>
+        <div class="desc">Atlas sunset (migrate by 9 Aug) · GPT-5.6 lands in ChatGPT · Kimi K3 open-weight</div>
+      </div>
+    </div>
+    <div class="cat mkt">
+      <div class="emoji">📈</div>
+      <div>
+        <div class="name">MARKETING IMPACT</div>
+        <div class="desc">ChatGPT Ads custom audiences · Google AI Mode ads study · TikTok's Agentic Hub</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta-row">
+    <div class="chip">10 stories · every story sourced</div>
+    <div class="chip">🟢 Act now · 🟡 Watch · 🔴 Wait</div>
+    <div class="chip">EN + 中文</div>
+  </div>
+
+  <div class="footer">
+    <div class="who">
+      <div class="headshot"><img src="file:///workspace/carrie-ai-intelligence/assets/carrie.jpg"></div>
+      <div>
+        <div class="name">Carrie Hui</div>
+        <div class="role">AI Marketing Strategist · Travel Retail &amp; Greater China · 每週 AI 簡報</div>
+      </div>
+    </div>
+    <div class="cta">
+      <div class="go">Full brief → link in comments</div>
+      <div class="sub">New issue every week</div>
+    </div>
+  </div>
+</body>
+</html>
