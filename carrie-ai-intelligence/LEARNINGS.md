@@ -138,3 +138,16 @@ Carrie 指出原本「Don't curate news. Curate decisions.」下面三個 action
 - Label 由動詞（PREPARE/AUDIT/GOVERN）改名詞主題（AUDIENCE DATA／BRAND VISIBILITY／AI GOVERNANCE）；nav 由「Actions」改「Worth Asking／值得思考」
 
 原則：呢個 section 係全站最後一個命令式殘留——同「網站唔用個人掛名觀點、informational 不說教」嘅定位對齊。以後底部永遠用問題形式。
+
+## 中文避免翻譯腔（2026-07-22 Carrie feedback 後定立，永久生效）
+
+Carrie 指出部分中文「唔夠 native」（例：「面對這些新廣告平台越來越倚重的 first-party 數據，你手上準備好了嗎？」）。根源係**照搬英文句構**。中文 editor 掃全站捉到 7 句，集中喺後加/重寫嘅段落。
+
+寫中文時避開嘅翻譯腔 marker：
+1. **長前置修飾語**（英文 relative clause 搬過嚟：「這些…越來越倚重的…數據」）→ 拆短，用 topic-comment，先講重點
+2. **「面對…」「隨著…」「對於…而言」骨架** → 母語作者多數會刪
+3. **被動 calque**（「正在被決定」）→ 改主動（「由這幾間公司拍板定案」）
+4. **名詞化堆疊**（「…的準備」「…的提升」）→ 改動詞（「先把…準備好」）
+5. **動賓搭配唔啱**（準備好+冇賓語、留下決策）→ 補返賓語或換講法
+6. **英文詞直譯**（「一頁答案」= one-page answer）→ 「一份一頁紙的答覆」
+**自測**：每句中文問「一個母語讀者會唔會咁講？」——起草後、以及任何後加/重寫段落，都要再過一次（翻譯腔最常喺趕住補寫嘅段落出現）。

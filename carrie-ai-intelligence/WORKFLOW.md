@@ -90,6 +90,7 @@
 # headless chromium render + 檢查連結（executablePath: /opt/pw-browsers/chromium，playwright-core）
 # 檢查：全部 readsrc 連結正確（badge 對 link 域名）、JS error = 0、中英 toggle 正常、full page screenshot 人眼過一次
 # 另 grep：第一身殘留（我會／我預期／I expect／my read）、廣東話殘留（緊／咗／嘅／係／唔）、簡體殘留（着／里／为）、舊 label（Summary／Why it matters／Carrie）
+# 中文翻譯腔自測（見 LEARNINGS）：長前置修飾語／「面對…隨著…」骨架／被動 calque／名詞化堆疊——每句問「母語讀者會唔會咁講」
 ```
 
 **如果起草後有大改（重寫、濃縮、加新聞）**：再開一個 agent 做獨立來源覆核——濃縮改寫會引入 drift（Issue 001 就係咁捉返兩個錯）。清晰度自測：每段洞察抽離前文都要即刻明（見 LEARNINGS 清晰度規則）。
