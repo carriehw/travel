@@ -2,34 +2,39 @@
 
 > Helping marketers filter AI noise into business decisions.
 
-每週 AI 簡報網頁（中英雙語），回應咗以下設計原則：
+每週 AI 簡報網頁（中英雙語），設計原則：
 
-- **唔做 news，做 intelligence**：每則新聞都有 Summary → Why it matters → Carrie's Take → 行動訊號（🟢 Act now / 🟡 Watch / 🔴 Wait）→ 部分附 My Prediction
+- **唔做 news，做 intelligence**：每則新聞有 Key Highlights（2–3 粒 bullet，事實＋重要性融埋）→ Industry Insight（中性行文，**冇個人掛名觀點**）→ 行動訊號（🟢 Act now / 🟡 Watch / 🔴 Wait）→ 部分附 Pattern Watch（有實據 pattern）
 - **三分類 + 強烈 visual hierarchy**：🔥 MUST KNOW（紅）、⚡ PRODUCTIVITY（藍）、📈 MARKETING IMPACT（紫）
 - **清晰來源**：每則新聞標題同 "Read original →" 按鈕都一 click 跳去原文
 - **個人 IP**：hero 右邊 editor card + About 段，建立 trust
-- **中英雙語**：右上角「中/EN」toggle，記住用戶選擇
+- **中英雙語**：右上角「中/EN」toggle，記住用戶選擇；hero 中文標題「看懂 AI，不必看盡 AI」係固定刊頭語
+
+> 完整出刊 SOP 見 `WORKFLOW.md`；累積規則同教訓見 `LEARNINGS.md`。呢兩份係每期出刊嘅單一事實來源。
 
 ## 檔案
 
 | 檔案 | 用途 |
 |---|---|
 | `index.html` | Weekly brief 頁面（single file，無 dependencies） |
-| `linkedin-post.md` | 配套 LinkedIn post 草稿（英文＋廣東話）＋每週模板 |
-| `assets/carrie.jpg` | 你嘅 professional headshot（見下面） |
+| `linkedin-post.md` | 配套 LinkedIn post（英文＋書面中文）＋first comment＋每週模板＋出街應對小抄 |
+| `WORKFLOW.md` / `LEARNINGS.md` | 出刊 SOP／累積規則（每期開工前必讀） |
+| `assets/carrie.jpg` | Professional headshot（800×800） |
+| `assets/covers/` | 當期 LinkedIn 頭圖（全英文）＋ `cover-template.html` ＋ newsletter logo |
 
 ## 每週更新流程
 
-1. 改 hero 嘅 Issue 號同日期（搜尋 `Issue 001`）
+1. 改 hero 嘅 Issue 號同日期（搜尋 `Issue 001`）；hero 中英標題固定，唔使改
 2. 改「This week's signal」嘅 quote 同一段解讀
-3. 每個分類換 3 張 story card：複製現有 `<article class="story must/prod/mkt">` 結構，每張卡要齊：
-   - Source badge + 日期（真實日期，唔好老作）
-   - 標題連結去**原文** URL
-   - Summary（約 100 字）/ Why it matters / Carrie's Take（en + zh 兩個 span 都要改）
-   - 行動訊號：`signal act`（🟢）/ `signal watch`（🟡）/ `signal wait`（🔴）
-   - 想加 prediction 就保留 `.predict` block，唔想就刪
-4. 改底部三個 action（TEST / AUDIT / GOVERN 可以每週轉主題）
-5. 用 `linkedin-post.md` 嘅模板寫當週 LinkedIn post
+3. 每個分類換 story card（全期 9–10 則）：複製現有 `<article class="story must/prod/mkt">` 結構，每張卡要齊：
+   - Source badge + 日期（真實日期＋有來源，唔好老作）
+   - 標題連結去**原文** URL（badge 要對得上 link 域名）
+   - Key Highlights（`<ul class="kh">` 2–3 粒 bullet）/ Industry Insight（中性行文，冇「我」）——en + zh 兩個 span 都要改
+   - 行動訊號：`signal act`（🟢）/ `signal watch`（🟡）/ `signal wait`（🔴），每期 🟢 唔超過 3 個
+   - 有實據 pattern 就保留 `.predict` block（label「Pattern Watch／趨勢觀察」），冇就刪
+4. 改底部三個 action（PREPARE / AUDIT / GOVERN 可以每週轉主題）
+5. 用 `cover-template.html` 生成當期全英文頭圖
+6. 用 `linkedin-post.md` 嘅模板寫當週 LinkedIn post
 
 ## Headshot
 

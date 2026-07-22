@@ -1,11 +1,11 @@
 ---
 name: carrie-weekly-brief
-description: Produce a new issue of "Carrie AI Intelligence" — the bilingual (EN + 書面中文) weekly AI brief for marketers at carriehw/carrie-ai-intelligence. Covers the full pipeline; research the past week's AI news, draft 9 sourced stories in 3 categories, adversarial fact-check and expert-panel review via parallel agents, verify and publish to GitHub Pages, and update the LinkedIn post drafts. Use this skill whenever the user asks to 出 Issue / 出新一期 / next issue / weekly brief update / 更新網站新聞 / write this week's LinkedIn post for Carrie AI Intelligence, or mentions updating the AI marketing weekly site — even if they only mention one part (e.g. just the LinkedIn post), because every part depends on the same verified story set.
+description: Produce a new issue of "Carrie AI Intelligence" — the bilingual (EN + 書面中文) weekly AI brief for marketers at carriehw/carrie-ai-intelligence. Covers the full pipeline; research the past week's AI news, draft 9-10 sourced stories in 3 categories (each with Key Highlights + a neutral Industry Insight, no personally attributed opinion), adversarial fact-check and expert-panel review via parallel agents, verify and publish to GitHub Pages, generate the English cover image, and update the LinkedIn post drafts. Use this skill whenever the user asks to 出 Issue / 出新一期 / next issue / weekly brief update / 更新網站新聞 / write this week's LinkedIn post for Carrie AI Intelligence, or mentions updating the AI marketing weekly site — even if they only mention one part (e.g. just the LinkedIn post), because every part depends on the same verified story set.
 ---
 
 # Carrie AI Intelligence — 出刊 skill
 
-呢個 skill 係為 Carrie Hui 嘅個人 IP 產品「Carrie AI Intelligence」出新一期 weekly brief。品牌承諾：**Helping marketers filter AI noise into business decisions** — 做 intelligence（解讀＋決策），唔係 news（快訊）。讀者係香港／大中華嘅 marketers 同 agency 決策者。
+呢個 skill 係為 Carrie Hui 嘅個人 IP 產品「Carrie AI Intelligence」出新一期 weekly brief。品牌承諾：**Helping marketers filter AI noise into business decisions** — 做 intelligence（解讀＋決策），唔係 news（快訊）。讀者 = 香港（主）＋台灣＋海外華人 marketer 同 agency 決策者（LinkedIn 大陸用唔到，大陸唔係目標讀者，但佢哋做緊大陸市場生意，所以 GC 內容照跟——詳見 LEARNINGS 受眾定位）。
 
 ## 開工前必讀（Step 0）
 
@@ -20,9 +20,10 @@ description: Produce a new issue of "Carrie AI Intelligence" — the bilingual (
 1. **研究**：WebSearch 為主（proxy 封鎖大部分 WebFetch）；每分類 2–3 條 query，**另加中文 query 搜大中華線**（微信 AI／小紅書聚光／巨量引擎／騰訊廣告／AIGC 監管／travel retail AI）；每則新聞必須核實**原始公布日期**係當週——roundup 成日將舊聞包裝成新聞
 2. **起草**：3 分類共 9–10 則（🔥 MUST KNOW／⚡ PRODUCTIVITY／📈 MARKETING IMPACT），每則齊：來源＋日期＋一 click 原文連結＋**Key Highlights（2–3 粒 bullet，事實＋重要性融埋）**＋**Industry Insight（中性行文，冇「我」、冇個人掛名）**＋🟢🟡🔴 訊號；有實據 pattern 先加 Pattern Watch；EN 同書面中文兩版都要寫
 3. **審核（必做，唔可以跳過）**：三個 agent 並行——兩個 fact-check（逐 claim VERIFIED/PARTLY WRONG/CANNOT CONFIRM＋證據 URL），一個專家 panel（總編／agency director／personal branding 三視角，判 KEEP/TWEAK/RETHINK）
-4. **修正 → 驗證**：headless chromium（`/opt/pw-browsers/chromium` + playwright-core）check render、全部原文連結、JS error、中英 toggle
-5. **發布**：push `carriehw/carrie-ai-intelligence` main（GitHub Pages 自動 deploy）＋開發 branch；更新 `linkedin-post.md`（EN＋書面中文＋first comment）
-6. **記錄**：喺 `LEARNINGS.md` append 今期學習——呢步係下期質素嘅來源，收工前必做
+4. **修正 → 驗證**：headless chromium（`/opt/pw-browsers/chromium` + playwright-core）check render、全部原文連結、JS error、中英 toggle；起草後有大改就再開 agent 做獨立來源覆核（濃縮改寫會引入 drift）
+5. **當期頭圖**：用 `assets/covers/cover-template.html`（**全英文**）換 Issue 號＋新聞速覽，render 1080×1350 @2x 做 `assets/covers/issue-XXX.png`
+6. **發布**：push `carriehw/carrie-ai-intelligence` main（GitHub Pages 自動 deploy）＋開發 branch；更新 `linkedin-post.md`（EN＋書面中文＋first comment）
+7. **記錄**：喺 `LEARNINGS.md` append 今期學習——呢步係下期質素嘅來源，收工前必做
 
 ## 不可妥協嘅規則
 
@@ -32,6 +33,6 @@ description: Produce a new issue of "Carrie AI Intelligence" — the bilingual (
 - **網站唔用第一身、唔用個人掛名觀點**（Carrie 決定：「我嘅觀點唔一定啱，費事講錯嘢俾人周」）——行業洞察中性行文；「I've seen…」親歷聲稱一律禁用
 - **每個 🟢 Act now 要通過香港執行度測試**：香港讀者聽日返工做唔做到？做唔到就改 readiness 或註明市場限制
 - **大中華視角係結構性要求**：每期至少 2–3 則 GC/HK 原生新聞（散落三個分類，唔另設分區）；每則全球新聞必須答到「香港/GC marketer 有咩關係」——呢個係本 brief 嘅 moat，冇咗就只係另一份美國科技摘要
-- **預測單一、有日期、可驗證**；產品狀態字眼（default／GA／beta／rolling out）逐隻核實
-- **公司名唔出現**：Carrie 嘅身份係「AI Marketing Strategist · Travel Retail & Greater China」，唔提僱主；獎項寫「所屬團隊曾獲」
-- 所有 Take／Prediction 係代 Carrie 起草，出街前由佢過目——喺總結中提醒佢
+- **Pattern Watch 要有實據**（觀察到嘅 sequence／數據），寫明依據，唔用「我預期」斷言；產品狀態字眼（default／GA／beta／rolling out）同「可用市場」清單逐隻核實
+- **公司名唔出現**：Carrie 嘅身份係「AI Marketing Strategist · Travel Retail & Greater China」，唔提僱主；獎項寫「所屬團隊曾獲」；footer 常設個人出版物＋AI 協作聲明
+- 所有 Industry Insight／Pattern Watch 係代 Carrie 起草，出街前由佢過目——喺總結中提醒佢，並附完整 LinkedIn post 全文（中英）方便直接 copy

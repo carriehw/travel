@@ -29,12 +29,13 @@
   - `旅遊零售 AI 營銷`（Carrie 主場，有料必用）
   - 來源：平台官方公告、36氪、晚點 LatePost、界面——同樣要一手
 - 大型研究可調用 `deep-research` skill
-- 揀每類 3 則，標準：
+- 全期揀 9–10 則（每類約 3 則，🔥 MUST KNOW 可以 4 則），標準：
   - **必須係當週新聞**（用 roundup 搵料，但要核實原始日期——roundup 成日炒冷飯）
   - 對香港 marketer 有實際意義
   - 有可連結嘅一手來源（官方 blog／CNBC／TechCrunch 級數，唔要 aggregator）
   - **全期至少 2–3 則 GC/HK 原生新聞**（WeChat／RED／Douyin／騰訊／字節／中國 AI 監管／travel retail AI），散落喺三個分類，唔另設分區——呢個係本 brief 對比美國 newsletter 嘅 moat
-  - **每則全球新聞必須答到「香港/GC marketer 有咩關係」**（喺 Why it matters 或 Take 入面）——答唔到嘅新聞唔夠格入選
+  - **每則全球新聞必須答到「香港/GC marketer 有咩關係」**（喺 Key Highlights 或 Industry Insight 入面）——答唔到嘅新聞唔夠格入選
+  - 受眾提示：讀者係香港（主）＋台灣＋海外華人 marketer（LinkedIn 大陸用唔到）——但佢哋做緊大陸市場生意，GC 內容線係 moat，一啲都唔減
 
 ## Step 2 — 起草
 
@@ -49,8 +50,9 @@
 | 行動訊號 | 🟢 Act now / 🟡 Watch / 🔴 Wait，加一句具體動作 |
 | Pattern Watch／趨勢觀察 | 有實據 pattern 先寫（見預測準則），中性行文，唔用「我預期」 |
 
-- 語言：EN + 書面中文（`.en`/`.zh` span 兩版都要寫）
+- 語言：EN + 書面中文（`.en`/`.zh` span 兩版都要寫）；hero 標題係固定刊頭語（「看懂 AI，不必看盡 AI」），唔使每期改
 - 同步更新：hero 嘅 Issue 號/日期、This week's signal、三個 Actions（PREPARE/AUDIT/GOVERN 主題可每期轉）
+- **當期頭圖**：用 `assets/covers/cover-template.html` 換 Issue 號＋英文 hook＋三行新聞速覽，headless chromium 1080×1350 @2x render 做 `assets/covers/issue-XXX.png`——**圖片全英文（Carrie 規定）**，SendUserFile 交俾 Carrie 出 post 用
 
 ### 寫作規則（違反過先寫低，唔好再犯）
 
@@ -63,14 +65,14 @@
 
 ## Step 3 — Fact-check（兩個並行 agent）
 
-開兩個 general-purpose agent（一個負責 MUST KNOW，一個負責其餘六則），prompt 要求：
+開兩個 general-purpose agent（一個負責 🔥 MUST KNOW，一個負責其餘 6–7 則），prompt 要求：
 - 逐條 claim 判定 VERIFIED / PARTLY WRONG / CANNOT CONFIRM
 - 附證據 URL；建議更好嘅一手來源
-- 特別核對：日期係咪當週、數字、「預設／全面推出」呢類字眼
+- 特別核對：日期係咪當週、數字、產品狀態字眼（default／GA／beta／rolling out）、**「可用市場」清單要搵最新完整名單**（Issue 001 教訓：ChatGPT Ads 寫剩 3 個市場實際 7 個）、日期 metadata 都要有來源
 
 ## Step 4 — 專家 panel（一個 agent，同 Step 3 並行）
 
-一個 agent 以三重視角 review 所有 Take + Prediction：
+一個 agent 以三重視角 review 所有 Industry Insight + Pattern Watch：
 - 前媒體總編：邏輯、有冇 overreach、同期一致性
 - Agency director：香港執行度、專業風險（客戶日後可以指住話你錯嘅句子）
 - Personal branding：斷章取義風險、fabricated experience、voice 一致
@@ -79,15 +81,18 @@
 ## Step 5 — 修正
 
 - 照 fact-check 逐項改：日期、數字、來源 URL、措辭
-- 照 panel 判決改 Take／Prediction（TWEAK/RETHINK 全改，KEEP 不動）
+- 照 panel 判決改 Industry Insight／Pattern Watch（TWEAK/RETHINK 全改，KEEP 不動）
 - 舊聞（>7 日前而且唔係當週有新發展）整則換走
 
 ## Step 6 — 驗證
 
 ```bash
 # headless chromium render + 檢查連結（executablePath: /opt/pw-browsers/chromium，playwright-core）
-# 檢查：9 條 readsrc 連結正確、JS error = 0、中英 toggle 正常、full page screenshot 人眼過一次
+# 檢查：全部 readsrc 連結正確（badge 對 link 域名）、JS error = 0、中英 toggle 正常、full page screenshot 人眼過一次
+# 另 grep：第一身殘留（我會／我預期／I expect／my read）、廣東話殘留（緊／咗／嘅／係／唔）、簡體殘留（着／里／为）、舊 label（Summary／Why it matters／Carrie）
 ```
+
+**如果起草後有大改（重寫、濃縮、加新聞）**：再開一個 agent 做獨立來源覆核——濃縮改寫會引入 drift（Issue 001 就係咁捉返兩個錯）。清晰度自測：每段洞察抽離前文都要即刻明（見 LEARNINGS 清晰度規則）。
 
 ## Step 7 — Push（兩個 repo 都要）
 
@@ -97,8 +102,8 @@
 ## Step 8 — LinkedIn post
 
 - 更新 `linkedin-post.md`：EN 版 + 書面中文版 + first comment
-- 結構：hook（本週訊號一句）→ 3 個 takeaway（🟢🟡🔴 開頭）→ 1 個預測（第一身＋寫明依據＋"check back on me" 式收尾）→ CTA
-- 規則：brief 連結放 first comment；香港時間週二／三 8:30–9:30am 出；hashtags 6–8 個
+- 結構：hook（本週訊號一句）→ 3 個 takeaway（🟢🟡🔴 開頭）→ 1 個 pattern watch（「One pattern worth watching」式，寫明依據，唔用斷言）→ CTA（"one brief, not fifty headlines"）
+- 規則：brief 連結＋「Personal project — views mine, not any employer's or client's」放 first comment（60 秒內貼＋pin）；當期頭圖做 post 附圖；香港時間週二／三 8:30–9:30am 出；hashtags 6–8 個；出 post 前重溫 linkedin-post.md 尾段嘅應對小抄同 24 小時 playbook
 
 ## Step 9 — 記錄 learnings（收工前必做）
 
