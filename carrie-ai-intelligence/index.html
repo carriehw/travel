@@ -663,10 +663,11 @@
         document.body.classList.toggle('lang-zh', lang === 'zh');
         document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
         btn.textContent = lang === 'zh' ? 'EN' : '中';
-        try { localStorage.setItem('cai-lang', lang); } catch (e) {}
+        try { localStorage.setItem('cai-lang-v2', lang); } catch (e) {}
       }
+      // English is the default language; a reader's explicit toggle is remembered.
       var saved = 'en';
-      try { saved = localStorage.getItem('cai-lang') || 'en'; } catch (e) {}
+      try { saved = localStorage.getItem('cai-lang-v2') || 'en'; } catch (e) {}
       apply(saved);
       btn.addEventListener('click', function () {
         apply(document.body.classList.contains('lang-zh') ? 'en' : 'zh');
