@@ -126,3 +126,15 @@ Carrie 指出洞察段「表達唔清晰、前文後理難以理解」（例：A
 2. 「營銷」照用（香港用法），台灣讀者睇得明，唔為單一詞分裂版本
 3. **重要區分：大陸讀者 ≠ 大陸內容**——讀者係香港/台灣 marketer，但佢哋好多做緊大陸市場生意，所以 WeChat／小紅書／巨量引擎／中國 AI 監管呢啲 GC 內容線照跟，一啲都唔減——嗰個係內容 moat，唔係受眾問題
 4. 將來如果分發渠道擴展（例如 WeChat 公眾號版），先重新檢視簡體需求
+
+## 底部 section 改「問題」不「命令」（2026-07-22 Carrie feedback）
+
+Carrie 指出原本「Don't curate news. Curate decisions.」下面三個 action（Build / Check / Write your…）**太強（命令句）＋唔關讀者事**（假設讀者係有客戶嘅 agency：top 3 clients／in a pitch／your team——但一半受眾係 in-house／細團隊）。
+
+改法（永久生效）：
+- 標題改「Three questions this week raises／本週值得思考的三個問題」
+- 副題明講「Not a to-do list… whether you sit in an agency or on the brand side／無論你在 agency 還是品牌方」——修正受眾假設
+- 三項由命令句改**問題句**（「Do you have…？」「How do…？」「Could your team…？」）＋一句中性 context——informational，唔說教，agency/品牌方都成立
+- Label 由動詞（PREPARE/AUDIT/GOVERN）改名詞主題（AUDIENCE DATA／BRAND VISIBILITY／AI GOVERNANCE）；nav 由「Actions」改「Worth Asking／值得思考」
+
+原則：呢個 section 係全站最後一個命令式殘留——同「網站唔用個人掛名觀點、informational 不說教」嘅定位對齊。以後底部永遠用問題形式。

@@ -51,7 +51,7 @@
 | Pattern Watch／趨勢觀察 | 有實據 pattern 先寫（見預測準則），中性行文，唔用「我預期」 |
 
 - 語言：EN + 書面中文（`.en`/`.zh` span 兩版都要寫）；hero 標題係固定刊頭語（「看懂 AI，不必看盡 AI」），唔使每期改
-- 同步更新：hero 嘅 Issue 號/日期、This week's signal、三個 Actions（PREPARE/AUDIT/GOVERN 主題可每期轉）
+- 同步更新：hero 嘅 Issue 號/日期、This week's signal、底部「本週值得思考的三個問題」（**問題形式，唔用命令句**；對 agency 同品牌方都成立，主題每期轉）
 - **當期頭圖**：用 `assets/covers/cover-template.html` 換 Issue 號＋英文 hook＋三行新聞速覽，headless chromium 1080×1350 @2x render 做 `assets/covers/issue-XXX.png`——**圖片全英文（Carrie 規定）**，SendUserFile 交俾 Carrie 出 post 用
 
 ### 寫作規則（違反過先寫低，唔好再犯）

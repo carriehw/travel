@@ -32,7 +32,7 @@
    - Key Highlights（`<ul class="kh">` 2–3 粒 bullet）/ Industry Insight（中性行文，冇「我」）——en + zh 兩個 span 都要改
    - 行動訊號：`signal act`（🟢）/ `signal watch`（🟡）/ `signal wait`（🔴），每期 🟢 唔超過 3 個
    - 有實據 pattern 就保留 `.predict` block（label「Pattern Watch／趨勢觀察」），冇就刪
-4. 改底部三個 action（PREPARE / AUDIT / GOVERN 可以每週轉主題）
+4. 改底部「本週值得思考的三個問題」（問題形式，唔用命令句；對 agency 同品牌方都成立，主題每期轉）
 5. 用 `cover-template.html` 生成當期全英文頭圖
 6. 用 `linkedin-post.md` 嘅模板寫當週 LinkedIn post
 
