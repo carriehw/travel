@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#fffdf7" />
+  <title>飛啦喂！旅行盲盒</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="decor blob blob-yellow"></div>
+    <div class="decor blob blob-pink"></div>
+    <div class="decor blob blob-green"></div>
+    <div class="decor blob blob-purple"></div>
+
+    <main class="shell">
+      <section id="home" class="screen active home">
+        <div class="topbar">
+          <div class="logo">飛啦喂！</div>
+          <div class="badge">外星旅人 · 地球導遊</div>
+        </div>
+        <div class="eyebrow">唔知下一站去邊？</div>
+        <h1 class="headline">想去邊？<br><span>抽咗</span>先算。</h1>
+        <p class="lead">揀幾個條件，等小天線隊長幫你配對，再由你親手開盲盒揭曉下一站。</p>
+        <div class="journey-flow" aria-label="揀條件、揀盲盒、揭曉下一站">
+          <svg class="journey-line" viewBox="0 0 360 92" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M22 58 C82 10, 126 84, 184 47 S281 20, 338 54" />
+          </svg>
+          <div class="journey-stop stop-1"><b>🧭</b><span>揀條件</span></div>
+          <div class="journey-stop stop-2"><b>🎁</b><span>揀盲盒</span></div>
+          <div class="journey-stop stop-3"><b>✈️</b><span>揭曉</span></div>
+          <i class="journey-spark spark-a">✦</i>
+          <i class="journey-spark spark-b">✦</i>
+        </div>
+        <div class="hero-art">
+          <button class="float-box box-a" aria-label="裝飾盲盒">?</button>
+          <div data-mascot class="mascot-host"></div>
+          <button class="float-box box-b" aria-label="裝飾盲盒">?</button>
+        </div>
+        <div class="slogan">
+          <span class="slogan-mark">✦</span>
+          <small>You only live once</small>
+          <strong>人生得一次，仲等咩？<em>飛啦喂！</em></strong>
+        </div>
+        <button class="primary-cta" data-go="modes">開始飛啦 ✈</button>
+        <div class="fine">約 2 分鐘 · 唔使登入 · 開盒先知去邊</div>
+      </section>
+
+      <section id="modes" class="screen">
+        <header class="screen-head"><button class="back" data-go="home">‹</button><div class="logo small">飛啦喂！</div><span></span></header>
+        <div class="progress" data-progress="10"><i></i><b>✈</b></div>
+        <h2>今次想點樣<span>飛</span>？</h2>
+        <p class="sub">玩法唔同，驚喜程度都唔同。第一次玩可以揀「精準飛」。</p>
+        <div class="choice-grid mode-grid">
+          <button class="choice mint" data-mode="smart"><strong>🧭 精準飛</strong><small>答多少少，揀得更啱你。</small></button>
+          <button class="choice yellow" data-mode="quick"><strong>⚡ 快快飛</strong><small>30 秒搞掂，快啲開盒。</small></button>
+          <button class="choice pink" data-mode="random"><strong>🎲 亂咁飛</strong><small>少啲條件，多啲驚喜。</small></button>
+          <button class="choice purple" data-mode="group"><strong>👽 一班人飛</strong><small>朋友、情侶、屋企人一齊玩。</small></button>
+        </div>
+      </section>
+
+      <section id="companion" class="screen">
+        <header class="screen-head"><button class="back" data-go="modes">‹</button><div class="logo small">飛啦喂！</div><span></span></header>
+        <div class="progress" data-progress="24"><i></i><b>✈</b></div>
+        <h2>今次同邊個<span>飛</span>？</h2>
+        <p class="sub">旅伴唔同，啱玩嘅地方真係差好遠。</p>
+        <div id="companionGrid" class="choice-grid"></div>
+        <footer class="sticky"><button class="next" id="companionNext">下一步 →</button></footer>
+      </section>
+
+      <section id="basics" class="screen">
+        <header class="screen-head"><button class="back" data-go="companion">‹</button><div class="logo small">飛啦喂！</div><span></span></header>
+        <div class="progress" data-progress="40"><i></i><b>✈</b></div>
+        <h2>有幾多日？<br>今次想<span>使幾多</span>？</h2>
+        <p class="sub">兩個基本條件就夠，唔使填一大堆表。</p>
+        <div class="group"><label>旅行日數</label><div id="days" class="chips"></div></div>
+        <div class="group"><label>每人 Budget（大約）</label><div id="budget" class="chips"></div></div>
+        <footer class="sticky"><button class="next" id="basicsNext">下一步 →</button></footer>
+      </section>
+
+      <section id="vibe" class="screen">
+        <header class="screen-head"><button class="back" data-go="basics">‹</button><div class="logo small">飛啦喂！</div><span></span></header>
+        <div class="progress" data-progress="57"><i></i><b>✈</b></div>
+        <h2>最想喺旅程入面<span>做咩</span>？</h2>
+        <p class="sub">最多揀 4 樣。揀你真係在意嘅，唔使樣樣都要。</p>
+        <div id="interests" class="interest-grid"></div>
+        <footer class="sticky"><button class="next" id="vibeNext">下一步 →</button></footer>
+      </section>
+
+      <section id="concern" class="screen">
+        <header class="screen-head"><button class="back" data-go="vibe">‹</button><div class="logo small">飛啦喂！</div><span></span></header>
+        <div class="progress" data-progress="72"><i></i><b>✈</b></div>
+        <h2 id="concernTitle">今次最唔想<span>遇到</span>咩？</h2>
+        <p id="concernDesc" class="sub">有時避開一樣嘢，比加多十個喜好更準。</p>
+        <div id="concerns" class="choice-grid"></div>
+        <footer class="sticky"><button class="next" id="concernNext">下一步 →</button></footer>
+      </section>
+
+      <section id="memory" class="screen">
+        <header class="screen-head"><button class="back" data-go="concern">‹</button><div class="logo small">飛啦喂！</div><button class="skip" id="skipMemory">跳過</button></header>
+        <div class="progress" data-progress="86"><i></i><b>✈</b></div>
+        <h2>有冇地方今次<span>唔想再見</span>？</h2>
+        <p class="sub">去過唔代表永久消失。呢步只係幫你避免次次都出返同一批。</p>
+        <div class="memory-card">
+          <div class="memory-tip">撳一次＝去過 · 再撳＝今次唔想見 · 第三次＝取消</div>
+          <div id="memoryList" class="memory-list"></div>
+        </div>
+        <footer class="sticky"><button class="next" id="matchNow">幫我配對啦 ✨</button></footer>
+      </section>
+
+      <section id="loading" class="screen loading-screen">
+        <div class="planet"><div class="orbit"><span>✈</span></div></div>
+        <h2 id="loadingText">小天線隊長翻緊地球資料…</h2>
+        <div class="loadbar"><i id="loadFill"></i></div>
+        <p>唔係亂抽。先啱你，再交俾驚喜。</p>
+      </section>
+
+      <section id="boxes" class="screen">
+        <header class="screen-head"><button class="back" data-go="memory">‹</button><div class="logo small">飛啦喂！</div><button class="skip" id="reshuffle">換一批</button></header>
+        <div class="box-title"><div><div class="eyebrow">候選池完成 ✨</div><h2>揀一個<span>盲盒</span></h2></div><strong id="poolCount">12 個</strong></div>
+        <p class="sub">全部都過咗你嘅基本條件。盒面只畀少少 feel，答案開咗先知。</p>
+        <div id="partyNote" class="party-note" hidden>👀 一班人玩？今次邊個手氣最好，就俾佢篤一盒。</div>
+        <div id="boxGrid" class="box-grid"></div>
+      </section>
+
+      <section id="result" class="screen">
+        <header class="screen-head"><button class="back" data-go="boxes">‹</button><div class="logo small">飛啦喂！</div><button class="skip" id="shareTop">分享</button></header>
+        <div class="destination-card">
+          <div id="resultFlag" class="flag">🇯🇵</div>
+          <div class="eyebrow">今次飛呢度！</div>
+          <h2 id="resultCity">福岡</h2>
+          <div id="resultEn" class="result-en">Fukuoka</div>
+          <div id="resultTags" class="result-tags"></div>
+        </div>
+        <h3 class="why">點解今次係佢？</h3>
+        <div id="reasons"></div>
+        <div class="result-actions">
+          <button id="reroll" class="soft">↻ 再抽一次</button>
+          <button id="share" class="blue">分享 ✈</button>
+          <button id="save" class="heart">♡ 收藏呢個地方</button>
+        </div>
+      </section>
+    </main>
+
+    <div id="confirmSheet" class="sheet">
+      <div class="sheet-card">
+        <div id="pickedBox" class="picked-box">?</div>
+        <h2>就揀呢盒？</h2>
+        <p>一開就揭曉。唔准偷睇答案 👀</p>
+        <div class="sheet-actions"><button id="lookAgain">我再睇下</button><button id="openBox">開盒！ ✨</button></div>
+      </div>
+    </div>
+
+    <div id="reveal" class="reveal">
+      <div id="countdown" class="countdown">3…</div>
+      <div class="reveal-box">?</div>
+      <span class="spark s1">✦</span><span class="spark s2">✦</span><span class="spark s3">●</span>
+    </div>
+    <div id="toast" class="toast">收到！</div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
