@@ -1,25 +1,4 @@
-const mascotSVG=`
-<svg viewBox="0 0 260 250" xmlns="http://www.w3.org/2000/svg" aria-label="小天線隊長">
-  <ellipse cx="132" cy="220" rx="69" ry="13" fill="#463B35" opacity=".08"/>
-  <g transform="translate(23,77) rotate(-9)">
-    <rect x="0" y="32" width="57" height="95" rx="25" fill="#1267D8"/>
-    <rect x="8" y="40" width="41" height="70" rx="19" fill="#197DF2"/>
-    <path d="M18 79l11-9 4-15 6 13 15 2-13 8 3 15-12-10-14 7 5-12z" fill="#fff"/>
-  </g>
-  <path d="M82 184c-9 3-20 18-14 27 6 9 24 0 31-12" fill="#0A58B5"/>
-  <path d="M171 187c12 4 24 17 19 27-5 10-25 2-34-12" fill="#0A58B5"/>
-  <path d="M82 149c-19 5-31 20-24 31 7 12 25 0 36-10" fill="#78E0C3"/>
-  <path d="M180 147c20 3 33 16 28 28-5 12-25 4-38-7" fill="#78E0C3"/>
-  <circle cx="132" cy="124" r="75" fill="#84E6C8"/>
-  <circle cx="112" cy="116" r="25" fill="#fff"/><circle cx="155" cy="116" r="25" fill="#fff"/>
-  <ellipse cx="116" cy="118" rx="13" ry="18" fill="#143B66"/><ellipse cx="159" cy="118" rx="13" ry="18" fill="#143B66"/>
-  <circle cx="120" cy="112" r="4" fill="#fff"/><circle cx="163" cy="112" r="4" fill="#fff"/>
-  <ellipse cx="93" cy="150" rx="12" ry="7" fill="#FF99A8" opacity=".8"/><ellipse cx="174" cy="150" rx="12" ry="7" fill="#FF99A8" opacity=".8"/>
-  <path d="M119 145c4 20 27 24 34 2 2-7-4-11-16-11-12 0-20 2-18 9z" fill="#6B1E2D"/><path d="M128 154c8-7 18-4 20 1-6 9-15 11-20-1z" fill="#FF8D9D"/>
-  <path d="M107 54C99 28 89 18 80 22" stroke="#55CDB2" stroke-width="11" stroke-linecap="round" fill="none"/><circle cx="78" cy="21" r="13" fill="#78E0C3"/>
-  <path d="M159 53c8-27 19-35 28-30" stroke="#55CDB2" stroke-width="11" stroke-linecap="round" fill="none"/><circle cx="190" cy="23" r="13" fill="#78E0C3"/>
-</svg>`;
-
+const mascotSVG='<img src="./mascot.png" class="mascot-img" alt="小天線隊長">';
 const state={mode:"smart",companion:"friends",days:5,budget:2,interests:[],concern:"none",visited:[],excluded:[],pool:[],selected:null,result:null};
 const memoryFallback={};
 function storeGet(k,d="[]"){try{return localStorage.getItem(k)||d}catch(e){return memoryFallback[k]||d}}
