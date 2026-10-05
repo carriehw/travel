@@ -12,7 +12,7 @@ button{font:inherit;color:inherit}
 .app{min-height:100dvh;position:relative;overflow:hidden}
 .phone{position:relative;z-index:2;width:100%;max-width:480px;margin:0 auto;min-height:100dvh;padding:max(14px,env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom))}
 .screen{display:none;min-height:calc(100dvh - 42px);animation:pageIn .34s ease both}
-.screen.active{display:block}
+.screen.active{display:block}.home.active{display:flex;flex-direction:column}
 @keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .ambient{position:fixed;border-radius:50%;z-index:0;filter:saturate(.9);pointer-events:none;animation:float 7s ease-in-out infinite alternate}
 .ambient-a{width:180px;height:180px;background:#F5D46F;left:-104px;top:-60px}
@@ -32,7 +32,7 @@ button{font:inherit;color:inherit}
 .hero-copy h1 .q{color:#4E8FB6}
 .hero-copy h1 em{font-style:normal;color:var(--coral)}
 .hero-copy p{display:none}
-.hero-stage{position:relative;min-height:370px;margin-top:6px}
+.hero-stage{position:relative;flex:1;min-height:315px;max-height:360px;margin-top:4px}
 .journey{position:absolute;inset:0}
 .journey svg{position:absolute;inset:30px 0 auto;width:100%;height:190px;overflow:visible}
 .journey path{fill:none;stroke:#6CB0D3;stroke-width:3;stroke-linecap:round;stroke-dasharray:7 9;animation:dash 9s linear infinite;opacity:.85}
@@ -41,11 +41,11 @@ button{font:inherit;color:inherit}
 .stop b{width:47px;height:47px;display:grid;place-items:center;border-radius:18px;font-size:24px;box-shadow:0 9px 18px rgba(75,55,43,.08);transform:rotate(-5deg)}
 .stop span{font-size:13px;font-weight:1000;line-height:1.15}
 .stop small{display:block;font-size:10px;color:#7A7068;margin-top:3px;font-weight:750}
-.stop.s1{left:1%;top:236px}.stop.s1 b{background:var(--yellow-soft)}
-.stop.s2{left:36%;top:278px;animation-delay:-1s}.stop.s2 b{background:#F5C4BF}
-.stop.s3{right:-1%;top:230px;animation-delay:-2s}.stop.s3 b{background:#BDE3D0}
+.stop.s1{left:1%;bottom:34px}.stop.s1 b{background:var(--yellow-soft)}
+.stop.s2{left:36%;bottom:0;animation-delay:-1s}.stop.s2 b{background:#F5C4BF}
+.stop.s3{right:-1%;bottom:34px;animation-delay:-2s}.stop.s3 b{background:#BDE3D0}
 @keyframes bob{50%{transform:translateY(-6px)}}
-.mascot-wrap{position:absolute;width:min(250px,66vw);left:50%;top:32px;transform:translateX(-50%);animation:mascotFloat 2.8s ease-in-out infinite}
+.mascot-wrap{position:absolute;width:min(245px,65vw);left:50%;top:18px;transform:translateX(-50%);animation:mascotFloat 2.8s ease-in-out infinite}
 .mascot-wrap svg,.mascot-peek svg,.mini-mascot svg,.box-mascot svg,.mascot-wrap img,.mascot-peek img,.mini-mascot img,.box-mascot img{width:100%;display:block;height:auto}
 @keyframes mascotFloat{50%{transform:translate(-50%,-7px) rotate(1deg)}}
 .sticker{position:absolute;font-family:"Marker Felt","Bradley Hand",cursive;font-weight:900;color:#4E94BF;line-height:.9;transform:rotate(-8deg)}
