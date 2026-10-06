@@ -1,202 +1,107 @@
 <!doctype html>
 <html lang="zh-HK">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#F8F1E6" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>飛啦喂！旅行盲盒</title>
-  <link rel="stylesheet" href="./style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFF8EC">
+<title>飛啦喂！</title>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div class="app">
-  <div class="ambient ambient-a"></div>
-  <div class="ambient ambient-b"></div>
-  <div class="ambient ambient-c"></div>
+<main class="app">
 
-  <main class="phone">
-    <section id="home" class="screen active home">
-      <div class="home-top">
-        <div>
-          <div class="brand">飛啦喂！<span>🪐</span></div>
-          <div class="brand-sub">外星旅人 · 地球導遊</div>
-        </div>
-        <div class="face-flower flower-yellow"><span>•ᴗ•</span></div>
-      </div>
+<section id="home" class="screen active home">
+  <div class="blob flower y"><span>•ᴗ•</span></div>
+  <div class="blob flower p"><span>•ᴗ•</span></div>
+  <div class="brand">飛啦喂！ <span>🪐</span><small>外星旅人・地球導遊</small></div>
 
-      <div class="hero-copy">
-        <div class="micro">唔知下一站去邊？</div>
-        <h1>想去邊<span class="q">？</span><br><em>抽咗先算。</em></h1>
-      </div>
+  <div class="hero-title">想去邊<span class="blue">？</span><br>抽咗<span class="coral">先算</span><span class="blue">。</span></div>
+  <div class="yellow-stroke"></div>
 
-      <div class="hero-stage">
-        <div class="journey doodle">
-          <svg viewBox="0 0 330 120" aria-hidden="true">
-            <path d="M15 84 C62 22,116 110,170 60 S270 25,318 75" />
-          </svg>
-          <div class="stop s1"><b>📋</b><span>揀條件<small>話你知想點玩</small></span></div>
-          <div class="stop s2"><b>🎁</b><span>揀盲盒<small>揀你心儀嘅盒</small></span></div>
-          <div class="stop s3"><b>✈️</b><span>揭曉下一站<small>睇吓去邊！</small></span></div>
-        </div>
-        <div class="mascot-wrap" data-mascot></div>
-        <span class="sticker st-a">LET'S<br>GO!</span>
-        <span class="spark sp-a">✦</span><span class="spark sp-b">✦</span>
-      </div>
+  <div class="home-world">
+    <img src="./mascot.png" class="mascot main-mascot" alt="小天線隊長">
+    <div class="lets">LET'S<br>GO!</div>
+    <svg class="dash-route" viewBox="0 0 320 180" aria-hidden="true"><path d="M35,138 C105,165 145,100 198,121 C240,138 255,105 290,92"/></svg>
+    <div class="plane-dot">✈</div>
 
-      <button class="cta primary" data-go="modes">開始飛啦 ✈ <span>→</span></button>
-      <div class="slogan"><small>You only live once</small><strong>人生得一次，仲等咩？飛啦喂！</strong></div>
-    </section>
-
-    <section id="modes" class="screen">
-      <header class="nav"><button class="back" data-go="home">‹</button><div class="pagecount">1/6</div></header>
-      <div class="route-progress"><i style="--p:16%"></i><b style="left:16%">✈</b></div>
-      <div class="headline-card yellow-swipe">
-        <h2>今次想點樣<span>飛</span>？</h2>
-        <p>玩法唔同，驚喜程度都唔同。</p>
-      </div>
-      <div class="mode-stickers">
-        <button class="sticker-choice c-mint" data-mode="smart"><span class="bigicon">🧭</span><strong>精準飛</strong><small>答多少少，揀得更啱你</small></button>
-        <button class="sticker-choice c-blue" data-mode="quick"><span class="bigicon">⚡</span><strong>快快飛</strong><small>30 秒搞掂，快啲開盒</small></button>
-        <button class="sticker-choice c-peach" data-mode="random"><span class="bigicon">🎲</span><strong>亂咁飛</strong><small>少啲條件，多啲驚喜</small></button>
-        <button class="sticker-choice c-lilac" data-mode="group"><span class="bigicon">👽</span><strong>一班人飛</strong><small>朋友、情侶、屋企人一齊玩</small></button>
-      </div>
-      <div class="mascot-peek" data-mascot></div>
-    </section>
-
-    <section id="companion" class="screen">
-      <header class="nav"><button class="back" data-go="modes">‹</button><div class="pagecount">2/6</div></header>
-      <div class="route-progress"><i style="--p:32%"></i><b style="left:32%">✈</b></div>
-      <div class="headline-card yellow-swipe">
-        <h2>同邊個一齊去<span>最好玩</span>？</h2>
-        <p>旅伴唔同，啱玩嘅地方真係差好遠。</p>
-      </div>
-      <div id="companionGrid" class="companion-grid"></div>
-      <div class="guide-bubble"><div data-mascot class="mini-mascot"></div><p><b>交俾小天線隊長</b><br>由我幫你決定最合適嘅組合！</p></div>
-      <footer class="footer-action"><button class="cta primary" id="companionNext">下一步 →</button></footer>
-    </section>
-
-    <section id="basics" class="screen">
-      <header class="nav"><button class="back" data-go="companion">‹</button><div class="pagecount">3/6</div></header>
-      <div class="route-progress"><i style="--p:48%"></i><b style="left:48%">✈</b></div>
-      <div class="headline-card yellow-swipe">
-        <h2>去幾多日？<br>Budget 大約<span>幾多</span>？</h2>
-        <p>兩樣基本資料就夠，唔使填長問卷。</p>
-      </div>
-      <div class="ticket-block">
-        <label>旅行日數</label>
-        <div id="days" class="chip-row"></div>
-      </div>
-      <div class="ticket-block">
-        <label>每人 Budget</label>
-        <div id="budget" class="chip-row"></div>
-      </div>
-      <footer class="footer-action"><button class="cta primary" id="basicsNext">下一步 →</button></footer>
-    </section>
-
-    <section id="vibe" class="screen">
-      <header class="nav"><button class="back" data-go="basics">‹</button><div class="pagecount">4/6</div></header>
-      <div class="route-progress"><i style="--p:64%"></i><b style="left:64%">✈</b></div>
-      <div class="headline-card yellow-swipe">
-        <h2>你想要咩類型嘅<span>旅程</span>？</h2>
-        <p>揀 1–4 個最啱 feel 嘅就得。</p>
-      </div>
-      <div id="interests" class="vibe-grid"></div>
-      <div class="scribble-note">揀完就去揀盲盒啦！</div>
-      <footer class="footer-action"><button class="cta primary" id="vibeNext">下一步 →</button></footer>
-    </section>
-
-    <section id="concern" class="screen">
-      <header class="nav"><button class="back" data-go="vibe">‹</button><div class="pagecount">5/6</div></header>
-      <div class="route-progress"><i style="--p:80%"></i><b style="left:80%">✈</b></div>
-      <div class="headline-card coral-swipe">
-        <h2>今次最唔想<span>遇到</span>咩？</h2>
-        <p>避開一樣最介意嘅嘢，配對會準好多。</p>
-      </div>
-      <div id="concerns" class="concern-cloud"></div>
-      <footer class="footer-action"><button class="cta primary" id="concernNext">下一步 →</button></footer>
-    </section>
-
-    <section id="memory" class="screen">
-      <header class="nav"><button class="back" data-go="concern">‹</button><button class="text-btn" id="skipMemory">跳過</button></header>
-      <div class="route-progress"><i style="--p:94%"></i><b style="left:94%">✈</b></div>
-      <div class="headline-card yellow-swipe">
-        <h2>有冇啲地方今次<span>唔想再見</span>？</h2>
-        <p>去過唔代表永久消失，只係避免次次都出返同一批。</p>
-      </div>
-      <div class="paper-note">
-        <div class="paper-pin">📌</div>
-        <div class="memory-tip">撳一次＝去過 · 再撳＝今次唔想見 · 第三次＝取消</div>
-        <div id="memoryList" class="memory-list"></div>
-      </div>
-      <footer class="footer-action"><button class="cta primary" id="matchNow">幫我配對啦 ✨</button></footer>
-    </section>
-
-    <section id="loading" class="screen loading">
-      <div class="confetti-bg"></div>
-      <div class="loading-copy">
-        <div class="micro">準備揭曉</div>
-        <h2>你嘅下一站…</h2>
-        <div class="count-orbit"><span>3</span><span>2</span><span>1</span></div>
-      </div>
-      <div class="big-box">
-        <div class="lid"></div>
-        <div class="question">?</div>
-        <div data-mascot class="box-mascot"></div>
-      </div>
-      <div id="loadingText" class="loading-note">小天線隊長翻緊地球資料…</div>
-      <div class="loadbar"><i id="loadFill"></i></div>
-    </section>
-
-    <section id="boxes" class="screen">
-      <header class="nav"><button class="back" data-go="memory">‹</button><button class="text-btn" id="reshuffle">換一批</button></header>
-      <div class="headline-card yellow-swipe">
-        <h2>揀一個你<span>心儀嘅盲盒</span>！</h2>
-        <p><b id="poolCount">12 個</b>目的地等你發掘，盒面只畀少少提示。</p>
-      </div>
-      <div id="partyNote" class="party-note" hidden>👀 一班人玩？今次邊個手氣最好，就俾佢篤一盒。</div>
-      <div id="boxGrid" class="box-grid"></div>
-    </section>
-
-    <section id="result" class="screen">
-      <header class="nav"><button class="back" data-go="boxes">‹</button><button class="text-btn" id="shareTop">分享</button></header>
-      <div class="postcard">
-        <div class="stamp">✈</div>
-        <div class="tape tape-a"></div>
-        <div class="tape tape-b"></div>
-        <div class="result-overline">你嘅下一站係…</div>
-        <h2 id="resultCity">京都</h2>
-        <div id="resultEn" class="result-en">Kyoto, Japan</div>
-        <div class="postcard-scene" id="resultVisual">🏯</div>
-        <div id="resultFlag" class="flag">🇯🇵</div>
-        <div id="resultTags" class="result-tags"></div>
-      </div>
-      <div class="why-title">為你推薦嘅原因：</div>
-      <div id="reasons" class="reasons"></div>
-      <div class="result-actions">
-        <button class="cta primary" id="save">保存結果 ♥</button>
-        <button class="cta ghost" id="reroll">↻ 再抽一次</button>
-        <button class="text-btn share" id="share">分享俾朋友 ✈</button>
-      </div>
-    </section>
-  </main>
-
-  <div id="confirmSheet" class="sheet">
-    <div class="sheet-card">
-      <div id="pickedBox" class="picked-box">?</div>
-      <h2>就揀呢盒？</h2>
-      <p>一開就揭曉，唔准偷睇答案 👀</p>
-      <div class="sheet-actions"><button id="lookAgain">我再睇下</button><button id="openBox">開盒！ ✨</button></div>
-    </div>
+    <div class="home-step step-a"><i>📋</i><b>揀條件</b><small>話你知想點玩</small></div>
+    <div class="home-step step-b"><i>🎁</i><b>揀盲盒</b><small>揀你心儀嘅盒</small></div>
+    <div class="home-step step-c"><i>✈</i><b>揭曉下一站</b><small>睇吓去邊！</small></div>
   </div>
 
-  <div id="reveal" class="reveal">
-    <div class="reveal-copy">準備揭曉<br>你嘅下一站…</div>
-    <div id="countdown" class="reveal-count">3</div>
-    <div class="reveal-box">?</div>
-    <div class="paper-strip">Let the adventure begin! ✈</div>
+  <button class="big-cta" data-go="type">開始飛啦 ✈ <span>→</span></button>
+  <div class="home-slogan"><em>You only live once</em><strong>人生得一次，仲等咩？飛啦喂！</strong></div>
+</section>
+
+<section id="type" class="screen">
+  <header class="topbar"><button class="round back" data-go="home">‹</button><div class="progress"><i class="on"></i><i></i><i></i><i></i><i></i></div><span class="count">1/3</span></header>
+  <div class="paint-title">你想要<br>咩類型嘅旅程？</div>
+  <p class="hintline">揀一個最啱你嘅感覺就得！</p>
+  <div class="type-grid">
+    <button class="type-card chill" data-vibe="relax"><div class="art">🌴☀️</div><b>Chill 放鬆</b><small>海島・陽光・慢活</small></button>
+    <button class="type-card city" data-vibe="city"><div class="art">🏙️</div><b>城市探索</b><small>文化・美食・打卡</small></button>
+    <button class="type-card nature" data-vibe="nature"><div class="art">🏔️</div><b>自然風景</b><small>山川・湖泊・大自然</small></button>
+    <button class="type-card food" data-vibe="food"><div class="art">🍜</div><b>美食之旅</b><small>地道・餐廳・市場</small></button>
+    <button class="type-card heal" data-vibe="heal"><div class="art">♨️</div><b>療癒放空</b><small>溫泉・慢遊・Recharge</small></button>
+    <button class="type-card surprise" data-vibe="surprise"><div class="art">🗺️✨</div><b>隨機驚喜</b><small>交俾命運！</small></button>
   </div>
-  <div id="toast" class="toast">收到！</div>
-</div>
+  <div class="bottom-guide"><img src="./mascot.png" class="mascot mini" alt=""><div>揀完就去<br><b>揀盲盒啦！</b></div></div>
+</section>
+
+<section id="companion" class="screen">
+  <header class="topbar"><button class="round back" data-go="type">‹</button><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><span class="count">2/3</span></header>
+  <div class="paint-title">同邊個一齊去最好玩？</div>
+  <p class="hintline">揀一個旅伴，我哋會幫你配對更適合嘅目的地！</p>
+
+  <div class="people-grid">
+    <button class="people-card solo" data-companion="solo"><div class="people-art">👩🏻‍🦰✌🏻</div><b>自己一個</b><small>隨心出發・自由自在</small></button>
+    <button class="people-card couple" data-companion="couple"><div class="people-art">👩🏻‍❤️‍👨🏻</div><b>情侶 / 伴侶</b><small>浪漫・二人世界</small></button>
+    <button class="people-card friends" data-companion="friends"><div class="people-art">😎👩🏻👩🏻</div><b>朋友</b><small>一齊玩・更多可能</small></button>
+    <button class="people-card family" data-companion="family"><div class="people-art">👨‍👩‍👧‍👦</div><b>家庭</b><small>親子・溫馨時光</small></button>
+  </div>
+
+  <div class="orline">或者……</div>
+  <button class="captain-card" data-companion="captain"><img src="./mascot.png" class="mascot captain" alt=""><div><b>交俾小天線隊長</b><small>由我幫你決定最合適嘅組合！</small></div></button>
+</section>
+
+<section id="boxes" class="screen">
+  <header class="simple-head"><button class="round back" data-go="companion">‹</button><span></span></header>
+  <div class="boxes-title"><small>揀一個</small><strong>你心儀嘅盲盒！</strong><em>12個目的地<br>等你發掘！</em></div>
+  <div id="boxGrid" class="box-grid"></div>
+</section>
+
+<section id="reveal" class="screen reveal">
+  <div class="confetti-layer" aria-hidden="true"></div>
+  <div class="reveal-title">準備揭曉<br>你嘅下一站…</div>
+  <div class="countdown"><span>3</span><i>…</i><span>2</span><i>…</i><span>1</span></div>
+  <div class="openbox">
+    <div class="lid"></div>
+    <div class="boxface">?</div>
+    <img src="./mascot.png" class="mascot popup" alt="">
+  </div>
+  <div class="paper-note">Let the<br>adventure begin! ✈</div>
+</section>
+
+<section id="result" class="screen result">
+  <div class="result-label">你嘅下一站係…</div>
+  <div class="postcard">
+    <div class="stamp">✈</div>
+    <div class="city-name" id="cityName">京都</div>
+    <div class="city-en" id="cityEn">Kyoto, Japan</div>
+    <div class="hero-photo" id="heroPhoto"></div>
+    <div class="mini-photo tea">🍵</div>
+    <div class="mini-photo lane">🏮</div>
+    <img src="./mascot.png" class="mascot result-mascot" alt="">
+  </div>
+  <div class="reason-card">
+    <b>為你推薦嘅原因：</b>
+    <ul id="reasonList"></ul>
+  </div>
+  <button class="big-cta save" id="saveResult">保存結果 ♥</button>
+  <button class="again" data-go="boxes">↻ 再抽一次</button>
+</section>
+
+</main>
 <script src="./app.js"></script>
 </body>
 </html>
