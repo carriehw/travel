@@ -46,41 +46,30 @@
   </div>
 </section>
 
-<section id="conditions" class="screen">
-  <header class="topbar">
-    <button class="back" data-go="companion">‹</button>
-    <div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
-    <span class="count">3/8</span>
-  </header>
-  <div class="paint-title wide">設定你嘅旅程條件</div>
-  <p class="subtitle">話多啲俾我知，我會搵最啱嘅目的地！</p>
+<section id="conditions" class="screen master-screen master-conditions">
+  <div class="master-canvas master-canvas-conditions">
+    <img class="master-art" src="./assets/master/screen4.webp?v=12" alt="旅行條件設定定稿">
+    <button class="hotspot back-hotspot" data-go="companion" aria-label="返回"></button>
 
-  <div class="condition-panel">
-    <h3>🗓️ 旅行日數</h3>
-    <div class="seg days">
-      <button data-days="3">1–3日</button><button data-days="7">4–7日</button><button data-days="14">8–14日</button><button data-days="20">14日以上</button>
-    </div>
+    <button class="hotspot cond-hotspot day-1" data-days="3" aria-label="1至3日"></button>
+    <button class="hotspot cond-hotspot day-2" data-days="7" aria-label="4至7日"></button>
+    <button class="hotspot cond-hotspot day-3" data-days="14" aria-label="8至14日"></button>
+    <button class="hotspot cond-hotspot day-4" data-days="20" aria-label="14日以上"></button>
+
+    <button class="hotspot cond-hotspot dist-1" data-distance="short" aria-label="短途"></button>
+    <button class="hotspot cond-hotspot dist-2" data-distance="long" aria-label="長途"></button>
+
+    <button class="hotspot cond-hotspot budget-1" data-budget="1" aria-label="經濟預算"></button>
+    <button class="hotspot cond-hotspot budget-2" data-budget="2" aria-label="標準預算"></button>
+    <button class="hotspot cond-hotspot budget-3" data-budget="3" aria-label="豪華預算"></button>
+
+    <button class="hotspot cond-hotspot region-1" data-region="asia" aria-label="亞洲"></button>
+    <button class="hotspot cond-hotspot region-2" data-region="europe" aria-label="歐洲"></button>
+    <button class="hotspot cond-hotspot region-3" data-region="america" aria-label="美洲"></button>
+    <button class="hotspot cond-hotspot region-4" data-region="any" aria-label="其他地區"></button>
+
+    <button class="hotspot conditions-next-hotspot" id="conditionsNext" aria-label="下一步"></button>
   </div>
-  <div class="condition-panel">
-    <h3>✈️ 旅行距離</h3>
-    <div class="distance-row">
-      <button data-distance="short"><span class="radio">✓</span><b>短途</b><small>亞洲・3–5小時內</small></button>
-      <button data-distance="long"><span class="radio"></span><b>長途</b><small>其他地區・5小時以上</small></button>
-    </div>
-  </div>
-  <div class="condition-panel">
-    <h3>🪙 預算（每人）</h3>
-    <div class="seg budget">
-      <button data-budget="1">經濟<small>HK$3,000以下</small></button><button data-budget="2">標準<small>HK$3,000–8,000</small></button><button data-budget="3">豪華<small>HK$8,000以上</small></button>
-    </div>
-  </div>
-  <div class="condition-panel">
-    <h3>🌎 地區偏好</h3>
-    <div class="region-grid">
-      <button data-region="asia">⛩️ 亞洲</button><button data-region="europe">🗼 歐洲</button><button data-region="america">🗽 美洲</button><button data-region="oceania">🌊 大洋洲</button><button data-region="middleeast">🕌 中東</button><button data-region="any">🌴 其他</button>
-    </div>
-  </div>
-  <button class="primary-btn sticky-next" id="conditionsNext">下一步 →</button>
 </section>
 
 <section id="visited" class="screen">
