@@ -1,21 +1,50 @@
-# 飛啦喂！ Web App v8
+# 飛啦喂！ Web App — v20 Golden Master Rebuild
 
-以最新確認的 Playful Pastel 視覺稿為基礎重製的可玩 Web App prototype。
+目前 v19 只保留作 technical prototype。v20 進入 **Golden Master-led production**：先逐頁還原已確認設計，再加入功能與動畫。
 
-## Design direction
-- 暖米白底 + Coral / Powder Blue / Mint / Butter Yellow / Lilac
-- 避免規整 SaaS 卡片感，改用 sticker、手繪路線、便條紙、postcard、盲盒
-- 小天線隊長固定：薄荷綠身體、藍色背包、2 手、2 腳、2 條天線
-- Slogan 固定：**You only live once, 人生得一次，仲等咩？飛啦喂！**
+## Non-negotiables
+- 8 張 Golden Master 為最高視覺準則
+- 不准重畫／改色小天線隊長
+- 不准將插畫式版面變成 generic app cards
+- 不准用低清 full-page screenshot 拉伸充當 UI
+- Screen 1 未過 Visual QA，不進 Screen 2
+- 每頁使用 Reference / Live / 50% Overlay 驗收
 
-## Flow
-首頁 → 玩法 → 旅伴 → 日數/預算 → 旅行類型 → Concern → 旅行記憶 → 配對 → 12 個盲盒 → Reveal → 結果原因
+## Confirmed product scope
+- 首頁 → 旅行類型 → 旅伴 → 條件 → Concern / 偏好 → 已去過 / 排除
+- 智能配對 → 12 個盲盒 → Reveal → Result
+- visited / exclude / anti-repeat
+- 暫不開放 itinerary planning
+- Slogan：**You only live once, 人生得一次，仲等咩？飛啦喂！**
 
-## MVP scope
-- 有 anti-repeat / visited / exclude logic
-- 有動畫與盲盒互動
-- 暫時沒有 itinerary planning
-- 純 HTML/CSS/JS，無需 build step
+## Production docs
+- [Production Bible](docs/00_PRODUCTION_BIBLE.md)
+- [Role Matrix](docs/01_ROLE_MATRIX.md)
+- [Acceptance Criteria](docs/02_ACCEPTANCE_CRITERIA.md)
+- [Handoff Workflow](docs/03_HANDOFF_WORKFLOW.md)
+- [Screen 1 Asset Inventory](docs/04_SCREEN1_ASSET_INVENTORY.md)
+- [Latest checkpoint](docs/checkpoints/2026-10-07_v19_AUDIT.md)
 
-## Run
-直接用 web server 開 `feilawei/index.html`；手機正式測試建議用 HTTPS host，而唔係 iOS 文件預覽器。
+## Project-local skills
+- [Golden Master Visual Fidelity](skills/golden-master-visual-fidelity/SKILL.md)
+- [UX Flow Review](skills/ux-flow-review/SKILL.md)
+- [Web App Engineering](skills/webapp-engineering/SKILL.md)
+- [Motion & Interaction](skills/motion-interaction/SKILL.md)
+- [Asset Pipeline](skills/asset-pipeline/SKILL.md)
+- [QA & Release](skills/qa-release/SKILL.md)
+
+## Team workstreams
+GitHub master issue: #11
+
+Subtasks:
+- #5 Visual / Illustration
+- #6 UX / Product
+- #7 Motion / Interaction
+- #8 Web Engineering
+- #9 Visual + Functional QA
+- #10 Cantonese Copy + Accessibility
+
+## Current next step
+**Screen 1 only**: exact asset preparation → coordinate spec → engineering → overlay QA.
+
+Do not patch v19 visual layout further.
