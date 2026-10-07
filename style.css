@@ -209,3 +209,7 @@
 @media(prefers-reduced-motion:reduce){
  .master-confetti i,.reveal-glow,.master-screen.active .master-art{animation:none!important}
 }
+
+.master-canvas-boxes{aspect-ratio:264/461;}
+.master-canvas-reveal{aspect-ratio:257/461;}
+.master-canvas-result{aspect-ratio:259/461;}
