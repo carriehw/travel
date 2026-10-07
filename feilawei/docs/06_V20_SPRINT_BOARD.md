@@ -33,11 +33,11 @@
 
 ### Engineering
 - [ ] Remove v19 native approximation from production path
-- [ ] Build 390px fixed artboard architecture
+- [x] Build 390px fixed artboard architecture
 - [ ] Use exact artwork layers
-- [ ] Add CTA interaction overlay
-- [ ] Safe-area handling
-- [ ] No height-based stretching
+- [x] Add CTA interaction overlay
+- [x] Safe-area handling
+- [x] No height-based stretching
 
 ### QA
 - [ ] 375px
