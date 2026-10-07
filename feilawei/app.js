@@ -51,7 +51,7 @@ document.addEventListener("click",e=>{
  const v=e.target.closest("[data-vibe]"); if(v){state.vibe=v.dataset.vibe;sel("[data-vibe]",v);setTimeout(()=>go("companion"),260)}
  const c=e.target.closest("[data-companion]"); if(c){state.companion=c.dataset.companion;sel("[data-companion]",c);setTimeout(()=>go("conditions"),260)}
  const d=e.target.closest("[data-days]"); if(d){state.days=+d.dataset.days;sel("[data-days]",d)}
- const dist=e.target.closest("[data-distance]"); if(dist){state.distance=dist.dataset.distance;sel("[data-distance]",dist);$("[data-distance='short'] .radio").textContent=state.distance==="short"?"✓":"";$("[data-distance='long'] .radio").textContent=state.distance==="long"?"✓":""}
+ const dist=e.target.closest("[data-distance]"); if(dist){state.distance=dist.dataset.distance;sel("[data-distance]",dist)}
  const b=e.target.closest("[data-budget]"); if(b){state.budget=+b.dataset.budget;sel("[data-budget]",b)}
  const r=e.target.closest("[data-region]"); if(r){const val=r.dataset.region;if(val==="any"){state.regions=["any"];$$("[data-region]").forEach(x=>x.classList.remove("active"));r.classList.add("active")}else{state.regions=state.regions.filter(x=>x!=="any");r.classList.toggle("active");state.regions=r.classList.contains("active")?[...new Set([...state.regions,val])]:state.regions.filter(x=>x!==val);if(!state.regions.length)state.regions=["asia"]}}
  const q=e.target.closest("[data-q]"); if(q){const key=q.dataset.q,val=q.dataset.value;state.advanced[key]=val;q.closest(".qchips").querySelectorAll("button").forEach(x=>x.classList.remove("active"));q.classList.add("active")}
@@ -83,11 +83,37 @@ function renderPlaceGrid(filter=""){const grid=$("#placeGrid");const list=memory
 $("#memoryNext").onclick=()=>{buildPool();go("boxes")};
 function score(p){if(state.excluded.includes(p.country))return-9999;let s=0;if(state.regions.includes("any")||state.regions.includes(p.region))s+=26;else s-=12;if(state.distance===p.distance)s+=24;else s-=10;s+=12-Math.abs(state.budget-p.budget)*6;if(state.days>=p.days[0]&&state.days<=p.days[1])s+=18;else s-=Math.min(14,Math.abs(state.days-(p.days[0]+p.days[1])/2)*2);if(p.vibes.includes(state.vibe))s+=30;if(state.vibe==="surprise")s+=10;const a=state.advanced;if(a.weather!=="any"&&p.climate.includes(a.weather))s+=8;if(a.walk==="low")s-=p.walk*3;if(a.walk==="high")s+=p.walk*2;if(a.elderly==="yes")s+=p.elderly*4;if(a.kids==="yes")s+=p.kids*4;if(a.safety==="night")s+=p.safety*4;if(state.visited.includes(p.country))s-=36;const recent=JSON.parse(localStorage.getItem("flw_recent")||"[]"),ix=recent.indexOf(p.id);if(ix>=0)s-=Math.max(10,34-ix*4);return s+Math.random()*8}
 function buildPool(){const ranked=places.map(p=>({p,s:score(p)})).filter(x=>x.s>-9000).sort((a,b)=>b.s-a.s);const chosen=[],countries={};for(const x of ranked){if((countries[x.p.country]||0)>=3)continue;chosen.push(x.p);countries[x.p.country]=(countries[x.p.country]||0)+1;if(chosen.length===12)break}ranked.forEach(x=>{if(chosen.length<12&&!chosen.includes(x.p))chosen.push(x.p)});state.pool=chosen.sort(()=>Math.random()-.5);renderBoxes()}
-function renderBoxes(){$("#boxGrid").innerHTML=state.pool.map((p,i)=>`<button class="blindbox" data-box="${i}" style="background:${boxColors[i%boxColors.length]};animation-delay:-${i*.23}s">?<span>${boxHints[i%boxHints.length]}</span></button>`).join("")}
-function startReveal(){go("reveal");confetti();setTimeout(()=>{state.result=state.pool[state.selected]||state.pool[0];rememberRecent();renderResult();go("result")},3000)}
-function confetti(){const f=$("#confettiField");f.innerHTML="";for(let i=0;i<45;i++){const n=document.createElement("i");n.style.left=Math.random()*100+"%";n.style.background=boxColors[i%boxColors.length];n.style.animationDelay=Math.random()*.55+"s";f.appendChild(n)}}
+function renderBoxes(){
+   const grid=$("#boxGrid");
+   grid.innerHTML=state.pool.slice(0,12).map((p,i)=>`<button class="master-box-hit" data-box="${i}" aria-label="盲盒 ${i+1}"></button>`).join("");
+ }
+ function startReveal(){
+   go("reveal");
+   confetti();
+   setTimeout(()=>{
+     state.result=state.pool[state.selected]||state.pool[0]||places[0];
+     rememberRecent();
+     renderResult();
+     go("result");
+   },2850)
+ }
+ function confetti(){const f=$("#confettiField");f.innerHTML="";for(let i=0;i<45;i++){const n=document.createElement("i");n.style.left=Math.random()*100+"%";n.style.background=boxColors[i%boxColors.length];n.style.animationDelay=Math.random()*.55+"s";f.appendChild(n)}}
 function rememberRecent(){let a=JSON.parse(localStorage.getItem("flw_recent")||"[]");a=[state.result.id,...a.filter(x=>x!==state.result.id)].slice(0,12);localStorage.setItem("flw_recent",JSON.stringify(a))}
-function renderResult(){const p=state.result;$("#resultCity").textContent=p.name;$("#resultEn").textContent=p.en;$("#resultHero").style.backgroundImage=`url('${p.hero}')`;$("#resultMini1").style.backgroundImage=`url('${p.mini1||p.hero}')`;$("#resultMini2").style.backgroundImage=`url('${p.mini2||p.hero}')`;const reasons=[];if(p.vibes.includes(state.vibe))reasons.push("最啱你今次揀嘅旅程類型");if(state.distance===p.distance)reasons.push(state.distance==="short"?"航程符合你想要嘅短途節奏":"你接受長途，呢個目的地值得飛遠少少");if(state.days>=p.days[0]&&state.days<=p.days[1])reasons.push("同你預留嘅旅行日數幾吻合");if(state.visited.includes(p.country)===false)reasons.push("今次冇被你標記做已去過／排除");if(state.advanced.elderly==="yes"&&p.elderly>=4)reasons.push("有長者同行時較容易安排舒服行程");if(state.advanced.kids==="yes"&&p.kids>=4)reasons.push("親子友善度較高");while(reasons.length<4)reasons.push(["美食、文化同體驗夠豐富","交通同旅遊配套相對方便","整體配對分數喺候選池中較高","有少少驚喜，又唔會太離地"][reasons.length]);$("#reasons").innerHTML=reasons.slice(0,4).map(r=>`<li>✅ ${r}</li>`).join("")}
-$("#reroll").onclick=()=>{buildPool();go("boxes")};
-$("#saveResult").onclick=()=>{if(!state.result)return;let a=JSON.parse(localStorage.getItem("flw_saved")||"[]");if(!a.includes(state.result.id))a.push(state.result.id);localStorage.setItem("flw_saved",JSON.stringify(a));$("#saveResult").textContent="✓ 已保存結果";toast("幫你記低咗 ❤️")};
+function renderResult(){
+   const p=state.result||places[0];
+   $("#result").setAttribute("aria-label",`旅行結果：${p.name} ${p.en}`);
+   $("#resultCity").textContent=p.name;
+   $("#resultEn").textContent=p.en;
+   const reasons=[];
+   if(p.vibes.includes(state.vibe))reasons.push("最啱你今次揀嘅旅程類型");
+   if(state.distance===p.distance)reasons.push(state.distance==="short"?"航程符合你想要嘅短途節奏":"你接受長途，呢個目的地值得飛遠少少");
+   if(state.days>=p.days[0]&&state.days<=p.days[1])reasons.push("同你預留嘅旅行日數幾吻合");
+   if(!state.visited.includes(p.country))reasons.push("今次冇被你標記做已去過／排除");
+   if(state.advanced.elderly==="yes"&&p.elderly>=4)reasons.push("有長者同行時較容易安排舒服行程");
+   if(state.advanced.kids==="yes"&&p.kids>=4)reasons.push("親子友善度較高");
+   while(reasons.length<4)reasons.push(["美食、文化同體驗夠豐富","交通同旅遊配套相對方便","整體配對分數喺候選池中較高","有少少驚喜，又唔會太離地"][reasons.length]);
+   $("#reasons").innerHTML=reasons.slice(0,4).map(r=>`<li>✅ ${r}</li>`).join("");
+ }
+ $("#reroll").onclick=()=>{buildPool();go("boxes")};
+$("#saveResult").onclick=()=>{if(!state.result)return;let a=JSON.parse(localStorage.getItem("flw_saved")||"[]");if(!a.includes(state.result.id))a.push(state.result.id);localStorage.setItem("flw_saved",JSON.stringify(a));$("#saveResult").classList.add("saved");toast("幫你記低咗 ❤️")};
 initDefaults();renderPlaceGrid();
