@@ -72,21 +72,21 @@
   </div>
 </section>
 
-<section id="visited" class="screen">
-  <header class="topbar">
-    <button class="back" data-go="conditions">‹</button>
-    <div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
-    <span class="count">4/8</span>
-  </header>
-  <div class="paint-title wide small-title">有冇去過 / 唔想去嘅地方？</div>
-  <p class="subtitle">揀返去過嘅地方，或者今次唔想去嘅目的地！</p>
-  <div class="searchbar">🔍 <input id="placeSearch" placeholder="搜尋國家／城市（例如：日本、曼谷）"></div>
-  <div class="memory-modes">
-    <button id="modeVisited" class="active">✓ 我去過 <b id="visitedCount">0</b></button>
-    <button id="modeExcluded">✕ 今次唔想去 <b id="excludedCount">0</b></button>
+<section id="visited" class="screen master-screen master-visited">
+  <div class="master-canvas master-canvas-visited">
+    <img class="master-art" src="./assets/master/screen5.webp?v=12" alt="去過及排除地方定稿">
+    <button class="hotspot back-hotspot" data-go="conditions" aria-label="返回"></button>
+
+    <input id="placeSearch" class="master-search-input" aria-label="搜尋國家或城市" placeholder="">
+    <button class="hotspot memory-mode-hotspot memory-mode-visited active" id="modeVisited" aria-label="我去過"></button>
+    <button class="hotspot memory-mode-hotspot memory-mode-excluded" id="modeExcluded" aria-label="今次唔想去"></button>
+
+    <div id="placeGrid" class="master-place-grid"></div>
+    <button class="hotspot memory-next-hotspot" id="memoryNext" aria-label="開始配對"></button>
+
+    <span id="visitedCount" class="master-count master-count-visited">0</span>
+    <span id="excludedCount" class="master-count master-count-excluded">0</span>
   </div>
-  <div id="placeGrid" class="place-grid"></div>
-  <button id="memoryNext" class="memory-tip"><img src="./mascot.png?v=13" class="mascot tiny" alt=""><span>揀好去過／唔想去嘅地方<br><b>我會幫你避開佢哋！ →</b></span></button>
 </section>
 
 <section id="boxes" class="screen">
