@@ -11,68 +11,39 @@
 <body>
 <main class="app">
 
-<section id="home" class="screen active home">
-  <div class="edge-flower ef-yellow">•ᴗ•</div>
-  <div class="edge-flower ef-pink">•ᴗ•</div>
-  <div class="edge-blob eb-blue"></div>
-  <div class="edge-blob eb-green"></div>
-  <div class="brand">飛啦喂！ <span>🪐</span><small>外星旅人・地球導遊</small></div>
-  <h1 class="hero-title">想去邊<span class="blue">？</span><br>抽咗<span class="coral">先算</span><span class="blue">。</span></h1>
-  <div class="underline"></div>
-
-  <div class="home-stage">
-    <img src="./mascot.png?v=13" alt="小天線隊長" class="mascot hero-mascot">
-    <div class="lets">LET'S<br>GO!</div>
-    <svg class="route" viewBox="0 0 360 170" aria-hidden="true"><path d="M33 124 C89 155 131 100 184 112 C225 123 245 94 307 81"/></svg>
-    <div class="plane-orb">✈</div>
-
-    <div class="home-step hs-a"><span>📋</span><b>揀條件</b><small>話你知想點玩</small></div>
-    <div class="home-step hs-b"><span>🎁</span><b>揀盲盒</b><small>揀你心儀嘅盒</small></div>
-    <div class="home-step hs-c"><span>✈</span><b>揭曉下一站</b><small>睇吓去邊！</small></div>
+<section id="home" class="screen active master-screen master-home">
+  <div class="master-canvas master-canvas-home">
+    <img class="master-art" src="./assets/master/screen1.webp?v=12" alt="飛啦喂首頁定稿">
+    <button class="hotspot home-start" data-go="travelType" aria-label="開始飛啦"></button>
+    <span class="motion-spark spark-one">✦</span>
+    <span class="motion-spark spark-two">✦</span>
   </div>
-
-  <button class="primary-btn" data-go="travelType">開始飛啦 ✈ <i>→</i></button>
-  <div class="slogan"><em>You only live once</em><b>人生得一次，仲等咩？飛啦喂！</b></div>
 </section>
 
-<section id="travelType" class="screen">
-  <header class="topbar">
-    <button class="back" data-go="home">‹</button>
-    <div class="progress"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
-    <span class="count">1/8</span>
-  </header>
-  <div class="paint-title">你想要<br>咩類型嘅旅程？</div>
-  <p class="subtitle">揀一個最啱你嘅感覺就得！</p>
-  <div class="type-grid">
-    <button class="type-card chill" data-vibe="relax"><div class="illus palm"><i></i><i></i><b>☀</b></div><strong>Chill 放鬆</strong><small>海島・陽光・慢活</small></button>
-    <button class="type-card city" data-vibe="city"><div class="illus skyline"><i></i><i></i><i></i></div><strong>城市探索</strong><small>文化・美食・打卡</small></button>
-    <button class="type-card nature" data-vibe="nature"><div class="illus mountains"><i></i><i></i><i></i></div><strong>自然風景</strong><small>山川・湖泊・大自然</small></button>
-    <button class="type-card food" data-vibe="food"><div class="illus ramen"><span>🍜</span></div><strong>美食之旅</strong><small>地道・餐廳・市場</small></button>
-    <button class="type-card heal" data-vibe="heal"><div class="illus onsen"><span>♨</span></div><strong>療癒放空</strong><small>溫泉・慢遊・Recharge</small></button>
-    <button class="type-card surprise" data-vibe="surprise"><div class="illus map"><span>🗺️</span></div><strong>隨機驚喜</strong><small>交俾命運！</small></button>
+<section id="travelType" class="screen master-screen master-type">
+  <div class="master-canvas master-canvas-type">
+    <img class="master-art" src="./assets/master/screen2.webp?v=12" alt="旅程類型定稿">
+    <button class="hotspot back-hotspot" data-go="home" aria-label="返回"></button>
+    <button class="hotspot type-hotspot type-1" data-vibe="relax" aria-label="Chill 放鬆"></button>
+    <button class="hotspot type-hotspot type-2" data-vibe="city" aria-label="城市探索"></button>
+    <button class="hotspot type-hotspot type-3" data-vibe="nature" aria-label="自然風景"></button>
+    <button class="hotspot type-hotspot type-4" data-vibe="food" aria-label="美食之旅"></button>
+    <button class="hotspot type-hotspot type-5" data-vibe="heal" aria-label="療癒放空"></button>
+    <button class="hotspot type-hotspot type-6" data-vibe="surprise" aria-label="隨機驚喜"></button>
+    <span class="motion-spark type-spark">✦</span>
   </div>
-  <div class="peek-note"><img src="./mascot.png?v=13" class="mascot peek" alt=""><div>揀完就去<br><b>揀盲盒啦！</b></div></div>
 </section>
 
-<section id="companion" class="screen">
-  <header class="topbar">
-    <button class="back" data-go="travelType">‹</button>
-    <div class="progress"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
-    <span class="count">2/8</span>
-  </header>
-  <div class="paint-title wide">同邊個一齊去最好玩？</div>
-  <p class="subtitle">揀一個旅伴，我哋會幫你配對更適合嘅目的地！</p>
-  <div class="people-grid">
-    <button class="people-card solo" data-companion="solo"><div class="portrait">👩🏻‍🦰✌🏻</div><strong>自己一個</strong><small>隨心出發・自由自在</small></button>
-    <button class="people-card couple" data-companion="couple"><div class="portrait">👩🏻‍❤️‍👨🏻</div><strong>情侶 / 伴侶</strong><small>浪漫・二人世界</small></button>
-    <button class="people-card friends" data-companion="friends"><div class="portrait">😎👩🏻👩🏻</div><strong>朋友</strong><small>一齊玩・更多可能</small></button>
-    <button class="people-card family" data-companion="family"><div class="portrait">👨‍👩‍👧‍👦</div><strong>家庭</strong><small>親子・溫馨時光</small></button>
+<section id="companion" class="screen master-screen master-companion">
+  <div class="master-canvas master-canvas-companion">
+    <img class="master-art" src="./assets/master/screen3.webp?v=12" alt="旅伴選擇定稿">
+    <button class="hotspot back-hotspot" data-go="travelType" aria-label="返回"></button>
+    <button class="hotspot companion-hotspot companion-1" data-companion="solo" aria-label="自己一個"></button>
+    <button class="hotspot companion-hotspot companion-2" data-companion="couple" aria-label="情侶或伴侶"></button>
+    <button class="hotspot companion-hotspot companion-3" data-companion="friends" aria-label="朋友"></button>
+    <button class="hotspot companion-hotspot companion-4" data-companion="family" aria-label="家庭"></button>
+    <button class="hotspot companion-hotspot companion-5" data-companion="captain" aria-label="交俾小天線隊長"></button>
   </div>
-  <div class="or">或者……</div>
-  <button class="captain-choice" data-companion="captain">
-    <img src="./mascot.png?v=13" class="mascot captain" alt="">
-    <div><strong>交俾小天線隊長</strong><small>由我幫你決定最合適嘅組合！</small></div>
-  </button>
 </section>
 
 <section id="conditions" class="screen">
