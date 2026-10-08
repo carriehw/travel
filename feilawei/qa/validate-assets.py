@@ -37,6 +37,7 @@ def validate():
 
     reference = manifest["reference"]
     path = local_file(reference["path"])
+    source_review = {"verified": False, "records": []}
     if path is None:
         fail("CANONICAL_REFERENCE_MISSING", reference["path"])
     else:
@@ -48,6 +49,42 @@ def validate():
             check_hash(path, reference.get("sha256"), "Golden Master")
         except Exception as error:
             fail("REFERENCE_CORRUPT", str(error))
+
+        provenance = local_file(reference.get("provenance"))
+        if provenance is None:
+            fail("REFERENCE_PROVENANCE_MISSING", "Record the approved original and exact crop")
+        else:
+            before = len(issues)
+            try:
+                records = json.loads(provenance.read_text())["assets"]
+                sources = {}
+                for record in records:
+                    original = local_file(record["path"])
+                    if original is None:
+                        raise ValueError("Missing source: " + record["path"])
+                    check_hash(original, record["sha256"], record["id"])
+                    with Image.open(original) as image:
+                        image.load()
+                        if image.size != (record["width"], record["height"]):
+                            raise ValueError("Source dimensions changed: " + record["id"])
+                    sources[record["id"]] = (record, original)
+                    source_review["records"].append({
+                        "id": record["id"], "path": record["path"],
+                        "sha256": record["sha256"],
+                        "pixels": [record["width"], record["height"]],
+                    })
+                home, restored = sources["home_master_clean"]
+                _, master = sources[home["derivedFrom"]]
+                if restored != path:
+                    raise ValueError("Canonical source record points to a different file")
+                with Image.open(master) as original, Image.open(path) as restored_image:
+                    crop = original.crop(tuple(home["crop"])).convert("RGB")
+                    if crop.size != restored_image.size or crop.tobytes() != restored_image.convert("RGB").tobytes():
+                        raise ValueError("Restored reference differs from the recorded original crop")
+                source_review["verified"] = len(issues) == before
+                source_review["cropPixelsIdentical"] = True
+            except Exception as error:
+                fail("REFERENCE_PROVENANCE_INVALID", str(error))
 
     if manifest.get("schemaVersion") != 1 or any(
         manifest["design"].get(key) != value
@@ -120,6 +157,7 @@ def validate():
     return {
         "status": "FAIL" if issues else "READY_FOR_VISUAL_QA",
         "note": "Asset integrity is not visual sign-off.",
+        "referenceSources": source_review,
         "issues": issues, "assets": assets,
     }
 

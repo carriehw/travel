@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "sharedConversationURL": "https://chatgpt.com/share/6ac76157-837c-83e8-975d-c0fbfce0fb75",
+  "recoveredOn": "2026-10-08",
+  "assets": [
+    {
+      "id": "six_screen_master",
+      "path": "assets/reference/six-screen-master.png",
+      "width": 1024,
+      "height": 1536,
+      "sedimentFileID": "file_00000000406482108ac0663302b7050e",
+      "sourceMessageID": "3a5f3259-554b-47a6-8fff-8f98b8c38bd4",
+      "approvalMessageID": "c18d682c-7196-49aa-ad58-7a60ff064ce1",
+      "sha256": "d537571d64c2cf18b3df93f77ea41539cb6dfbbe49c70d742e6dbc182a63aca0",
+      "bytes": 2175424
+    },
+    {
+      "id": "character_sheet",
+      "path": "assets/reference/小天線隊長旅行角色設定圖.png",
+      "width": 1122,
+      "height": 1402,
+      "sedimentFileID": "file_00000000920c82109429e922e86d536a",
+      "sourceMessageID": "64fe9343-7a29-4273-b28f-f921ecb7e7a3",
+      "approvalMessageID": "b1c40858-e08c-45bc-8e9c-7260a7508e9c",
+      "note": "Confirmed revision distinguishing waving and pointing in the standard-actions row.",
+      "sha256": "e8cd3f557f2372521316448d0d808aa18efe6fe0971bac45b4f91bf6907d1fe0",
+      "bytes": 1686791
+    },
+    {
+      "id": "home_master_clean",
+      "path": "assets/reference/home_master_clean.png",
+      "width": 345,
+      "height": 697,
+      "derivedFrom": "six_screen_master",
+      "crop": [
+        7,
+        38,
+        352,
+        735
+      ],
+      "cropRecipeMessageID": "596ab74d-ffdb-426a-8ceb-7ff822f245dd",
+      "note": "Restored from the recorded crop. All RGB pixels match the original master region; this encoding is newly written, not a recovered standalone file. The recorded crop clips the bottom slogan.",
+      "sha256": "13efab862908a1cede56194573ce07b7140f75d8bba7d87c4a1e39f8345f3c92",
+      "bytes": 319999
+    }
+  ]
+}

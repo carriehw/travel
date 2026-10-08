@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Screen 1 recovered source review — blocked</title>
+<style>
+body{margin:24px;font:16px/1.5 system-ui;color:#262626;background:#fafafa}
+h1{font-size:24px}strong{color:#9c2626}p{max-width:920px}
+select{font:inherit}.panels{display:flex;align-items:flex-start;gap:20px;overflow:auto;margin:20px 0}
+figure{margin:0;flex:none;width:390px}figcaption{min-height:80px;margin-bottom:10px;max-width:430px}
+figure img{display:block;width:100%;height:auto;border:1px solid #ccc}
+.detail{max-width:100%;height:auto}.note{font-size:14px}
+</style>
+<h1>Recovered originals — Screen 1 source review</h1>
+<p><strong>Production remains blocked. These are source previews, not Live UI or a visual PASS.</strong>
+The approved source pixels have not been redrawn, sharpened or upscaled into production assets.</p>
+<label>Display width <select id="width"><option>375</option><option selected>390</option><option>393</option><option>430</option></select> CSS px</label>
+<div class="panels">
+<figure><figcaption>Recorded canonical crop — 345×697<br>The lower boundary clips the slogan.</figcaption>
+<img src="../../../assets/reference/home_master_clean.png" alt="Recovered recorded homepage crop with its original clipped footer"></figure>
+<figure><figcaption>Complete-footer proposal — 345×712<br>Original pixels, lower edge extended by 15px; not integrated.</figcaption>
+<img src="home-complete-footer-proposal.png" alt="Proposed crop of the same original with the complete footer"></figure>
+</div>
+<p>At 390px, the proposal requires an artboard height of 804.87px rather than the locked 788.4px.
+Other source pixels remain at the same coordinates. Production geometry has not changed.</p>
+<h2>Current footer boundary</h2>
+<p>The red line is original master row 735. This detail uses nearest-neighbour 3× magnification for QA.</p>
+<img class="detail" src="source-footer-boundary.png" alt="Magnified footer source with a red line through the current crop boundary">
+<h2>Character source resolution</h2>
+<p>The sheet is 1122×1402, but the raw hero region below is only 360×380 and includes adjacent marks.
+The production frame requires at least 459×489 native pixels at 430px. It has no approved alpha extraction.
+Resizing a smaller crop to a larger file does not create native Retina detail.</p>
+<img src="character-native-crop.png" width="360" height="380" alt="Native character sheet region, shown at its original pixel dimensions">
+<p class="note">Sources: <a href="../../../assets/reference/source_provenance.json">provenance and hashes</a> ·
+<a href="source-audit.json">native-resolution audit</a> · <a href="index.html">Reference / Live / 50% Overlay</a> ·
+<a href="../../12_SCREEN1_SOURCE_RECOVERY.md">source recovery report</a>.</p>
+<script>
+document.getElementById("width").onchange=event=>{
+  document.querySelectorAll("figure").forEach(figure=>figure.style.width=event.target.value+"px");
+};
+</script>
+</html>

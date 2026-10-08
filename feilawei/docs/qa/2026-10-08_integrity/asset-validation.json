@@ -1,0 +1,100 @@
+{
+  "status": "FAIL",
+  "note": "Asset integrity is not visual sign-off.",
+  "referenceSources": {
+    "verified": true,
+    "records": [
+      {
+        "id": "six_screen_master",
+        "path": "assets/reference/six-screen-master.png",
+        "sha256": "d537571d64c2cf18b3df93f77ea41539cb6dfbbe49c70d742e6dbc182a63aca0",
+        "pixels": [
+          1024,
+          1536
+        ]
+      },
+      {
+        "id": "character_sheet",
+        "path": "assets/reference/小天線隊長旅行角色設定圖.png",
+        "sha256": "e8cd3f557f2372521316448d0d808aa18efe6fe0971bac45b4f91bf6907d1fe0",
+        "pixels": [
+          1122,
+          1402
+        ]
+      },
+      {
+        "id": "home_master_clean",
+        "path": "assets/reference/home_master_clean.png",
+        "sha256": "13efab862908a1cede56194573ce07b7140f75d8bba7d87c4a1e39f8345f3c92",
+        "pixels": [
+          345,
+          697
+        ]
+      }
+    ],
+    "cropPixelsIdentical": true
+  },
+  "issues": [
+    {
+      "severity": "Major",
+      "code": "ASSETS_NOT_SIGNED_OFF",
+      "detail": "Asset integration has not passed source review"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "decorations"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "brand"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "title"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "mascot"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "letsgo"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "route"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "condition"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "blindbox"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "reveal"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "cta"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "slogan"
+    }
+  ],
+  "assets": []
+}

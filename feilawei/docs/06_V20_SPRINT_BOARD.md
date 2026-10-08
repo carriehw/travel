@@ -14,6 +14,8 @@
 ### Visual / Asset
 - [x] Canonical Screen 1 reference identified
 - [x] High-resolution character sheet identified
+- [x] Approved original board and confirmed character-sheet bytes recovered and hashed
+- [x] Recorded canonical crop restored and verified pixel-for-pixel
 - [ ] Final exact home-pose mascot production asset
 - [ ] Brand/title/LET'S GO asset decision
 - [ ] Step icon asset decision
@@ -40,6 +42,7 @@
 - [x] No height-based stretching
 - [x] Correct 824px scaffold height to approved 788.4px
 - [x] Atomic layer loading with missing/corrupt/Retina asset guard
+- [x] Verify fetched layer SHA-256 and provenance; decode the verified bytes
 - [x] Reproducible capture and Reference / Live / 50% Overlay tooling
 
 ### QA
@@ -56,9 +59,10 @@
 
 Engineering verification is logged separately in the latest checkpoint.
 The four viewport checkboxes above remain unchecked for **visual sign-off**:
-the canonical reference and all production layers are absent.
-The diagnostic Reference / Live / Overlay viewer is available, but its old
-reference is explicitly unverified and does not satisfy Golden Master QA.
+the production layers are absent, native source resolution is insufficient and
+the recorded reference crop clips the footer. The approved reference and
+character sheet are now recovered. The latest Reference / Live / Overlay viewer
+uses the verified canonical crop; its real blocked Live still fails visual QA.
 Screen 1 remains FAIL; Screen 2 and staging promotion remain blocked.
 
 ## Gate

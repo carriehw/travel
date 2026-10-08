@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const http = require("node:http");
+const { createHash } = require("node:crypto");
 const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 
 const root = path.resolve(__dirname, "..");
@@ -130,18 +131,21 @@ async function controls(browser, engine, base) {
   const manifest = JSON.parse(await fs.readFile(path.join(root, "assets/v20/screen01_manifest.json"), "utf8"));
   manifest.approval.assetsReady = true;
   manifest.reference.sha256 = "0".repeat(64);
+  const fixtures = new Map();
   for (const layer of manifest.layers) {
     layer.kind = "vector";
     layer.file = "./assets/v20/qa-fixture-" + layer.id + ".svg";
+    const [, , w, h] = layer.box;
+    const body = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h +
+      '"><rect width="' + w + '" height="' + h + '" fill="#eee"/></svg>';
+    fixtures.set(layer.id, body);
+    layer.sha256 = createHash("sha256").update(body).digest("hex");
+    layer.source = "Synthetic QA rectangle; not approved artwork";
   }
   await page.route("**/screen01_manifest.json?*", route => route.fulfill({ json: manifest }));
   await page.route("**/qa-fixture-*.svg?*", route => {
     const id = new URL(route.request().url()).pathname.split("qa-fixture-")[1].split(".")[0];
-    const layer = manifest.layers.find(value => value.id === id);
-    const [, , w, h] = layer.box;
-    return route.fulfill({ contentType: "image/svg+xml", body:
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h +
-      '"><rect width="' + w + '" height="' + h + '" fill="#eee"/></svg>' });
+    return route.fulfill({ contentType: "image/svg+xml", body: fixtures.get(id) });
   });
   await check(engine + ": synthetic valid layers load atomically, tap once, keyboard and refresh", async () => {
     await page.addInitScript(() => {
@@ -154,6 +158,15 @@ async function controls(browser, engine, base) {
     await waitForHome(page);
     assert.equal((await geometry(page)).assetStatus.status, "ready");
     assert.equal(await page.locator("img").count(), 11);
+    // The verified Blob must remain drawable after its temporary URL is revoked.
+    const pixel = await page.locator('[data-layer="title"]').evaluate(image => {
+      const canvas = document.createElement("canvas");
+      canvas.width = canvas.height = 16;
+      const context = canvas.getContext("2d");
+      context.drawImage(image, 0, 0, 16, 16);
+      return [...context.getImageData(8, 8, 1, 1).data];
+    });
+    assert.deepEqual(pixel, [238, 238, 238, 255]);
     await page.waitForTimeout(300);
     const button = page.getByRole("button", { name: "開始飛啦" });
     await button.dispatchEvent("pointerdown");
@@ -178,14 +191,52 @@ async function controls(browser, engine, base) {
     assert.equal((await geometry(page)).disabled, false);
     assert.deepEqual(await page.evaluate(() => window.startEvents), []);
   });
+  await check(engine + ": replaced artwork bytes cannot enable CTA", async () => {
+    const original = fixtures.get("title");
+    fixtures.set("title", original.replace("#eee", "#fff"));
+    try {
+      await page.reload();
+      await waitForHome(page);
+      const result = await geometry(page);
+      assert.equal(result.assetStatus.status, "blocked");
+      assert.ok(result.assetStatus.issues.includes("LAYER_HASH_MISMATCH:title"));
+      assert.equal(result.imageCount, 0);
+      assert.equal(result.disabled, true);
+    } finally { fixtures.set("title", original); }
+  });
+  await check(engine + ": unlocked metadata prevents all artwork requests", async () => {
+    const title = manifest.layers.find(layer => layer.id === "title");
+    const original = { sha256: title.sha256, source: title.source };
+    title.sha256 = null;
+    title.source = "";
+    let requests = 0;
+    const count = request => { if (request.url().includes("qa-fixture-")) requests++; };
+    page.on("request", count);
+    try {
+      await page.reload();
+      await waitForHome(page);
+      const result = await geometry(page);
+      assert.ok(result.assetStatus.issues.includes("UNLOCKED_LAYER_HASH:title"));
+      assert.ok(result.assetStatus.issues.includes("MISSING_LAYER_PROVENANCE:title"));
+      assert.equal(result.assetStatus.status, "blocked");
+      assert.equal(result.disabled, true);
+      assert.equal(result.imageCount, 0);
+      assert.equal(requests, 0);
+    } finally {
+      Object.assign(title, original);
+      page.off("request", count);
+    }
+  });
   await check(engine + ": tiny raster cannot pass Retina readiness", async () => {
     const mascot = manifest.layers.find(layer => layer.id === "mascot");
-    const original = { file: mascot.file, kind: mascot.kind };
+    const original = { file: mascot.file, kind: mascot.kind, sha256: mascot.sha256 };
+    const tiny = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4//8/AwAI/AL+p5qgoAAAAABJRU5ErkJggg==", "base64");
     mascot.file = "./assets/v20/qa-small.png";
     mascot.kind = "raster";
+    mascot.sha256 = createHash("sha256").update(tiny).digest("hex");
     await page.route("**/qa-small.png?*", route => route.fulfill({
       contentType: "image/png",
-      body: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4//8/AwAI/AL+p5qgoAAAAABJRU5ErkJggg==", "base64"),
+      body: tiny,
     }));
     try {
       await page.reload();

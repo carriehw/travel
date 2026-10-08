@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const VERSION = "20.1";
+  const VERSION = "20.2";
   const DESIGN = Object.freeze({ width: 390, height: 788.4, maxWidth: 430 });
   const REQUIRED_LAYERS = [
     "decorations", "brand", "title", "mascot", "letsgo", "route",
@@ -56,6 +56,14 @@
           layer.file.includes("..")) {
         issues.push("MISSING_LAYER:" + layer.id);
       }
+      if (layer.file) {
+        if (!/^[a-f0-9]{64}$/.test(layer.sha256 || "")) {
+          issues.push("UNLOCKED_LAYER_HASH:" + layer.id);
+        }
+        if (typeof layer.source !== "string" || !layer.source.trim()) {
+          issues.push("MISSING_LAYER_PROVENANCE:" + layer.id);
+        }
+      }
       const [x, y, width, height] = layer.box || [];
       if (!Array.isArray(layer.box) || layer.box.length !== 4 ||
           !layer.box.every(Number.isFinite) ||
@@ -83,17 +91,31 @@
   }
 
   async function loadLayer(layer) {
+    const response = await fetch(layer.file + "?v=" + VERSION);
+    if (!response.ok) throw new Error("LAYER_HTTP_" + response.status + ":" + layer.id);
+    const bytes = await response.arrayBuffer();
+    const digest = await crypto.subtle.digest("SHA-256", bytes);
+    const hash = Array.from(new Uint8Array(digest), byte =>
+      byte.toString(16).padStart(2, "0")).join("");
+    if (hash !== layer.sha256) throw new Error("LAYER_HASH_MISMATCH:" + layer.id);
+
     const image = new Image();
     image.alt = "";
     image.className = "v20-art-layer";
     image.dataset.layer = layer.id;
     image.draggable = false;
     image.decoding = "async";
-    image.src = layer.file + "?v=" + VERSION;
+    // Decode exactly the verified response, without a second file request.
+    const extension = layer.file.split(".").pop();
+    const type = extension === "svg" ? "image/svg+xml" : "image/" + extension;
+    const url = URL.createObjectURL(new Blob([bytes], { type }));
+    image.src = url;
     try {
       await image.decode();
     } catch {
       throw new Error("LAYER_DECODE_FAILED:" + layer.id);
+    } finally {
+      URL.revokeObjectURL(url);
     }
     if (layer.kind === "raster") {
       const scale = DESIGN.maxWidth / DESIGN.width * 2;

@@ -1,0 +1,252 @@
+{
+  "status": "BLOCKED",
+  "canonicalCropVerified": true,
+  "characterRedrawn": false,
+  "frames": [
+    {
+      "id": "brand",
+      "recordedReferenceBox": [
+        113,
+        6,
+        268,
+        70
+      ],
+      "nativeReferencePixels": [
+        155,
+        64
+      ],
+      "minimumRaster2xAt430": [
+        387,
+        160
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "title",
+      "recordedReferenceBox": [
+        48,
+        76,
+        325,
+        255
+      ],
+      "nativeReferencePixels": [
+        277,
+        179
+      ],
+      "minimumRaster2xAt430": [
+        691,
+        447
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "mascot",
+      "recordedReferenceBox": [
+        62,
+        255,
+        246,
+        451
+      ],
+      "nativeReferencePixels": [
+        184,
+        196
+      ],
+      "minimumRaster2xAt430": [
+        459,
+        489
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "letsgo",
+      "recordedReferenceBox": [
+        263,
+        244,
+        333,
+        333
+      ],
+      "nativeReferencePixels": [
+        70,
+        89
+      ],
+      "minimumRaster2xAt430": [
+        175,
+        222
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "route",
+      "recordedReferenceBox": [
+        203,
+        331,
+        339,
+        480
+      ],
+      "nativeReferencePixels": [
+        136,
+        149
+      ],
+      "minimumRaster2xAt430": [
+        339,
+        372
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "condition",
+      "recordedReferenceBox": [
+        14,
+        431,
+        108,
+        552
+      ],
+      "nativeReferencePixels": [
+        94,
+        121
+      ],
+      "minimumRaster2xAt430": [
+        235,
+        302
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "blindbox",
+      "recordedReferenceBox": [
+        128,
+        452,
+        232,
+        560
+      ],
+      "nativeReferencePixels": [
+        104,
+        108
+      ],
+      "minimumRaster2xAt430": [
+        260,
+        270
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "reveal",
+      "recordedReferenceBox": [
+        244,
+        405,
+        342,
+        548
+      ],
+      "nativeReferencePixels": [
+        98,
+        143
+      ],
+      "minimumRaster2xAt430": [
+        245,
+        357
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "cta",
+      "recordedReferenceBox": [
+        30,
+        576,
+        325,
+        650
+      ],
+      "nativeReferencePixels": [
+        295,
+        74
+      ],
+      "minimumRaster2xAt430": [
+        736,
+        185
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    },
+    {
+      "id": "slogan",
+      "recordedReferenceBox": [
+        72,
+        652,
+        321,
+        697
+      ],
+      "nativeReferencePixels": [
+        249,
+        45
+      ],
+      "minimumRaster2xAt430": [
+        621,
+        113
+      ],
+      "nativeReferenceMeetsRaster2x": false,
+      "note": "Reference ROI only; not an isolated transparent export. Vector source may serve non-character artwork after visual review."
+    }
+  ],
+  "characterCandidate": {
+    "nativeRegion": [
+      350,
+      180,
+      710,
+      560
+    ],
+    "nativePixels": [
+      360,
+      380
+    ],
+    "minimum2x": [
+      459,
+      489
+    ],
+    "ready": false,
+    "note": "QA-only sheet crop includes nearby artwork; no alpha extraction or source sign-off."
+  },
+  "historicalUpscale": {
+    "nativePixels": [
+      327,
+      358
+    ],
+    "outputPixels": [
+      654,
+      716
+    ],
+    "scale": 2,
+    "ready": false
+  },
+  "footer": {
+    "existingMasterCrop": [
+      7,
+      38,
+      352,
+      735
+    ],
+    "existingPixels": [
+      345,
+      697
+    ],
+    "proposalMasterCrop": [
+      7,
+      38,
+      352,
+      750
+    ],
+    "proposalPixels": [
+      345,
+      712
+    ],
+    "proposalArtboardHeightAt390": 804.8695652173913,
+    "approval": "PENDING; not integrated"
+  },
+  "visualVerdict": "FAIL"
+}

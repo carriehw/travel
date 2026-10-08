@@ -1,4 +1,4 @@
-# Screen 1 engineering handoff — v20.1
+# Screen 1 engineering handoff — v20.2
 
 Scope: Screen 1 only. No Screen 2 implementation or deployment.
 Authority remains the Golden Master, production docs and local skills.
@@ -33,6 +33,9 @@ See [asset contract](../assets/v20/assets_manifest.md) for the documented
 - Validate complete layer set and exact artboard before issuing image requests.
 - Reject unapproved/missing layers, full-page raster, corrupt image decoding and
   insufficient Retina resolution.
+- Require every supplied layer's source provenance and SHA-256 before requests.
+- Hash the fetched bytes, then decode that exact response through a temporary
+  Blob URL. Changed bytes fail before any artwork or active CTA is published.
 - Decode all layers off-DOM, then publish together; one failed layer rolls back
   the complete artwork.
 - Missing production artwork leaves `data-asset-status="blocked"` and CTA disabled.
@@ -76,6 +79,8 @@ Actual navigation is pending the later flow controller after the Screen 1 gate.
 Use [internal QA tools](../qa/README.md). Engineering checks and visual verdict
 are separate. Synthetic rectangles never count as visual evidence.
 
-The canonical reference and all eleven production layers are currently absent.
+The canonical reference and confirmed character sheet are recovered and hashed;
+see [source recovery](12_SCREEN1_SOURCE_RECOVERY.md). All eleven production
+layers remain absent. Native source resolution and footer clipping remain open.
 Visual QA remains **FAIL**. No user UAT request, no `gh-pages` promotion and no
 Vercel deployment until the required gate passes.

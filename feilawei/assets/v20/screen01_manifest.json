@@ -11,11 +11,12 @@
     "path": "assets/reference/home_master_clean.png",
     "width": 345,
     "height": 697,
-    "sha256": null
+    "sha256": "13efab862908a1cede56194573ce07b7140f75d8bba7d87c4a1e39f8345f3c92",
+    "provenance": "assets/reference/source_provenance.json"
   },
   "approval": {
     "assetsReady": false,
-    "note": "Canonical reference and production layers are absent. Do not fill these slots with legacy screenshots or generated artwork."
+    "note": "Approved canonical reference and character sheet recovered from the user-provided shared conversation. Production layers remain unapproved and incomplete; native source crops do not meet the Retina gate. Reference footer clipping requires product review."
   },
   "layers": [
     {

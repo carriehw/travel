@@ -1,0 +1,13 @@
+{
+  "baseCommit": "e48bb607aeadab2a7389ef18b4555590f0dc3e5f",
+  "cacheVersion": "20.2",
+  "files": {
+    "feilawei/index.html": "dae547557faa83f6df0059b0f4d745bcb570325898a635388047ddaeea9d7a52",
+    "feilawei/screen1.css": "c18ad24514c1b089f790d64cfa79f86cd5b644f6f95610258957b17991b0dfe2",
+    "feilawei/screen1.js": "0146c1b18d23652b95aa04527713c5ba22f586ab711cb3204fdc3bbfd02f2576",
+    "feilawei/assets/v20/screen01_manifest.json": "32705f654b548ced1c767f7f95b6c4bdc42d0c6d83af179d2f2c57935d487eb5",
+    "feilawei/qa/capture-screen1.cjs": "967541d95cbc9f39d7d5869e20e6346d954fb16d41a0e705995990776b40417e",
+    "feilawei/qa/validate-assets.py": "723a979a3b58425d426e1b1ecbc4552e5e9b050fffb835ded62d7fc1ccdaf1bb",
+    "feilawei/qa/build-review.py": "48654e1b366d8107eb646de9c947cc0aea660d59da81c7b7924088f7f4d0b398"
+  }
+}

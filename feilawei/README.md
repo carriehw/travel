@@ -23,11 +23,12 @@
 - [Acceptance Criteria](docs/02_ACCEPTANCE_CRITERIA.md)
 - [Handoff Workflow](docs/03_HANDOFF_WORKFLOW.md)
 - [Screen 1 Asset Inventory](docs/04_SCREEN1_ASSET_INVENTORY.md)
-- [Latest checkpoint](docs/checkpoints/2026-10-08_v20_SCREEN1_ENGINEERING_QA.md)
+- [Latest checkpoint](docs/checkpoints/2026-10-08_v20_SOURCE_RECOVERY_AND_INTEGRITY.md)
+- [Source recovery and open visual findings](docs/12_SCREEN1_SOURCE_RECOVERY.md)
 - [Screen 1 engineering handoff](docs/11_SCREEN1_ENGINEERING_HANDOFF.md)
 - [Production asset contract](assets/v20/assets_manifest.md)
 - [Internal QA tools](qa/README.md)
-- [QA evidence viewer](docs/qa/2026-10-08/index.html)
+- [QA evidence viewer](docs/qa/2026-10-08_integrity/index.html)
 
 ## Project-local skills
 - [Golden Master Visual Fidelity](skills/golden-master-visual-fidelity/SKILL.md)
@@ -59,10 +60,11 @@ Do not patch v19 visual layout further.
 runtime. The previous HTML is archived as `prototype-v19.html`; legacy scripts
 and artwork are unchanged.
 
-**Screen 1 visual QA = FAIL.** The canonical reference and Retina artwork layers
-are not in the repository. The asset loader records a blocked state and disables
-the CTA until actual approved art is supplied. This branch is an engineering
-checkpoint, not a usable homepage or user UAT candidate.
+**Screen 1 visual QA = FAIL.** The approved originals and recorded canonical
+crop are recovered and verified. Retina production layers remain absent; native
+source resolution and clipped footer are documented. The loader checks fetched
+artwork hashes and keeps the CTA disabled until actual approved art is supplied.
+This branch is a source/engineering checkpoint, not a user UAT candidate.
 
 GitHub Pages remains staging/UAT only. No staging promotion or Vercel release
 has been made for this checkpoint.

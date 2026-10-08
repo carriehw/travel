@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Screen 1 QA evidence</title>
+<style>
+body{font:16px/1.5 system-ui;margin:24px;color:#262626;background:#fafafa}
+select,input{font:inherit}strong{color:#9c2626}
+.panels{display:flex;gap:16px;align-items:flex-start;overflow:auto;margin-top:20px}
+figure{margin:0;flex:0 0 auto}figcaption{font-size:14px;margin-bottom:8px}
+img{display:block;max-width:430px;border:1px solid #ccc}
+.stack{position:relative}.stack img:last-child{position:absolute;inset:0;opacity:.5}
+label{margin-right:16px}p{max-width:900px}
+</style><h1>Screen 1 visual QA: FAIL</h1>
+<p><strong>Review geometry, artwork identity, copy, sharpness and all remaining acceptance criteria.</strong></p>
+<p>Live captures are actual v20 output. Blank Live captures show the missing production artwork.
+Engineering fixtures are excluded. WebKit emulation does not replace real iOS Safari or ChatGPT in-app UAT.</p>
+<label>Browser / width <select id="case"></select></label>
+<label>Live opacity <input id="opacity" type="range" min="0" max="100" value="50">
+<output id="percentage">50%</output></label>
+<div class="panels">
+<figure><figcaption>Reference — verified Golden Master</figcaption><img id="reference" alt="Reference slot"></figure>
+<figure><figcaption>Live — actual Screen 1</figcaption><img id="live" alt="Actual live artboard"></figure>
+<figure><figcaption>Overlay — starts at 50% Live</figcaption>
+<div class="stack"><img id="overlay-reference" alt=""><img id="overlay-live" alt="Live over reference"></div></figure>
+</div><p>Saved 50% overlay PNGs are listed in <a href="review.json">review.json</a>.
+Measurements and checks: <a href="capture.json">capture.json</a>.
+Source integrity: <a href="asset-validation.json">asset-validation.json</a>.</p>
+<script>
+const cases=[{"label": "chromium / 375px", "reference": "chromium-375-reference.png", "live": "chromium-375-live.png", "overlay": "chromium-375-overlay50.png", "width": 375, "height": 759}, {"label": "chromium / 390px", "reference": "chromium-390-reference.png", "live": "chromium-390-live.png", "overlay": "chromium-390-overlay50.png", "width": 390, "height": 789}, {"label": "chromium / 393px", "reference": "chromium-393-reference.png", "live": "chromium-393-live.png", "overlay": "chromium-393-overlay50.png", "width": 393, "height": 795}, {"label": "chromium / 430px", "reference": "chromium-430-reference.png", "live": "chromium-430-live.png", "overlay": "chromium-430-overlay50.png", "width": 430, "height": 870}, {"label": "webkit / 375px", "reference": "webkit-375-reference.png", "live": "webkit-375-live.png", "overlay": "webkit-375-overlay50.png", "width": 375, "height": 759}, {"label": "webkit / 390px", "reference": "webkit-390-reference.png", "live": "webkit-390-live.png", "overlay": "webkit-390-overlay50.png", "width": 390, "height": 789}, {"label": "webkit / 393px", "reference": "webkit-393-reference.png", "live": "webkit-393-live.png", "overlay": "webkit-393-overlay50.png", "width": 393, "height": 795}, {"label": "webkit / 430px", "reference": "webkit-430-reference.png", "live": "webkit-430-live.png", "overlay": "webkit-430-overlay50.png", "width": 430, "height": 870}], selector=document.getElementById("case");
+for(let i=0;i<cases.length;i++){const option=new Option(cases[i].label,i);selector.add(option);}
+function show(){const item=cases[selector.value||0];if(!item)return;
+document.getElementById("reference").src=item.reference;
+document.getElementById("live").src=item.live;
+document.getElementById("overlay-reference").src=item.reference;
+document.getElementById("overlay-live").src=item.live;}
+selector.onchange=show;show();
+document.getElementById("opacity").oninput=event=>{
+document.getElementById("overlay-live").style.opacity=event.target.value/100;
+document.getElementById("percentage").value=event.target.value+"%";};
+</script></html>

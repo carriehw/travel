@@ -65,6 +65,9 @@ You only live once, 人生得一次，仲等咩？飛啦喂！
 14. feilawei/assets/v20/assets_manifest.md
 15. feilawei/qa/README.md
 16. feilawei/docs/checkpoints/2026-10-08_v20_SCREEN1_ENGINEERING_QA.md
+17. feilawei/docs/12_SCREEN1_SOURCE_RECOVERY.md
+18. feilawei/assets/reference/README.md
+19. feilawei/docs/checkpoints/2026-10-08_v20_SOURCE_RECOVERY_AND_INTEGRITY.md
 
 ## Project-local skills
 - feilawei/skills/project-orchestration/SKILL.md
@@ -86,14 +89,17 @@ You only live once, 人生得一次，仲等咩？飛啦喂！
 - Cantonese Copy + Accessibility Reviewer
 
 ## Current status
-Latest continuation: **2026-10-08 Screen 1 engineering checkpoint; visual QA FAIL.**
+Latest continuation: **2026-10-08 source recovery + integrity; visual QA FAIL.**
 
 Read the latest checkpoint before using the older foundation status below.
 The current branch has a Screen 1-only entry, corrected 390×788.4 geometry,
-atomic artwork loading and reproducible QA tooling. The authoritative reference
-and production layers are missing; no artwork has been invented to fill the gap.
-Do not mistake synthetic engineering fixtures or the unverified diagnostic
-reference for a Golden Master pass.
+atomic artwork loading, fetched-byte SHA-256 verification and reproducible QA.
+The approved original master and confirmed character sheet are now recovered,
+and the recorded canonical crop is verified pixel-for-pixel. Production layers
+are still absent. Native Retina resolution is insufficient, and the recorded
+crop clips the slogan; concrete source review evidence is linked above.
+Do not mistake source recovery or 22 passing engineering checks for visual PASS.
+No source-quality exception, reference crop or artboard change is approved.
 
 v19 is rejected as a design candidate and retained only as a technical prototype.
 v20 foundation is in place:
@@ -107,7 +113,8 @@ v20 foundation is in place:
 ## Immediate next task
 Continue Screen 1 only:
 1. prepare exact production-quality Screen 1 artwork/assets from the approved Golden Master
-   - first restore the missing canonical reference/character source; see the asset contract
+   - sources are recovered; first resolve native source quality and the footer crop conflict
+   - never count a resized native crop as a high-resolution original
 2. integrate into the 390px artboard architecture
 3. validate on 375 / 390 / 393 / 430 widths
 4. run Reference / Live / 50% Overlay QA

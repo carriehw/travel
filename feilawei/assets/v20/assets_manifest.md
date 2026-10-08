@@ -1,4 +1,4 @@
-# Screen 1 production asset contract — v20.1
+# Screen 1 production asset contract — v20.2
 
 Authority: [coordinate spec](../../docs/05_SCREEN1_COORDINATE_SPEC.md),
 [asset inventory](../../docs/04_SCREEN1_ASSET_INVENTORY.md),
@@ -7,13 +7,21 @@ Authority: [coordinate spec](../../docs/05_SCREEN1_COORDINATE_SPEC.md),
 ## Current status: BLOCKED
 
 No production artwork has been fabricated, enlarged, traced or approved in this
-checkpoint. All eleven manifest file slots are deliberately null. The homepage
+checkpoint. All eleven manifest file slots remain null. The homepage
 does not load rejected screenshots or browser-font approximations as artwork.
 
-The canonical `home_master_clean.png` (345×697), character sheet
-`小天線隊長旅行角色設定圖.png` (1122×1402), and named transparent mascot candidates
-are absent from this branch/workspace. Their file names in prior docs establish
-the intended source, not possession of the source bytes.
+The user-provided shared conversation yielded the approved six-screen original
+and confirmed character-sheet revision. Their unchanged bytes are in
+`assets/reference/`. `home_master_clean.png` (345×697) was restored from the
+exact recorded crop, without scaling or changing RGB pixels. All three files
+have verified dimensions and SHA-256; see
+[source provenance](../reference/source_provenance.json) and
+[source recovery review](../../docs/12_SCREEN1_SOURCE_RECOVERY.md).
+
+**References are recovered; production exports are still blocked.** The native
+home regions and character crops do not meet the 2× requirement. The recorded
+home crop also clips the bottom slogan. No source-quality exception, replacement
+pose, revised reference crop or artboard change has been approved.
 
 ## Measured export frames
 
@@ -40,8 +48,8 @@ No silhouette, palette or stroke can be inferred solely from these rectangles.
 
 ## Integration procedure
 
-1. Restore the exact approved reference to `assets/reference/home_master_clean.png`.
-2. Verify source dimensions and record its SHA-256.
+1. Preserve the recovered originals in `assets/reference/`.
+2. Verify source hashes and pixel-identical crop using `validate-assets.py`.
 3. Export exact artwork layers, with source provenance; never redraw the mascot.
 4. Supply each `file`, `source`, `sha256` and correct `kind` in
    `screen01_manifest.json`. Paths are relative to `feilawei/`.
@@ -56,11 +64,17 @@ For the 208×221.5 mascot frame: minimum **459×489**; preferred **688×733**.
 Use transparent padding if needed to preserve the frame aspect ratio.
 SVGs must be self-contained paths with a matching viewBox; no font dependency
 or raster screenshot wrapped inside an SVG.
+Native source resolution must be sufficient: resizing a 327×358 crop to
+654×716 does not create a valid 2× source. The historical export does exactly
+that and cannot be accepted solely on its output dimensions.
 
 ## Source audit
 
 | Available file | Decoding result | Production decision |
 |---|---|---|
+| `assets/reference/six-screen-master.png` | 1024×1536 RGB, full decode passes | Original approved board; reference/source only |
+| `assets/reference/home_master_clean.png` | 345×697 RGB, pixel-identical recorded crop | Canonical reference recovered; bottom text clipping recorded |
+| `assets/reference/小天線隊長旅行角色設定圖.png` | 1122×1402 RGB, full decode passes | Confirmed revision; individual hero region still below Retina minimum |
 | `assets/master/screen1.webp` | 260×478 RGB, decodes | Cropped, low resolution; diagnostic only |
 | `mascot.png` | Header advertises 112×114; full decode fails | Reject; corrupt and too small |
 | Historical first home WebP | 256×471, decodes | Same insufficient source class |

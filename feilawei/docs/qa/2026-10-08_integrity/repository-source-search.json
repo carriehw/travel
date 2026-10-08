@@ -1,0 +1,188 @@
+{
+  "imageBlobsInspected": 51,
+  "nonQAImageBlobs": 17,
+  "scope": "All fetched reachable chatgpt/* project branches and gh-pages; no canonical or native Retina layers found before shared-source recovery.",
+  "images": [
+    {
+      "sha": "53cae6ebf6cfe4955968cdb29487c39c6b244ffc",
+      "path": "feilawei/assets/master/screen1.webp",
+      "bytes": 14736,
+      "magic": "52494646883900005745425056503820",
+      "size": [
+        260,
+        478
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "ca0fe9944afdaf7178bf04a4280c6c56e9dae52a",
+      "path": "feilawei/assets/master/screen2.webp",
+      "bytes": 8774,
+      "magic": "524946463e2200005745425056503820",
+      "size": [
+        180,
+        328
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "07143f1ab81da5316354d53e25d07c6f958d89c3",
+      "path": "feilawei/assets/master/screen3.webp",
+      "bytes": 9382,
+      "magic": "524946469e2400005745425056503820",
+      "size": [
+        180,
+        337
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "339946c5ed0ae810fc8984f68af50b3dae4c108c",
+      "path": "feilawei/assets/master/screen4.webp",
+      "bytes": 11000,
+      "magic": "52494646f02a00005745425056503820",
+      "size": [
+        220,
+        421
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "e4031d7d598e6dff73ba8fee085fe271741fd751",
+      "path": "feilawei/assets/master/screen5.webp",
+      "bytes": 14034,
+      "magic": "52494646ca3600005745425056503820",
+      "size": [
+        262,
+        461
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "a3c46c5f984dd962ccbbc5f6a48f3787b46b0536",
+      "path": "feilawei/assets/master/screen6.webp",
+      "bytes": 12642,
+      "magic": "524946465a3100005745425056503820",
+      "size": [
+        264,
+        461
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "d1f349fb2c0393024d6338871c2070de227b9662",
+      "path": "feilawei/assets/master/screen7.webp",
+      "bytes": 9140,
+      "magic": "52494646ac2300005745425056503820",
+      "size": [
+        220,
+        395
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "841876673427545e014259ffde7ee5c33f309e3d",
+      "path": "feilawei/assets/master/screen8.webp",
+      "bytes": 11822,
+      "magic": "52494646262e00005745425056503820",
+      "size": [
+        220,
+        392
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "209d43c223117cdf93d15df0469adff996dce056",
+      "path": "feilawei/mascot.png",
+      "bytes": 14831,
+      "magic": "89504e470d0a1a0a0000000d49484452",
+      "status": "INVALID",
+      "reason": "unrecognized data stream contents when reading image file"
+    },
+    {
+      "sha": "5c826a7bdfa15c62c80f35bbf8a54611efdc8fed",
+      "path": "home-master.jpg",
+      "bytes": 5888,
+      "magic": "a5c24d422c992baa33294e9901c67aba",
+      "status": "INVALID",
+      "reason": "cannot identify image file <_io.BytesIO object at 0x7f682a1914e0>"
+    },
+    {
+      "sha": "732a3ef378898a71f119125f4245c462c678277d",
+      "path": "six-screen-master.jpg",
+      "bytes": 109218,
+      "magic": "4585274659dcf9011dddb0bac070c44e",
+      "status": "INVALID",
+      "reason": "cannot identify image file <_io.BytesIO object at 0x7f682a191530>"
+    },
+    {
+      "sha": "6534c90d4a2cbc301710ec649942a49e4f45248f",
+      "path": "assets/master/screen5.webp",
+      "bytes": 15001,
+      "magic": "52494646cc4000005745425056503820",
+      "status": "INVALID",
+      "reason": "could not create decoder object"
+    },
+    {
+      "sha": "b3d171ce2af4c7e9c92e2ef28cf194c178dc9458",
+      "path": "assets/master/screen6.webp",
+      "bytes": 9541,
+      "magic": "524946463e2500005745425056503820",
+      "status": "INVALID",
+      "reason": "could not create decoder object"
+    },
+    {
+      "sha": "d752db7d675d5cef0eefa192cafbb36a585be153",
+      "path": "assets/master/screen1.webp",
+      "bytes": 15008,
+      "magic": "52494646d46100005745425056503820",
+      "status": "INVALID",
+      "reason": "could not create decoder object"
+    },
+    {
+      "sha": "0d447ed1e72d4c5dcfb2321f6fcd46a20fb325eb",
+      "path": "assets/master/screen1.webp",
+      "bytes": 15008,
+      "magic": "524946469c9e00005745425056503820",
+      "status": "INVALID",
+      "reason": "could not create decoder object"
+    },
+    {
+      "sha": "d9a6653b382f79e12f681b67a6b3657ab1be6154",
+      "path": "assets/master/screen1.webp",
+      "bytes": 14682,
+      "magic": "52494646523900005745425056503820",
+      "size": [
+        256,
+        471
+      ],
+      "format": "WEBP",
+      "mode": "RGB",
+      "status": "DECODES"
+    },
+    {
+      "sha": "8b9d7b1360fc75818dadbc24ade4837165236bca",
+      "path": "feilawei/assets/master/screen2.webp",
+      "bytes": 4928,
+      "magic": "52494646523b00005745425056503820",
+      "status": "INVALID",
+      "reason": "could not create decoder object"
+    }
+  ]
+}

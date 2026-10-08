@@ -51,6 +51,9 @@ and labels the reference slot unverified. It cannot establish a 95% match.
 - CTA geometry, proportional scaling, overflow and missing-file diagnostics.
 - Separate synthetic rectangle fixtures for transport, single-tap/keyboard
   activation, reduced motion, failed-layer rollback and refresh checks.
+- Source hashes and pixel-identical recovery of the recorded canonical crop.
+- Browser rejection of changed artwork bytes and missing hash/provenance;
+  verified SVG responses remain drawable after their temporary Blob URLs expire.
 - Reference / Live / 50% Overlay PNGs and an interactive comparison page.
 
 Synthetic fixtures are served only by Playwright request interception. They are
@@ -60,3 +63,14 @@ Before sign-off, review all immutable art, colours, copy, alpha edges and Retina
 sharpness against the real source. Record every Critical/Major mismatch. Require
 actual iOS Safari and ChatGPT in-app UAT after internal QA passes. Do not infer
 device sign-off from desktop WebKit emulation.
+
+## Recovered source review
+
+The approved originals are now in `assets/reference/`, with their conversation
+message IDs and hashes in `source_provenance.json`. Validation reports these
+separately from production-layer readiness. The complete asset verdict remains
+FAIL while the layers are absent.
+
+[Source review](../docs/12_SCREEN1_SOURCE_RECOVERY.md) records the native Retina
+shortfall and footer cropping defect. Any proposed crop is QA evidence only;
+it is not substituted into the production manifest or marked as visual PASS.

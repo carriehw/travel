@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "cases": 8,
+  "referenceLabel": "verified Golden Master",
+  "overlayDefault": 0.5,
+  "sliderChangesOpacity": true,
+  "sourceProposalIntegrated": false,
+  "imageFailures": 0,
+  "pageErrors": []
+}
