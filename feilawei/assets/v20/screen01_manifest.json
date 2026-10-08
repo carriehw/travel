@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "screen": "home",
+  "design": {
+    "width": 390,
+    "height": 788.4,
+    "maxWidth": 430,
+    "coordinateSpec": "docs/05_SCREEN1_COORDINATE_SPEC.md"
+  },
+  "reference": {
+    "path": "assets/reference/home_master_clean.png",
+    "width": 345,
+    "height": 697,
+    "sha256": null
+  },
+  "approval": {
+    "assetsReady": false,
+    "note": "Canonical reference and production layers are absent. Do not fill these slots with legacy screenshots or generated artwork."
+  },
+  "layers": [
+    {
+      "id": "decorations",
+      "box": [
+        0,
+        0,
+        390,
+        788.4
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "brand",
+      "box": [
+        127.7,
+        6.8,
+        175.3,
+        72.3
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "title",
+      "box": [
+        54.3,
+        85.9,
+        313.1,
+        202.4
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "mascot",
+      "box": [
+        70.1,
+        288.3,
+        208,
+        221.5
+      ],
+      "kind": "raster",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "letsgo",
+      "box": [
+        297.3,
+        275.8,
+        79.1,
+        100.6
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "route",
+      "box": [
+        229.5,
+        374.2,
+        153.7,
+        168.4
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "condition",
+      "box": [
+        15.8,
+        487.2,
+        106.3,
+        136.8
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "blindbox",
+      "box": [
+        144.7,
+        511,
+        117.6,
+        122
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "reveal",
+      "box": [
+        275.8,
+        457.8,
+        110.8,
+        161.7
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "cta",
+      "box": [
+        33.9,
+        651.1,
+        333.5,
+        83.7
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    },
+    {
+      "id": "slogan",
+      "box": [
+        81.4,
+        737,
+        281.5,
+        50.9
+      ],
+      "kind": "vector",
+      "file": null,
+      "source": null,
+      "sha256": null
+    }
+  ]
+}

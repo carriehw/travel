@@ -1,0 +1,755 @@
+{
+  "visualVerdict": "FAIL",
+  "note": "Screenshots are real home output. Synthetic controls checks do not prove visual fidelity.",
+  "cases": [
+    {
+      "engine": "chromium",
+      "width": 375,
+      "viewportHeight": 667,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 758.0625
+        },
+        "cta": {
+          "x": 32.59375,
+          "y": 626.03125,
+          "width": 320.671875,
+          "height": 80.46875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 758.0625
+        },
+        "cta": {
+          "x": 32.59375,
+          "y": 626.03125,
+          "width": 320.671875,
+          "height": 80.46875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "chromium-375-live.png"
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "viewportHeight": 844,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 788.390625
+        },
+        "cta": {
+          "x": 33.890625,
+          "y": 651.078125,
+          "width": 333.5,
+          "height": 83.6875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 788.390625
+        },
+        "cta": {
+          "x": 33.890625,
+          "y": 651.078125,
+          "width": 333.5,
+          "height": 83.6875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "chromium-390-live.png"
+    },
+    {
+      "engine": "chromium",
+      "width": 393,
+      "viewportHeight": 852,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 794.453125
+        },
+        "cta": {
+          "x": 34.15625,
+          "y": 656.09375,
+          "width": 336.0625,
+          "height": 84.328125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 794.453125
+        },
+        "cta": {
+          "x": 34.15625,
+          "y": 656.09375,
+          "width": 336.0625,
+          "height": 84.328125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "chromium-393-live.png"
+    },
+    {
+      "engine": "chromium",
+      "width": 430,
+      "viewportHeight": 932,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 430,
+          "height": 869.25
+        },
+        "cta": {
+          "x": 37.375,
+          "y": 717.859375,
+          "width": 367.703125,
+          "height": 92.28125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 430,
+          "height": 869.25
+        },
+        "cta": {
+          "x": 37.375,
+          "y": 717.859375,
+          "width": 367.703125,
+          "height": 92.28125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "chromium-430-live.png"
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "viewportHeight": 667,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 758.0625
+        },
+        "cta": {
+          "x": 32.59375,
+          "y": 626.03125,
+          "width": 320.671875,
+          "height": 80.46875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 758.0625
+        },
+        "cta": {
+          "x": 32.59375,
+          "y": 626.03125,
+          "width": 320.671875,
+          "height": 80.46875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "webkit-375-live.png"
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "viewportHeight": 844,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 788.390625
+        },
+        "cta": {
+          "x": 33.890625,
+          "y": 651.078125,
+          "width": 333.484375,
+          "height": 83.6875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 788.390625
+        },
+        "cta": {
+          "x": 33.890625,
+          "y": 651.078125,
+          "width": 333.484375,
+          "height": 83.6875
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "webkit-390-live.png"
+    },
+    {
+      "engine": "webkit",
+      "width": 393,
+      "viewportHeight": 852,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 794.453125
+        },
+        "cta": {
+          "x": 34.15625,
+          "y": 656.09375,
+          "width": 336.0625,
+          "height": 84.328125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 794.453125
+        },
+        "cta": {
+          "x": 34.15625,
+          "y": 656.09375,
+          "width": 336.0625,
+          "height": 84.328125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "webkit-393-live.png"
+    },
+    {
+      "engine": "webkit",
+      "width": 430,
+      "viewportHeight": 932,
+      "deviceScaleFactor": 3,
+      "normal": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 430,
+          "height": 869.25
+        },
+        "cta": {
+          "x": 37.375,
+          "y": 717.859375,
+          "width": 367.703125,
+          "height": 92.28125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "short": {
+        "board": {
+          "x": 0,
+          "y": 0,
+          "width": 430,
+          "height": 869.25
+        },
+        "cta": {
+          "x": 37.375,
+          "y": 717.859375,
+          "width": 367.703125,
+          "height": 92.28125
+        },
+        "horizontalOverflow": false,
+        "assetStatus": {
+          "status": "blocked",
+          "issues": [
+            "PRODUCTION_ART_NOT_APPROVED",
+            "MISSING_LAYER:decorations",
+            "MISSING_LAYER:brand",
+            "MISSING_LAYER:title",
+            "MISSING_LAYER:mascot",
+            "MISSING_LAYER:letsgo",
+            "MISSING_LAYER:route",
+            "MISSING_LAYER:condition",
+            "MISSING_LAYER:blindbox",
+            "MISSING_LAYER:reveal",
+            "MISSING_LAYER:cta",
+            "MISSING_LAYER:slogan"
+          ]
+        },
+        "imageCount": 0,
+        "disabled": true
+      },
+      "bottomVisible": true,
+      "errors": [],
+      "badResponses": [],
+      "requests": [
+        "/",
+        "/screen1.css",
+        "/screen1.js",
+        "/assets/v20/screen01_manifest.json"
+      ],
+      "live": "webkit-430-live.png"
+    }
+  ],
+  "engineering": [
+    {
+      "name": "chromium-375: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium-390: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium-393: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium-430: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium: absent artwork cannot enable CTA or load legacy UI",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium: synthetic valid layers load atomically, tap once, keyboard and refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium: tiny raster cannot pass Retina readiness",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium: one failed layer leaves no partial artwork or CTA",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium: 430px cap, centering and synthetic safe-area",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit-375: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit-390: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit-393: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit-430: proportional artboard, CTA and short viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit: absent artwork cannot enable CTA or load legacy UI",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit: synthetic valid layers load atomically, tap once, keyboard and refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit: tiny raster cannot pass Retina readiness",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit: one failed layer leaves no partial artwork or CTA",
+      "status": "PASS"
+    },
+    {
+      "name": "webkit: 430px cap, centering and synthetic safe-area",
+      "status": "PASS"
+    }
+  ],
+  "unavailableBrowsers": [],
+  "engineeringVerdict": "PASS",
+  "realDeviceUAT": "NOT_RUN: iOS Safari and ChatGPT in-app browser require actual devices"
+}

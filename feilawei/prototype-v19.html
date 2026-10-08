@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff8e9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>飛啦喂！</title>
+<link rel="stylesheet" href="./style.css?v=20">
+</head>
+<body>
+<main class="app">
+
+<section id="home" class="screen active v20-home-screen" aria-labelledby="home-title">
+  <div class="v20-artboard" data-design-width="390" data-design-height="824">
+    <img class="v20-screen1-art" src="./assets/v20/screen01_golden.webp?v=20" alt="" aria-hidden="true">
+    <h1 id="home-title" class="sr-only">飛啦喂！想去邊？抽咗先算。</h1>
+    <p class="sr-only">揀條件，揀盲盒，揭曉下一站。You only live once，人生得一次，仲等咩？飛啦喂！</p>
+    <button class="v20-hotspot v20-start-hotspot" data-go="travelType" aria-label="開始飛啦"></button>
+  </div>
+</section>
+
+<section id="travelType" class="screen master-screen master-type">
+  <div class="master-canvas master-canvas-type">
+    <img class="master-art" src="./assets/master/screen2.webp?v=20" alt="旅程類型定稿">
+    <button class="hotspot back-hotspot" data-go="home" aria-label="返回"></button>
+    <button class="hotspot type-hotspot type-1" data-vibe="relax" aria-label="Chill 放鬆"></button>
+    <button class="hotspot type-hotspot type-2" data-vibe="city" aria-label="城市探索"></button>
+    <button class="hotspot type-hotspot type-3" data-vibe="nature" aria-label="自然風景"></button>
+    <button class="hotspot type-hotspot type-4" data-vibe="food" aria-label="美食之旅"></button>
+    <button class="hotspot type-hotspot type-5" data-vibe="heal" aria-label="療癒放空"></button>
+    <button class="hotspot type-hotspot type-6" data-vibe="surprise" aria-label="隨機驚喜"></button>
+    <span class="motion-spark type-spark">✦</span>
+  </div>
+</section>
+
+<section id="companion" class="screen master-screen master-companion">
+  <div class="master-canvas master-canvas-companion">
+    <img class="master-art" src="./assets/master/screen3.webp?v=20" alt="旅伴選擇定稿">
+    <button class="hotspot back-hotspot" data-go="travelType" aria-label="返回"></button>
+    <button class="hotspot companion-hotspot companion-1" data-companion="solo" aria-label="自己一個"></button>
+    <button class="hotspot companion-hotspot companion-2" data-companion="couple" aria-label="情侶或伴侶"></button>
+    <button class="hotspot companion-hotspot companion-3" data-companion="friends" aria-label="朋友"></button>
+    <button class="hotspot companion-hotspot companion-4" data-companion="family" aria-label="家庭"></button>
+    <button class="hotspot companion-hotspot companion-5" data-companion="captain" aria-label="交俾小天線隊長"></button>
+  </div>
+</section>
+
+<section id="conditions" class="screen master-screen master-conditions">
+  <div class="master-canvas master-canvas-conditions">
+    <img class="master-art" src="./assets/master/screen4.webp?v=20" alt="旅行條件設定定稿">
+    <button class="hotspot back-hotspot" data-go="companion" aria-label="返回"></button>
+
+    <button class="hotspot cond-hotspot day-1" data-days="3" aria-label="1至3日"></button>
+    <button class="hotspot cond-hotspot day-2" data-days="7" aria-label="4至7日"></button>
+    <button class="hotspot cond-hotspot day-3" data-days="14" aria-label="8至14日"></button>
+    <button class="hotspot cond-hotspot day-4" data-days="20" aria-label="14日以上"></button>
+
+    <button class="hotspot cond-hotspot dist-1" data-distance="short" aria-label="短途"></button>
+    <button class="hotspot cond-hotspot dist-2" data-distance="long" aria-label="長途"></button>
+
+    <button class="hotspot cond-hotspot budget-1" data-budget="1" aria-label="經濟預算"></button>
+    <button class="hotspot cond-hotspot budget-2" data-budget="2" aria-label="標準預算"></button>
+    <button class="hotspot cond-hotspot budget-3" data-budget="3" aria-label="豪華預算"></button>
+
+    <button class="hotspot cond-hotspot region-1" data-region="asia" aria-label="亞洲"></button>
+    <button class="hotspot cond-hotspot region-2" data-region="europe" aria-label="歐洲"></button>
+    <button class="hotspot cond-hotspot region-3" data-region="america" aria-label="美洲"></button>
+    <button class="hotspot cond-hotspot region-4" data-region="any" aria-label="其他地區"></button>
+
+    <button class="hotspot conditions-next-hotspot" id="conditionsNext" aria-label="下一步"></button>
+  </div>
+</section>
+
+<section id="visited" class="screen master-screen master-visited">
+  <div class="master-canvas master-canvas-visited">
+    <img class="master-art" src="./assets/master/screen5.webp?v=20" alt="去過及排除地方定稿">
+    <button class="hotspot back-hotspot" data-go="conditions" aria-label="返回"></button>
+
+    <input id="placeSearch" class="master-search-input" aria-label="搜尋國家或城市" placeholder="">
+    <button class="hotspot memory-mode-hotspot memory-mode-visited active" id="modeVisited" aria-label="我去過"></button>
+    <button class="hotspot memory-mode-hotspot memory-mode-excluded" id="modeExcluded" aria-label="今次唔想去"></button>
+
+    <div id="placeGrid" class="master-place-grid"></div>
+    <button class="hotspot memory-next-hotspot" id="memoryNext" aria-label="開始配對"></button>
+
+    <span id="visitedCount" class="master-count master-count-visited">0</span>
+    <span id="excludedCount" class="master-count master-count-excluded">0</span>
+  </div>
+</section>
+
+<section id="boxes" class="screen master-screen master-boxes">
+  <div class="master-canvas master-canvas-boxes">
+    <img class="master-art" src="./assets/master/screen6.webp?v=20" alt="旅行盲盒定稿">
+    <button class="hotspot back-hotspot" data-go="visited" aria-label="返回"></button>
+    <div id="boxGrid" class="master-box-grid" aria-label="12個旅行盲盒"></div>
+  </div>
+</section>
+
+<section id="reveal" class="screen master-screen master-reveal">
+  <div class="master-canvas master-canvas-reveal">
+    <img class="master-art" src="./assets/master/screen7.webp?v=20" alt="旅行盲盒揭曉定稿">
+    <div id="confettiField" class="master-confetti" aria-hidden="true"></div>
+    <span class="reveal-glow reveal-glow-a"></span>
+    <span class="reveal-glow reveal-glow-b"></span>
+  </div>
+</section>
+
+<section id="result" class="screen master-screen master-result">
+  <div class="master-canvas master-canvas-result">
+    <img class="master-art" src="./assets/master/screen8.webp?v=20" alt="旅行結果定稿">
+    <button class="hotspot result-save-hotspot" id="saveResult" aria-label="保存結果"></button>
+    <button class="hotspot result-reroll-hotspot" id="reroll" aria-label="再抽一次"></button>
+    <div class="logic-only" aria-hidden="true">
+      <span id="resultCity">京都</span><span id="resultEn">Kyoto, Japan</span>
+      <span id="resultHero"></span><span id="resultMini1"></span><span id="resultMini2"></span>
+      <ul id="reasons"></ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="advancedSheet" class="sheet">
+  <div class="sheet-card">
+    <button class="sheet-close" id="sheetClose">×</button>
+    <div class="sheet-title">再補充少少 ✨</div>
+    <p>只會問同你今次旅程有關嘅條件，唔使填長問卷。</p>
+    <div id="conditionalQuestions"></div>
+    <button class="primary-btn" id="advancedDone">完成，幫我配對 →</button>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="./app.js?v=20"></script>
+</body>
+</html>

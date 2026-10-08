@@ -1,0 +1,72 @@
+{
+  "status": "FAIL",
+  "note": "Asset integrity is not visual sign-off.",
+  "issues": [
+    {
+      "severity": "Major",
+      "code": "CANONICAL_REFERENCE_MISSING",
+      "detail": "assets/reference/home_master_clean.png"
+    },
+    {
+      "severity": "Major",
+      "code": "ASSETS_NOT_SIGNED_OFF",
+      "detail": "Asset integration has not passed source review"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "decorations"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "brand"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "title"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "mascot"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "letsgo"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "route"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "condition"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "blindbox"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "reveal"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "cta"
+    },
+    {
+      "severity": "Major",
+      "code": "PRODUCTION_LAYER_MISSING",
+      "detail": "slogan"
+    }
+  ],
+  "assets": []
+}

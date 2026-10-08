@@ -1,0 +1,10 @@
+{
+  "name": "feilawei-screen1-qa",
+  "private": true,
+  "scripts": {
+    "capture": "node capture-screen1.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.57.0"
+  }
+}

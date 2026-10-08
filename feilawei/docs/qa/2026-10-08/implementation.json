@@ -1,0 +1,10 @@
+{
+  "baseCommit": "2069cf0db4e49f97f14718ef3863eb1cb6275f10",
+  "cacheVersion": "20.1",
+  "runtimeSHA256": {
+    "index.html": "c6b6cc3c4f9bfef630e2ca8c13e21060127ab87b6a51a7045c4e1f3c54b31c82",
+    "screen1.css": "c18ad24514c1b089f790d64cfa79f86cd5b644f6f95610258957b17991b0dfe2",
+    "screen1.js": "16aba3347bca02de95e220861571fa039cad8367a3a1bcfbe1edbeb9021a911a",
+    "assets/v20/screen01_manifest.json": "3ca28690ec4f1d5a86052b21d92e5846ca4ce3911a535b687e92ce8f1a22de4f"
+  }
+}

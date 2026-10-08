@@ -22,22 +22,25 @@
 ### UX
 - [x] One primary CTA confirmed
 - [x] Screen 1 purpose confirmed: explain 3-step experience and start
-- [ ] Accessibility reading order
-- [ ] In-app browser short-height behaviour
+- [x] Accessibility reading order
+- [x] Short-height engineering behaviour (real in-app UAT pending)
 
 ### Motion
-- [ ] Idle mascot motion spec
+- [x] Idle mascot motion spec and layer animation prepared (real art pending)
 - [ ] route animation spec
-- [ ] CTA press feedback
-- [ ] reduced-motion fallback
+- [x] CTA press feedback (synthetic engineering verification)
+- [x] reduced-motion fallback (synthetic engineering verification)
 
 ### Engineering
-- [ ] Remove v19 native approximation from production path
+- [x] Remove v19 native approximation from production path
 - [x] Build 390px fixed artboard architecture
 - [ ] Use exact artwork layers
 - [x] Add CTA interaction overlay
 - [x] Safe-area handling
 - [x] No height-based stretching
+- [x] Correct 824px scaffold height to approved 788.4px
+- [x] Atomic layer loading with missing/corrupt/Retina asset guard
+- [x] Reproducible capture and Reference / Live / 50% Overlay tooling
 
 ### QA
 - [ ] 375px
@@ -48,6 +51,15 @@
 - [ ] ChatGPT in-app browser
 - [ ] Reference / Live / Overlay
 - [ ] Screen 1 PASS
+
+### 2026-10-08 gate status
+
+Engineering verification is logged separately in the latest checkpoint.
+The four viewport checkboxes above remain unchecked for **visual sign-off**:
+the canonical reference and all production layers are absent.
+The diagnostic Reference / Live / Overlay viewer is available, but its old
+reference is explicitly unverified and does not satisfy Golden Master QA.
+Screen 1 remains FAIL; Screen 2 and staging promotion remain blocked.
 
 ## Gate
 **Do not begin Screen 2 implementation until Screen 1 QA = PASS.**

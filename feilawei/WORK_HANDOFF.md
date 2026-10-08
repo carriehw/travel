@@ -61,6 +61,10 @@ You only live once, 人生得一次，仲等咩？飛啦喂！
 10. feilawei/docs/09_PRODUCT_STATE_MODEL.md
 11. feilawei/docs/10_COPY_LOCK.md
 12. feilawei/docs/checkpoints/2026-10-07_v20_SCREEN1_FOUNDATION.md
+13. feilawei/docs/11_SCREEN1_ENGINEERING_HANDOFF.md
+14. feilawei/assets/v20/assets_manifest.md
+15. feilawei/qa/README.md
+16. feilawei/docs/checkpoints/2026-10-08_v20_SCREEN1_ENGINEERING_QA.md
 
 ## Project-local skills
 - feilawei/skills/project-orchestration/SKILL.md
@@ -82,6 +86,15 @@ You only live once, 人生得一次，仲等咩？飛啦喂！
 - Cantonese Copy + Accessibility Reviewer
 
 ## Current status
+Latest continuation: **2026-10-08 Screen 1 engineering checkpoint; visual QA FAIL.**
+
+Read the latest checkpoint before using the older foundation status below.
+The current branch has a Screen 1-only entry, corrected 390×788.4 geometry,
+atomic artwork loading and reproducible QA tooling. The authoritative reference
+and production layers are missing; no artwork has been invented to fill the gap.
+Do not mistake synthetic engineering fixtures or the unverified diagnostic
+reference for a Golden Master pass.
+
 v19 is rejected as a design candidate and retained only as a technical prototype.
 v20 foundation is in place:
 - fixed-artboard architecture
@@ -94,6 +107,7 @@ v20 foundation is in place:
 ## Immediate next task
 Continue Screen 1 only:
 1. prepare exact production-quality Screen 1 artwork/assets from the approved Golden Master
+   - first restore the missing canonical reference/character source; see the asset contract
 2. integrate into the 390px artboard architecture
 3. validate on 375 / 390 / 393 / 430 widths
 4. run Reference / Live / 50% Overlay QA

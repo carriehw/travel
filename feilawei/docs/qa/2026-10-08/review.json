@@ -1,0 +1,73 @@
+{
+  "visualVerdict": "FAIL",
+  "referenceVerified": false,
+  "source": "feilawei/assets/master/screen1.webp",
+  "sourceSHA256": "7b709b973df82e259aebcd4ce8161dafb7db208eb67214c655d24efae360d711",
+  "note": "Diagnostic source is cropped, low resolution and NOT an approved reference. It cannot establish fidelity.",
+  "cases": [
+    {
+      "label": "chromium / 375px",
+      "reference": "chromium-375-reference.png",
+      "live": "chromium-375-live.png",
+      "overlay": "chromium-375-overlay50.png",
+      "width": 375,
+      "height": 759
+    },
+    {
+      "label": "chromium / 390px",
+      "reference": "chromium-390-reference.png",
+      "live": "chromium-390-live.png",
+      "overlay": "chromium-390-overlay50.png",
+      "width": 390,
+      "height": 789
+    },
+    {
+      "label": "chromium / 393px",
+      "reference": "chromium-393-reference.png",
+      "live": "chromium-393-live.png",
+      "overlay": "chromium-393-overlay50.png",
+      "width": 393,
+      "height": 795
+    },
+    {
+      "label": "chromium / 430px",
+      "reference": "chromium-430-reference.png",
+      "live": "chromium-430-live.png",
+      "overlay": "chromium-430-overlay50.png",
+      "width": 430,
+      "height": 870
+    },
+    {
+      "label": "webkit / 375px",
+      "reference": "webkit-375-reference.png",
+      "live": "webkit-375-live.png",
+      "overlay": "webkit-375-overlay50.png",
+      "width": 375,
+      "height": 759
+    },
+    {
+      "label": "webkit / 390px",
+      "reference": "webkit-390-reference.png",
+      "live": "webkit-390-live.png",
+      "overlay": "webkit-390-overlay50.png",
+      "width": 390,
+      "height": 789
+    },
+    {
+      "label": "webkit / 393px",
+      "reference": "webkit-393-reference.png",
+      "live": "webkit-393-live.png",
+      "overlay": "webkit-393-overlay50.png",
+      "width": 393,
+      "height": 795
+    },
+    {
+      "label": "webkit / 430px",
+      "reference": "webkit-430-reference.png",
+      "live": "webkit-430-live.png",
+      "overlay": "webkit-430-overlay50.png",
+      "width": 430,
+      "height": 870
+    }
+  ]
+}

@@ -23,7 +23,11 @@
 - [Acceptance Criteria](docs/02_ACCEPTANCE_CRITERIA.md)
 - [Handoff Workflow](docs/03_HANDOFF_WORKFLOW.md)
 - [Screen 1 Asset Inventory](docs/04_SCREEN1_ASSET_INVENTORY.md)
-- [Latest checkpoint](docs/checkpoints/2026-10-07_v19_AUDIT.md)
+- [Latest checkpoint](docs/checkpoints/2026-10-08_v20_SCREEN1_ENGINEERING_QA.md)
+- [Screen 1 engineering handoff](docs/11_SCREEN1_ENGINEERING_HANDOFF.md)
+- [Production asset contract](assets/v20/assets_manifest.md)
+- [Internal QA tools](qa/README.md)
+- [QA evidence viewer](docs/qa/2026-10-08/index.html)
 
 ## Project-local skills
 - [Golden Master Visual Fidelity](skills/golden-master-visual-fidelity/SKILL.md)
@@ -48,3 +52,17 @@ Subtasks:
 **Screen 1 only**: exact asset preparation → coordinate spec → engineering → overlay QA.
 
 Do not patch v19 visual layout further.
+
+## Current entry and gate
+
+`index.html` is now a Screen 1-only v20 entry with independent styling and
+runtime. The previous HTML is archived as `prototype-v19.html`; legacy scripts
+and artwork are unchanged.
+
+**Screen 1 visual QA = FAIL.** The canonical reference and Retina artwork layers
+are not in the repository. The asset loader records a blocked state and disables
+the CTA until actual approved art is supplied. This branch is an engineering
+checkpoint, not a usable homepage or user UAT candidate.
+
+GitHub Pages remains staging/UAT only. No staging promotion or Vercel release
+has been made for this checkpoint.
