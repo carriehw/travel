@@ -161,3 +161,25 @@ MVP implementation should remain cost-effective:
 - single-device Party Mode first
 - no real-time multiplayer backend yet
 - Room Mode is Phase 2
+
+## v20.3 workflow simplification — LOCKED
+
+The user clarified:
+- Golden Master is 100% final design.
+- 390px canonical composition is the authority.
+- Other phone widths scale proportionally.
+- Cost/time efficiency is a hard requirement.
+
+Therefore existing approved screens now use:
+**Canonical Golden Master artboard + semantic HTML hotspots.**
+
+Do NOT reopen the old eleven-layer Screen 1 plan.
+Do NOT redraw the mascot, title, icons or lettering in CSS/SVG.
+Do NOT decompose a locked screen unless an independently animated/stateful element genuinely requires it.
+
+Screen 1 production state is tracked in:
+- `feilawei/PROJECT_STATUS.md`
+- `feilawei/docs/13_IMPLEMENTATION_STRATEGY.md`
+- `feilawei/docs/checkpoints/2026-10-11_v20_WORKFLOW_LOCK_AND_SCREEN1_BUILD.md`
+
+Before doing any work, read `feilawei/PROJECT_STATUS.md` and continue only from its Current task.
