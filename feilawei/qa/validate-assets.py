@@ -1,164 +1,142 @@
-"""Validate supplied artwork without manufacturing or changing any source image."""
+"""Validate the locked Screen 1 Golden Master artboard and its provenance."""
 import argparse
 import hashlib
 import json
 import math
 from pathlib import Path
-import xml.etree.ElementTree as ET
 
-from PIL import Image
+from PIL import Image, ImageChops, ImageStat
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED = {
-    "decorations", "brand", "title", "mascot", "letsgo", "route",
-    "condition", "blindbox", "reveal", "cta", "slogan",
-}
+EXPECTED_DESIGN = {"width": 390, "height": 804.87, "maxWidth": 430}
+
+
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def local_file(value):
+    if not isinstance(value, str):
+        return None
+    path = (ROOT / value).resolve()
+    return path if path.is_relative_to(ROOT) and path.is_file() else None
 
 
 def validate():
     manifest = json.loads((ROOT / "assets/v20/screen01_manifest.json").read_text())
     issues = []
-    assets = []
+    evidence = {}
 
     def fail(code, detail):
         issues.append({"severity": "Major", "code": code, "detail": detail})
 
-    def local_file(value):
-        if not isinstance(value, str):
-            return None
-        path = (ROOT / value).resolve()
-        return path if path.is_relative_to(ROOT) and path.is_file() else None
+    if manifest.get("schemaVersion") != 2:
+        fail("MANIFEST_SCHEMA", "Expected schemaVersion 2")
+    for key, value in EXPECTED_DESIGN.items():
+        if manifest.get("design", {}).get(key) != value:
+            fail("DESIGN_SPEC_CHANGED", f"{key}: expected {value}")
 
-    def check_hash(path, expected, label):
-        actual = hashlib.sha256(path.read_bytes()).hexdigest()
-        if actual != expected:
-            fail("HASH_NOT_LOCKED", label + ": record verified source SHA-256")
-        return actual
-
-    reference = manifest["reference"]
-    path = local_file(reference["path"])
-    source_review = {"verified": False, "records": []}
-    if path is None:
-        fail("CANONICAL_REFERENCE_MISSING", reference["path"])
+    reference = manifest.get("reference", {})
+    reference_path = local_file(reference.get("path"))
+    if reference_path is None:
+        fail("CANONICAL_REFERENCE_MISSING", str(reference.get("path")))
     else:
+        with Image.open(reference_path) as image:
+            image.load()
+            if image.size != (reference.get("width"), reference.get("height")):
+                fail("REFERENCE_DIMENSIONS", str(image.size))
+        actual = sha256(reference_path)
+        if actual != reference.get("sha256"):
+            fail("REFERENCE_HASH", actual)
+
+    provenance_path = local_file(reference.get("provenance"))
+    if provenance_path is None:
+        fail("PROVENANCE_MISSING", str(reference.get("provenance")))
+    elif reference_path:
         try:
-            with Image.open(path) as image:
-                image.load()
-                if image.size != (345, 697):
-                    fail("REFERENCE_DIMENSIONS", str(image.size))
-            check_hash(path, reference.get("sha256"), "Golden Master")
-        except Exception as error:
-            fail("REFERENCE_CORRUPT", str(error))
-
-        provenance = local_file(reference.get("provenance"))
-        if provenance is None:
-            fail("REFERENCE_PROVENANCE_MISSING", "Record the approved original and exact crop")
-        else:
-            before = len(issues)
-            try:
-                records = json.loads(provenance.read_text())["assets"]
-                sources = {}
-                for record in records:
-                    original = local_file(record["path"])
-                    if original is None:
-                        raise ValueError("Missing source: " + record["path"])
-                    check_hash(original, record["sha256"], record["id"])
-                    with Image.open(original) as image:
-                        image.load()
-                        if image.size != (record["width"], record["height"]):
-                            raise ValueError("Source dimensions changed: " + record["id"])
-                    sources[record["id"]] = (record, original)
-                    source_review["records"].append({
-                        "id": record["id"], "path": record["path"],
-                        "sha256": record["sha256"],
-                        "pixels": [record["width"], record["height"]],
-                    })
-                home, restored = sources["home_master_clean"]
-                _, master = sources[home["derivedFrom"]]
-                if restored != path:
-                    raise ValueError("Canonical source record points to a different file")
-                with Image.open(master) as original, Image.open(path) as restored_image:
-                    crop = original.crop(tuple(home["crop"])).convert("RGB")
-                    if crop.size != restored_image.size or crop.tobytes() != restored_image.convert("RGB").tobytes():
-                        raise ValueError("Restored reference differs from the recorded original crop")
-                source_review["verified"] = len(issues) == before
-                source_review["cropPixelsIdentical"] = True
-            except Exception as error:
-                fail("REFERENCE_PROVENANCE_INVALID", str(error))
-
-    if manifest.get("schemaVersion") != 1 or any(
-        manifest["design"].get(key) != value
-        for key, value in {"width": 390, "height": 788.4, "maxWidth": 430}.items()
-    ):
-        fail("DESIGN_SPEC_CHANGED", "Use the locked 390 x 788.4 coordinate system")
-    if manifest["approval"].get("assetsReady") is not True:
-        fail("ASSETS_NOT_SIGNED_OFF", "Asset integration has not passed source review")
-    layers = manifest["layers"]
-    ids = [layer["id"] for layer in layers]
-    if len(set(ids)) != len(ids) or set(ids) != REQUIRED:
-        fail("INCOMPLETE_LAYER_SET", "All eleven measured artwork zones are required")
-
-    for layer in layers:
-        label = layer["id"]
-        box = layer.get("box", [])
-        if len(box) != 4 or not all(
-            isinstance(value, (int, float)) and math.isfinite(value) for value in box
-        ):
-            fail("INVALID_BOX", label)
-            continue
-        x, y, width, height = box
-        if min(x, y) < 0 or min(width, height) <= 0 or x + width > 390.1 or y + height > 788.5:
-            fail("BOX_OUTSIDE_ARTBOARD", label)
-        path = local_file(layer.get("file"))
-        if path is None:
-            fail("PRODUCTION_LAYER_MISSING", label)
-            continue
-        if layer["kind"] == "raster" and width >= 390 * .8 and height >= 788.4 * .8:
-            fail("FULL_PAGE_RASTER", label)
-        check_hash(path, layer.get("sha256"), label)
-        if not layer.get("source"):
-            fail("SOURCE_PROVENANCE_MISSING", label)
-        try:
-            if layer["kind"] == "vector":
-                if path.suffix.lower() != ".svg":
-                    raise ValueError("Vector layers must be SVG")
-                tree = ET.parse(path).getroot()
-                viewbox = [float(n) for n in tree.attrib.get("viewBox", "").replace(",", " ").split()]
-                if len(viewbox) != 4 or viewbox[2] <= 0 or viewbox[3] <= 0:
-                    raise ValueError("SVG needs a valid viewBox")
-                if abs(viewbox[2] / viewbox[3] * height - width) > 1:
-                    fail("ASPECT_MISMATCH", label)
-                tags = {element.tag.rsplit("}", 1)[-1] for element in tree.iter()}
-                if tags & {"text", "foreignObject", "image", "script"}:
-                    fail("SVG_DEPENDENCY", label + ": use outlined, self-contained artwork")
-                assets.append({"id": label, "kind": "vector", "viewBox": viewbox})
-            elif layer["kind"] == "raster":
+            provenance = json.loads(provenance_path.read_text())
+            records = {item["id"]: item for item in provenance["assets"]}
+            complete = records["home_master_complete_footer"]
+            master = records["six_screen_master"]
+            complete_path = local_file(complete["path"])
+            master_path = local_file(master["path"])
+            if complete_path != reference_path:
+                raise ValueError("Manifest reference differs from provenance record")
+            for record, path in [(complete, complete_path), (master, master_path)]:
+                if path is None or sha256(path) != record["sha256"]:
+                    raise ValueError("Source hash mismatch: " + record["id"])
                 with Image.open(path) as image:
                     image.load()
-                    pixels = image.size
-                    scale = 430 / 390
-                    required = (math.ceil(width * scale * 2), math.ceil(height * scale * 2))
-                    preferred = (math.ceil(width * scale * 3), math.ceil(height * scale * 3))
-                    if pixels[0] < required[0] or pixels[1] < required[1]:
-                        fail("INSUFFICIENT_RETINA_RESOLUTION", label + ": need " + str(required))
-                    if abs(pixels[0] / pixels[1] * height - width) > 1:
-                        fail("ASPECT_MISMATCH", label)
-                    if "A" not in image.getbands() or image.getchannel("A").getextrema()[0] == 255:
-                        fail("TRANSPARENCY_MISSING", label)
-                    assets.append({
-                        "id": label, "kind": "raster", "pixels": pixels,
-                        "minimum2x": required, "preferred3x": preferred,
-                    })
-            else:
-                fail("INVALID_LAYER_KIND", label)
+                    if image.size != (record["width"], record["height"]):
+                        raise ValueError("Source dimensions changed: " + record["id"])
+            with Image.open(master_path) as source, Image.open(complete_path) as restored:
+                crop = source.crop(tuple(complete["crop"])).convert("RGB")
+                restored_rgb = restored.convert("RGB")
+                if crop.size != restored_rgb.size or crop.tobytes() != restored_rgb.tobytes():
+                    raise ValueError("Complete-footer reference is not pixel-identical to master crop")
+            evidence["provenanceVerified"] = True
         except Exception as error:
-            fail("ASSET_CORRUPT", label + ": " + str(error))
+            fail("PROVENANCE_INVALID", str(error))
+
+    if manifest.get("approval", {}).get("assetsReady") is not True:
+        fail("ASSET_NOT_APPROVED", "assetsReady must be true")
+    if manifest.get("approval", {}).get("strategy") != "canonical-artboard":
+        fail("WRONG_STRATEGY", "Screen 1 must use the locked canonical artboard strategy")
+
+    art = manifest.get("artboard", {})
+    art_path = local_file(art.get("file"))
+    if art_path is None:
+        fail("PRODUCTION_ART_MISSING", str(art.get("file")))
+    else:
+        actual = sha256(art_path)
+        if actual != art.get("sha256"):
+            fail("PRODUCTION_ART_HASH", actual)
+        try:
+            with Image.open(art_path) as image:
+                image.load()
+                if image.size != (art.get("width"), art.get("height")):
+                    fail("PRODUCTION_ART_DIMENSIONS", str(image.size))
+                production = image.convert("RGB")
+            if reference_path:
+                with Image.open(reference_path) as image:
+                    canonical = image.convert("RGB")
+                back = production.resize(canonical.size, Image.Resampling.LANCZOS)
+                diff = ImageChops.difference(canonical, back)
+                stats = ImageStat.Stat(diff)
+                mae = sum(stats.mean) / len(stats.mean)
+                mse = sum(value * value for value in stats.rms) / len(stats.rms)
+                psnr = float("inf") if mse == 0 else 10 * math.log10((255 * 255) / mse)
+                evidence["pixelFidelity"] = {
+                    "mae": round(mae, 4),
+                    "psnr": round(psnr, 3),
+                    "canonicalPixels": list(canonical.size),
+                    "productionPixels": list(production.size),
+                }
+                if mae > 2.0 or psnr < 37:
+                    fail("PIXEL_FIDELITY", f"MAE={mae:.3f}, PSNR={psnr:.2f}")
+        except Exception as error:
+            fail("PRODUCTION_ART_CORRUPT", str(error))
+
+    hotspots = manifest.get("hotspots", [])
+    start = next((item for item in hotspots if item.get("id") == "start"), None)
+    if not start:
+        fail("START_HOTSPOT_MISSING", "start")
+    else:
+        box = start.get("box")
+        if not isinstance(box, list) or len(box) != 4 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in box):
+            fail("START_HOTSPOT_INVALID", str(box))
+        else:
+            x, y, width, height = box
+            if min(x, y) < 0 or min(width, height) <= 0 or x + width > 390.1 or y + height > 804.97:
+                fail("START_HOTSPOT_OUTSIDE", str(box))
+            evidence["startHotspot"] = box
 
     return {
-        "status": "FAIL" if issues else "READY_FOR_VISUAL_QA",
-        "note": "Asset integrity is not visual sign-off.",
-        "referenceSources": source_review,
-        "issues": issues, "assets": assets,
+        "status": "FAIL" if issues else "READY_FOR_BROWSER_QA",
+        "strategy": "canonical-artboard",
+        "note": "Asset integrity + pixel fidelity only. Browser geometry and real-device UAT remain separate gates.",
+        "issues": issues,
+        "evidence": evidence,
     }
 
 
