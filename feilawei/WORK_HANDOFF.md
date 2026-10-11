@@ -183,3 +183,14 @@ Screen 1 production state is tracked in:
 - `feilawei/docs/checkpoints/2026-10-11_v20_WORKFLOW_LOCK_AND_SCREEN1_BUILD.md`
 
 Before doing any work, read `feilawei/PROJECT_STATUS.md` and continue only from its Current task.
+
+
+## Current checkpoint — 2026-10-11
+Screen 1 internal QA has PASSED and is deployed to GitHub Pages staging.
+
+- QA run: 38128410822
+- staging commit: f5a5fc9a4cadc1895a99e8db0adec1a6b58f6ae4
+- staging URL: https://carriehw.github.io/travel/
+
+**Current task: wait for user real-device UAT.**
+Do not implement Screen 2 before user signs off Screen 1.
