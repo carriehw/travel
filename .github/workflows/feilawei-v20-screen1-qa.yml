@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: feilawei-v20-screen1-${{ github.ref }}
+  group: feilawei-v20-screen1
   cancel-in-progress: true
 
 permissions:
