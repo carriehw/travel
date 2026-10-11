@@ -45,8 +45,8 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 - [x] Hash verification implemented
 - [x] QA scripts updated
 - [x] GitHub Actions QA workflow created
-- [ ] Automated browser QA PASS
-- [ ] GitHub Pages staging deploy
+- [x] Automated browser QA PASS
+- [x] GitHub Pages staging deploy
 - [ ] User real-device UAT
 - [ ] Screen 1 final PASS
 
