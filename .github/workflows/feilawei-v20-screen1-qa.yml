@@ -9,6 +9,10 @@ on:
       - ".github/workflows/feilawei-v20-screen1-qa.yml"
   workflow_dispatch:
 
+concurrency:
+  group: feilawei-v20-screen1-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
