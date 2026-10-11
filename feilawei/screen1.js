@@ -1,20 +1,16 @@
 (() => {
   "use strict";
 
-  const VERSION = "20.2";
-  const DESIGN = Object.freeze({ width: 390, height: 788.4, maxWidth: 430 });
-  const REQUIRED_LAYERS = [
-    "decorations", "brand", "title", "mascot", "letsgo", "route",
-    "condition", "blindbox", "reveal", "cta", "slogan"
-  ];
+  const VERSION = "20.3";
+  const DESIGN = Object.freeze({ width: 390, height: 804.87, maxWidth: 430 });
   const home = document.getElementById("home");
   const artwork = document.getElementById("screen1-artwork");
   const start = document.getElementById("screen1-start");
   let report = { status: "loading", issues: [] };
   let locked = false;
   let unlockTimer;
+  let activeObjectUrl = null;
 
-  // QA can read diagnostics; there is no bypass for missing or unapproved art.
   window.feilaweiScreen1 = Object.freeze({
     version: VERSION,
     design: DESIGN,
@@ -31,123 +27,100 @@
     }));
   }
 
+  function validSha(value) {
+    return /^[a-f0-9]{64}$/.test(value || "");
+  }
+
+  function validateBox(box) {
+    if (!Array.isArray(box) || box.length !== 4 || !box.every(Number.isFinite)) return false;
+    const [x, y, width, height] = box;
+    return x >= 0 && y >= 0 && width > 0 && height > 0 &&
+      x + width <= DESIGN.width + .1 && y + height <= DESIGN.height + .1;
+  }
+
   function validateManifest(manifest) {
     const issues = [];
-    if (manifest.schemaVersion !== 1 ||
+    if (manifest.schemaVersion !== 2 ||
         manifest.design?.width !== DESIGN.width ||
         manifest.design?.height !== DESIGN.height ||
         manifest.design?.maxWidth !== DESIGN.maxWidth) {
       issues.push("INVALID_DESIGN_SPEC");
     }
     if (manifest.approval?.assetsReady !== true ||
-        !/^[a-f0-9]{64}$/.test(manifest.reference?.sha256 || "")) {
+        manifest.approval?.strategy !== "canonical-artboard") {
       issues.push("PRODUCTION_ART_NOT_APPROVED");
     }
-    const layers = Array.isArray(manifest.layers) ? manifest.layers : [];
-    const ids = layers.map(layer => layer.id);
-    if (ids.length !== REQUIRED_LAYERS.length ||
-        new Set(ids).size !== ids.length ||
-        REQUIRED_LAYERS.some(id => !ids.includes(id))) {
-      issues.push("INCOMPLETE_LAYER_SET");
+    if (!validSha(manifest.reference?.sha256) || !validSha(manifest.artboard?.sha256)) {
+      issues.push("MISSING_OR_INVALID_HASH");
     }
-    for (const layer of layers) {
-      if (typeof layer.file !== "string" ||
-          !/^\.\/assets\/v20\/[a-zA-Z0-9_./-]+\.(svg|png|webp)$/.test(layer.file) ||
-          layer.file.includes("..")) {
-        issues.push("MISSING_LAYER:" + layer.id);
-      }
-      if (layer.file) {
-        if (!/^[a-f0-9]{64}$/.test(layer.sha256 || "")) {
-          issues.push("UNLOCKED_LAYER_HASH:" + layer.id);
-        }
-        if (typeof layer.source !== "string" || !layer.source.trim()) {
-          issues.push("MISSING_LAYER_PROVENANCE:" + layer.id);
-        }
-      }
-      const [x, y, width, height] = layer.box || [];
-      if (!Array.isArray(layer.box) || layer.box.length !== 4 ||
-          !layer.box.every(Number.isFinite) ||
-          x < 0 || y < 0 || width <= 0 || height <= 0 ||
-          x + width > DESIGN.width + .1 || y + height > DESIGN.height + .1) {
-        issues.push("INVALID_LAYER_BOX:" + layer.id);
-      }
-      if (!["vector", "raster"].includes(layer.kind)) {
-        issues.push("INVALID_LAYER_KIND:" + layer.id);
-      }
-      if (layer.kind === "raster" && width >= DESIGN.width * .8 &&
-          height >= DESIGN.height * .8) {
-        issues.push("FULL_PAGE_RASTER:" + layer.id);
-      }
+    if (manifest.artboard?.file !== "./assets/v20/screen01_golden@2x.webp") {
+      issues.push("UNEXPECTED_ARTBOARD_PATH");
+    }
+    if (manifest.artboard?.width < 780 || manifest.artboard?.height < 1610) {
+      issues.push("INSUFFICIENT_RENDER_ASSET_SIZE");
+    }
+    const startHotspot = manifest.hotspots?.find(item => item.id === "start");
+    if (!startHotspot || !validateBox(startHotspot.box)) {
+      issues.push("INVALID_START_HOTSPOT");
     }
     return issues;
   }
 
-  function position(image, box) {
+  function positionHotspot(element, box) {
     const [x, y, width, height] = box;
-    image.style.left = (x / DESIGN.width * 100) + "%";
-    image.style.top = (y / DESIGN.height * 100) + "%";
-    image.style.width = (width / DESIGN.width * 100) + "%";
-    image.style.height = (height / DESIGN.height * 100) + "%";
+    element.style.left = (x / DESIGN.width * 100) + "%";
+    element.style.top = (y / DESIGN.height * 100) + "%";
+    element.style.width = (width / DESIGN.width * 100) + "%";
+    element.style.height = (height / DESIGN.height * 100) + "%";
   }
 
-  async function loadLayer(layer) {
-    const response = await fetch(layer.file + "?v=" + VERSION);
-    if (!response.ok) throw new Error("LAYER_HTTP_" + response.status + ":" + layer.id);
+  async function verifiedImage(file, sha256) {
+    const response = await fetch(file + "?v=" + VERSION, { cache: "no-store" });
+    if (!response.ok) throw new Error("ARTBOARD_HTTP_" + response.status);
     const bytes = await response.arrayBuffer();
     const digest = await crypto.subtle.digest("SHA-256", bytes);
     const hash = Array.from(new Uint8Array(digest), byte =>
       byte.toString(16).padStart(2, "0")).join("");
-    if (hash !== layer.sha256) throw new Error("LAYER_HASH_MISMATCH:" + layer.id);
+    if (hash !== sha256) throw new Error("ARTBOARD_HASH_MISMATCH");
 
     const image = new Image();
     image.alt = "";
-    image.className = "v20-art-layer";
-    image.dataset.layer = layer.id;
+    image.className = "v20-golden-artboard";
     image.draggable = false;
     image.decoding = "async";
-    // Decode exactly the verified response, without a second file request.
-    const extension = layer.file.split(".").pop();
-    const type = extension === "svg" ? "image/svg+xml" : "image/" + extension;
-    const url = URL.createObjectURL(new Blob([bytes], { type }));
+    const url = URL.createObjectURL(new Blob([bytes], { type: "image/webp" }));
     image.src = url;
     try {
       await image.decode();
     } catch {
-      throw new Error("LAYER_DECODE_FAILED:" + layer.id);
-    } finally {
       URL.revokeObjectURL(url);
+      throw new Error("ARTBOARD_DECODE_FAILED");
     }
-    if (layer.kind === "raster") {
-      const scale = DESIGN.maxWidth / DESIGN.width * 2;
-      if (image.naturalWidth < Math.ceil(layer.box[2] * scale) ||
-          image.naturalHeight < Math.ceil(layer.box[3] * scale)) {
-        throw new Error("INSUFFICIENT_RETINA_RESOLUTION:" + layer.id);
-      }
+    if (image.naturalWidth < 780 || image.naturalHeight < 1610) {
+      URL.revokeObjectURL(url);
+      throw new Error("ARTBOARD_DIMENSION_MISMATCH");
     }
-    if (layer.id !== "cta") position(image, layer.box);
-    if (layer.id === "mascot") image.classList.add("v20-mascot-motion");
-    return { layer, image };
+    return { image, url };
   }
 
   async function init() {
     try {
-      const response = await fetch("./assets/v20/screen01_manifest.json?v=" + VERSION);
+      const response = await fetch("./assets/v20/screen01_manifest.json?v=" + VERSION, { cache: "no-store" });
       if (!response.ok) throw new Error("MANIFEST_HTTP_" + response.status);
       const manifest = await response.json();
       const issues = validateManifest(manifest);
       if (issues.length) return setStatus("blocked", issues);
-      // Publish atomically: a missing layer must never leave a half-built home.
-      const loaded = await Promise.all(manifest.layers.map(loadLayer));
-      const fragment = document.createDocumentFragment();
-      for (const { layer, image } of loaded) {
-        if (layer.id === "cta") start.append(image);
-        else fragment.append(image);
-      }
-      artwork.replaceChildren(fragment);
+
+      const startHotspot = manifest.hotspots.find(item => item.id === "start");
+      positionHotspot(start, startHotspot.box);
+
+      const loaded = await verifiedImage(manifest.artboard.file, manifest.artboard.sha256);
+      if (activeObjectUrl) URL.revokeObjectURL(activeObjectUrl);
+      activeObjectUrl = loaded.url;
+      artwork.replaceChildren(loaded.image);
       setStatus("ready");
     } catch (error) {
       artwork.replaceChildren();
-      start.replaceChildren();
       setStatus("blocked", [error.message]);
     }
   }
@@ -158,14 +131,17 @@
     delete start.dataset.pressed;
     home.classList.remove("v20-leaving");
   }
+
   function press() {
     if (!start.disabled && !locked) start.dataset.pressed = "true";
   }
-  function release() { delete start.dataset.pressed; }
-  start.addEventListener("pointerdown", press);
-  for (const type of ["pointerup", "pointercancel", "blur"]) {
-    start.addEventListener(type, release);
+
+  function release() {
+    delete start.dataset.pressed;
   }
+
+  start.addEventListener("pointerdown", press);
+  ["pointerup", "pointercancel", "blur"].forEach(type => start.addEventListener(type, release));
   start.addEventListener("keydown", event => {
     if (event.key === " " || event.key === "Enter") press();
   });
@@ -173,16 +149,23 @@
   start.addEventListener("click", () => {
     if (start.disabled || locked) return;
     locked = true;
-    // The future flow controller consumes this event. No Screen 2 is built here.
     const event = new CustomEvent("feilawei:start", {
-      bubbles: true, cancelable: true, detail: { nextScreen: "travelType" }
+      bubbles: true,
+      cancelable: true,
+      detail: { nextScreen: "travelType" }
     });
     if (!start.dispatchEvent(event)) home.classList.add("v20-leaving");
     unlockTimer = setTimeout(resetInteraction, 350);
   });
+
   window.addEventListener("pageshow", resetInteraction);
+  window.addEventListener("pagehide", () => {
+    if (activeObjectUrl) URL.revokeObjectURL(activeObjectUrl);
+    activeObjectUrl = null;
+  });
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) release();
   });
+
   init();
 })();
