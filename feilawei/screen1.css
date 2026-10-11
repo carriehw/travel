@@ -18,13 +18,13 @@ button{font:inherit}.app{width:100%;min-height:100vh}
 .brand{position:absolute;top:.7%;left:32.8%;width:50.8%;text-align:left}
 .brand-art{display:block;width:100%;height:auto}
 .brand p{margin:-5.2% 0 0 1.5%;font-weight:700;font-size:min(3.25vw,14px);letter-spacing:.02em;color:#4b4350;white-space:nowrap}
-.hero-title-art{position:absolute;left:5%;top:9.8%;width:94%;height:auto;display:block}
+.hero-title-art{position:absolute;left:4.3%;top:10.1%;width:99%;height:auto;display:block}
 .mascot-window{position:absolute;left:18%;top:35.8%;width:53.3%;aspect-ratio:360/380;overflow:hidden;mix-blend-mode:multiply}
 .mascot-window img{position:absolute;width:311.6667%;max-width:none;left:-97.2222%;top:-56.5789%;user-select:none;-webkit-user-drag:none}
 .lets-go{position:absolute;right:6.5%;top:34.3%;color:#37a8ef;font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(7.2vw,31px);font-weight:700;line-height:.86;transform:rotate(-8deg);text-align:center}
 .route{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .steps{position:absolute;inset:0;z-index:3;pointer-events:none}
-.step{position:absolute;text-align:center}.step-one{left:4.1%;top:60.4%;width:27.2%}.step-two{left:37.1%;top:63.1%;width:30.1%}.step-three{left:70.7%;top:53.0%;width:28.4%}
+.step{position:absolute;text-align:center}.step-one{left:4.1%;top:62.0%;width:27.2%}.step-two{left:37.1%;top:64.4%;width:30.1%}.step-three{left:70.7%;top:53.0%;width:28.4%}
 .icon-circle{width:52%;aspect-ratio:1;margin:0 auto 6%;border-radius:50%;display:grid;place-items:center}.icon-circle.yellow{background:#ffd768}.icon-circle.butter{background:#ffe99c}.icon-circle.blue{background:#7cc8f5}.icon-circle svg{width:82%;height:82%;display:block}
 .step h2{margin:0;font-family:"Hannotate TC","HanziPen TC","PingFang TC","PingFang HK",sans-serif;font-size:min(4.35vw,18.7px);font-weight:900;letter-spacing:-.04em;white-space:nowrap}.step p{margin:2% 0 0;font-size:min(3.05vw,13.1px);font-weight:650;color:#4e4a4b;white-space:nowrap}.step-three h2{font-size:min(3.95vw,17px)}
 .start-btn{position:absolute;left:8.7%;top:80.9%;width:85.5%;height:10.4%;border:0;border-radius:999px;background:linear-gradient(90deg,#ff686a,#f25b5f);color:#fff;font-weight:900;font-size:min(5.65vw,24.3px);letter-spacing:-.04em;display:flex;align-items:center;justify-content:center;gap:4%;box-shadow:0 7px 0 rgba(120,54,56,.10),inset 0 0 0 4px rgba(255,255,255,.72);cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .14s ease,filter .14s ease}
