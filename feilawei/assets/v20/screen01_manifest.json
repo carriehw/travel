@@ -1,166 +1,58 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "screen": "home",
   "design": {
     "width": 390,
-    "height": 788.4,
+    "height": 804.87,
     "maxWidth": 430,
+    "scaling": "proportional-width-only",
     "coordinateSpec": "docs/05_SCREEN1_COORDINATE_SPEC.md"
   },
   "reference": {
-    "path": "assets/reference/home_master_clean.png",
+    "path": "assets/reference/home_master_complete_footer.png",
     "width": 345,
-    "height": 697,
-    "sha256": "13efab862908a1cede56194573ce07b7140f75d8bba7d87c4a1e39f8345f3c92",
+    "height": 712,
+    "crop": [
+      7,
+      38,
+      352,
+      750
+    ],
+    "derivedFrom": "assets/reference/six-screen-master.png",
+    "sha256": "63dd1cbfd7e31f81adeeec802c02ba226282f5c6ea4e3ac00413dc2cf2d80624",
     "provenance": "assets/reference/source_provenance.json"
   },
   "approval": {
-    "assetsReady": false,
-    "note": "Approved canonical reference and character sheet recovered from the user-provided shared conversation. Production layers remain unapproved and incomplete; native source crops do not meet the Retina gate. Reference footer clipping requires product review."
+    "assetsReady": true,
+    "strategy": "canonical-artboard",
+    "note": "Locked Golden Master rendered as a single verified artboard for fidelity and cost/time efficiency. The production WebP is a standard Lanczos technical resample only; no AI redraw, recolouring, relayout or invented detail."
   },
-  "layers": [
+  "artboard": {
+    "id": "golden-master",
+    "file": "./assets/v20/screen01_golden@2x.webp",
+    "width": 780,
+    "height": 1610,
+    "kind": "raster",
+    "source": "assets/reference/home_master_complete_footer.png",
+    "sha256": "625363bd728df4419242cc5519d9310f27aaf2bd1ca33313add8b79251b5fe7e",
+    "derivation": {
+      "resize": "780x1610",
+      "resample": "Lanczos",
+      "format": "WebP",
+      "quality": 96
+    }
+  },
+  "hotspots": [
     {
-      "id": "decorations",
-      "box": [
-        0,
-        0,
-        390,
-        788.4
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "brand",
-      "box": [
-        127.7,
-        6.8,
-        175.3,
-        72.3
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "title",
-      "box": [
-        54.3,
-        85.9,
-        313.1,
-        202.4
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "mascot",
-      "box": [
-        70.1,
-        288.3,
-        208,
-        221.5
-      ],
-      "kind": "raster",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "letsgo",
-      "box": [
-        297.3,
-        275.8,
-        79.1,
-        100.6
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "route",
-      "box": [
-        229.5,
-        374.2,
-        153.7,
-        168.4
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "condition",
-      "box": [
-        15.8,
-        487.2,
-        106.3,
-        136.8
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "blindbox",
-      "box": [
-        144.7,
-        511,
-        117.6,
-        122
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "reveal",
-      "box": [
-        275.8,
-        457.8,
-        110.8,
-        161.7
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "cta",
+      "id": "start",
+      "action": "start",
       "box": [
         33.9,
         651.1,
         333.5,
         83.7
       ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
-    },
-    {
-      "id": "slogan",
-      "box": [
-        81.4,
-        737,
-        281.5,
-        50.9
-      ],
-      "kind": "vector",
-      "file": null,
-      "source": null,
-      "sha256": null
+      "ariaLabel": "開始飛啦"
     }
   ]
 }
