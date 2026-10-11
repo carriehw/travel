@@ -188,7 +188,8 @@ async function controls(browser, engine, base) {
     const result = await geometry(desktop);
     assert.equal(result.board.width, 430);
     assert.equal(result.board.x, 85);
-    await desktop.addStyleTag({ content: "*{animation:none!important;transition:none!important}.v20-home-screen{padding-top:44px!important;padding-bottom:34px!important}" });\n    await desktop.waitForTimeout(20);
+    await desktop.addStyleTag({ content: "*{animation:none!important;transition:none!important}.v20-home-screen{padding-top:44px!important;padding-bottom:34px!important}" });
+    await desktop.waitForTimeout(20);
     const padded = await geometry(desktop);
     assert.equal(padded.board.y, 44);
     assert.equal(padded.board.height, result.board.height);
