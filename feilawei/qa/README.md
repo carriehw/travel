@@ -1,76 +1,56 @@
-# Screen 1 internal QA
+# Screen 1 Automated QA — v20.3
 
-These tools validate engineering separately from visual approval. A passing
-engineering run cannot unlock Screen 2 or publish staging.
+Screen 1 uses the locked **Canonical Artboard + Semantic Hotspot** strategy.
 
-## Setup
-
-Python 3 with Pillow 11+; Node 20+; Playwright 1.57.0.
+## Commands
 
 ```sh
 npm --prefix feilawei/qa ci
 npx --prefix feilawei/qa playwright install chromium webkit
-```
-
-On a configured host, run from the repository root:
-
-```sh
 python3 feilawei/qa/validate-assets.py --output feilawei/docs/qa/latest/asset-validation.json
 node feilawei/qa/capture-screen1.cjs feilawei/docs/qa/latest
 python3 feilawei/qa/build-review.py feilawei/docs/qa/latest
 ```
 
-Asset validation and visual review exit 1 while blocked. This is an intentional
-FAIL, not a tooling error. Capture exits 0 only for its engineering checks across
-both browser engines; its report records a separate visual verdict.
+GitHub Actions runs the same pipeline automatically.
 
-The capture tool starts its own loopback server. Optional environment variables:
+## Gates
 
-- `PLAYWRIGHT_MODULE`: installed Playwright module path.
-- `CHROMIUM_EXECUTABLE`: existing Chromium executable.
-- `PLAYWRIGHT_BROWSERS_PATH`: directory containing installed WebKit/Chromium.
+### Asset gate
+Checks:
+- exact source provenance
+- complete-footer crop is pixel-identical to approved six-screen master
+- production hash/dimensions
+- asset-level pixel fidelity
 
-## Missing reference
+Threshold:
+- MAE <= 2
+- PSNR >= 37 dB
 
-The canonical input is `assets/reference/home_master_clean.png`, 345×697, with
-its verified SHA-256 recorded in the manifest. If it is unavailable, a diagnostic
-comparison can be generated explicitly:
+### Browser gate
+Chromium + WebKit:
+- 375 / 390 / 393 / 430 widths
+- proportional 390×804.87 artboard
+- correct CTA hotspot
+- no horizontal overflow
+- short viewport scrolling
+- keyboard/touch
+- duplicate activation guard
+- reduced motion
+- artwork hash rejection
+- 430px cap / safe-area independence
 
-```sh
-python3 feilawei/qa/build-review.py feilawei/docs/qa/latest --diagnostic-source feilawei/assets/master/screen1.webp
-```
+### Visual gate
+Reference / Live / 50% Overlay.
 
-The diagnostic image is proportionally contained, never stretched. Its crop
-and low resolution differ from the canonical reference. The review stays FAIL
-and labels the reference slot unverified. It cannot establish a 95% match.
+Automated tolerance:
+- MAE <= 4
+- PSNR >= 30 dB
 
-## Evidence
+### Final gate
+Real iPhone Safari + ChatGPT in-app browser + user UAT.
 
-- Actual artboard and viewport captures at 375 / 390 / 393 / 430.
-- Actual short viewport captures after scrolling to the bottom.
-- CTA geometry, proportional scaling, overflow and missing-file diagnostics.
-- Separate synthetic rectangle fixtures for transport, single-tap/keyboard
-  activation, reduced motion, failed-layer rollback and refresh checks.
-- Source hashes and pixel-identical recovery of the recorded canonical crop.
-- Browser rejection of changed artwork bytes and missing hash/provenance;
-  verified SVG responses remain drawable after their temporary Blob URLs expire.
-- Reference / Live / 50% Overlay PNGs and an interactive comparison page.
+Automated browser PASS does not replace real-device UAT.
 
-Synthetic fixtures are served only by Playwright request interception. They are
-not production files, never depict 小天線隊長, and never enter visual evidence.
-
-Before sign-off, review all immutable art, colours, copy, alpha edges and Retina
-sharpness against the real source. Record every Critical/Major mismatch. Require
-actual iOS Safari and ChatGPT in-app UAT after internal QA passes. Do not infer
-device sign-off from desktop WebKit emulation.
-
-## Recovered source review
-
-The approved originals are now in `assets/reference/`, with their conversation
-message IDs and hashes in `source_provenance.json`. Validation reports these
-separately from production-layer readiness. The complete asset verdict remains
-FAIL while the layers are absent.
-
-[Source review](../docs/12_SCREEN1_SOURCE_RECOVERY.md) records the native Retina
-shortfall and footer cropping defect. Any proposed crop is QA evidence only;
-it is not substituted into the production manifest or marked as visual PASS.
+## Important
+Do not restore the old 11-layer QA fixtures. That workflow was superseded after the user locked canonical-size pixel fidelity and cost/time-effective delivery.
