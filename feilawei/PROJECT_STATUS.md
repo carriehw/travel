@@ -52,9 +52,13 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 - [x] Automated browser QA PASS
 - [x] GitHub Pages staging deploy
 - [x] User real-device UAT attempted
-- [ ] **UAT FAIL — artwork visibly blurry on real device**
-- [ ] High-resolution production artboard replacement
-- [ ] Sharpness/native-resolution QA
+- [x] **UAT FAIL recorded — blur + AI text**
+- [x] Low-resolution full-screen raster renderer removed from v20.4
+- [x] Important visible copy converted to real zh-HK DOM text
+- [x] Approved high-resolution mascot source used
+- [x] Browser/text-integrity QA PASS on Chromium + WebKit, 375/390/393/430
+- [ ] Manual visual alignment against Golden Master
+- [ ] GitHub Pages redeploy for user re-UAT
 - [ ] Screen 1 final PASS
 
 ### Screen 2+
@@ -62,7 +66,16 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 No implementation should begin.
 
 ## Current task
-**Screen 1 P0 correction: real Traditional Chinese + sharp native renderer.**
+**Screen 1 P1 visual alignment after P0 text/sharpness QA PASS.**
+
+Latest CI:
+- GitHub Actions run 38135102111: PASS
+- real Traditional Chinese DOM copy: PASS
+- no full-screen raster text renderer: PASS
+- Chromium + WebKit width matrix: PASS
+
+Manual overlay review: NOT YET PASS.
+The renderer is sharp and the text is genuine, but spacing/type personality still needs closer Golden Master alignment before staging redeploy.
 
 Real-device UAT on 2026-10-11 exposed a Major issue:
 - visual composition matches the locked Golden Master;
