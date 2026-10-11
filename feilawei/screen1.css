@@ -15,25 +15,25 @@ button{font:inherit}.app{width:100%;min-height:100vh}
 .blob-purple{right:-12%;bottom:3%;width:28%;height:12%;background:var(--purple);border-radius:50%}
 .face:before,.face:after{content:"";position:absolute;top:42%;width:5%;aspect-ratio:1;background:#2f2a2a;border-radius:50%}
 .face:before{left:38%}.face:after{left:55%}.face{position:absolute;inset:0}
-.brand{position:absolute;top:1.8%;left:31%;width:45%;text-align:left}
+.brand{position:absolute;top:1.5%;left:30.5%;width:47%;text-align:left}
 .brand-line{display:flex;align-items:center;gap:4%;white-space:nowrap}
-.brand-name{color:#0d6ba8;font-weight:900;font-size:min(7.9vw,34px);letter-spacing:-.08em;line-height:1}
-.brand p{margin:.8% 0 0;font-weight:700;font-size:min(3.3vw,14px);letter-spacing:.04em;color:#4b4350;white-space:nowrap}
+.brand-name{color:#0d6ba8;font-family:"Hannotate TC","HanziPen TC","PingFang TC","PingFang HK",sans-serif;font-weight:900;font-size:min(8.6vw,37px);letter-spacing:-.09em;line-height:1;transform:rotate(-1deg)}
+.brand p{margin:.4% 0 0;font-weight:700;font-size:min(3.25vw,14px);letter-spacing:.02em;color:#4b4350;white-space:nowrap}
 .planet{position:relative;width:13%;aspect-ratio:1;display:inline-block;border-radius:50%;background:#8edfcf;border:2px solid #176ca9;flex:0 0 auto}
 .planet:before{content:"";position:absolute;left:-27%;top:42%;width:155%;height:15%;border:2px solid #176ca9;border-radius:50%;transform:rotate(-8deg)}
 .planet i{position:absolute;inset:33% 40%;border-radius:50%;background:#ffd661}
-.hero-title{position:absolute;left:12%;top:10.2%;width:78%;margin:0;font-size:min(13vw,56px);font-weight:950;line-height:.99;letter-spacing:-.075em;color:var(--ink);font-family:"PingFang TC","PingFang HK","Noto Sans TC","Microsoft JhengHei",sans-serif}
-.hero-title>span{display:block;white-space:nowrap}.hero-title>span:nth-child(2){margin-top:2%}.q-blue,.dot-blue{color:var(--blue)}.coral{color:var(--coral)}
-.scribble{position:absolute;left:54%;top:28.4%;width:30%;height:1.4%;border-bottom:4px solid #ffd12f;border-radius:50%;transform:rotate(-6deg)}
-.mascot-window{position:absolute;left:16.5%;top:34.1%;width:55%;aspect-ratio:360/380;overflow:hidden;mix-blend-mode:multiply}
-.mascot-window img{position:absolute;width:311.6667%;max-width:none;left:-97.2222%;top:-56.5789%;user-select:none;-webkit-user-drag:none}
-.lets-go{position:absolute;right:7.2%;top:33.4%;color:#37a8ef;font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(7.2vw,31px);font-weight:700;line-height:.86;transform:rotate(-8deg);text-align:center}
+.hero-title{position:absolute;left:11.5%;top:9.8%;width:80%;margin:0;font-size:min(15vw,64.5px);font-weight:900;line-height:.95;letter-spacing:-.085em;color:var(--ink);font-family:"Hannotate TC","HanziPen TC","PingFang TC","PingFang HK","Noto Sans TC","Microsoft JhengHei",sans-serif}
+.hero-title>span{display:block;white-space:nowrap;transform-origin:left center}.hero-title>span:first-child{transform:scaleX(1.08) rotate(-1deg)}.hero-title>span:nth-child(2){margin-top:1%;transform:scaleX(1.07) rotate(-1.5deg)}.q-blue,.dot-blue{color:var(--blue)}.coral{color:var(--coral)}
+.scribble{position:absolute;left:56%;top:29.3%;width:29%;height:1.4%;border-bottom:4px solid #ffd12f;border-radius:50%;transform:rotate(-6deg)}
+.mascot-window{position:absolute;left:14.5%;top:32.7%;width:59%;aspect-ratio:355/370;overflow:hidden;mix-blend-mode:multiply}
+.mascot-window img{position:absolute;width:316.056%;max-width:none;left:-102.817%;top:-58.108%;user-select:none;-webkit-user-drag:none}
+.lets-go{position:absolute;right:6.3%;top:34.2%;color:#37a8ef;font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(7.2vw,31px);font-weight:700;line-height:.86;transform:rotate(-8deg);text-align:center}
 .route{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-.steps{position:absolute;left:0;top:57.5%;width:100%;height:22%;z-index:3}
+.steps{position:absolute;left:0;top:56.7%;width:100%;height:22%;z-index:3}
 .step{position:absolute;text-align:center;width:30%}.step-one{left:2%}.step-two{left:35%}.step-three{right:1%}
 .icon-circle{width:45%;aspect-ratio:1;margin:0 auto 4%;border-radius:50%;display:grid;place-items:center}.icon-circle.yellow{background:#ffd768}.icon-circle.butter{background:#ffe99c}.icon-circle.blue{background:#7cc8f5}.icon-circle svg{width:82%;height:82%;display:block}
-.step h2{margin:0;font-size:min(4.35vw,18.7px);font-weight:900;letter-spacing:-.04em;white-space:nowrap}.step p{margin:2% 0 0;font-size:min(3.05vw,13.1px);font-weight:650;color:#4e4a4b;white-space:nowrap}.step-three h2{font-size:min(3.95vw,17px)}
-.start-btn{position:absolute;left:8.5%;top:82.2%;width:83%;height:9.9%;border:0;border-radius:999px;background:linear-gradient(90deg,#ff686a,#f25b5f);color:#fff;font-weight:900;font-size:min(5.8vw,25px);letter-spacing:-.03em;display:flex;align-items:center;justify-content:center;gap:4%;box-shadow:0 7px 0 rgba(120,54,56,.10),inset 0 0 0 4px rgba(255,255,255,.72);cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .14s ease,filter .14s ease}
+.step h2{margin:0;font-family:"Hannotate TC","HanziPen TC","PingFang TC","PingFang HK",sans-serif;font-size:min(4.35vw,18.7px);font-weight:900;letter-spacing:-.04em;white-space:nowrap}.step p{margin:2% 0 0;font-size:min(3.05vw,13.1px);font-weight:650;color:#4e4a4b;white-space:nowrap}.step-three h2{font-size:min(3.95vw,17px)}
+.start-btn{position:absolute;left:8.2%;top:82.0%;width:83.6%;height:9.8%;border:0;border-radius:999px;background:linear-gradient(90deg,#ff686a,#f25b5f);color:#fff;font-weight:900;font-size:min(5.65vw,24.3px);letter-spacing:-.04em;display:flex;align-items:center;justify-content:center;gap:4%;box-shadow:0 7px 0 rgba(120,54,56,.10),inset 0 0 0 4px rgba(255,255,255,.72);cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .14s ease,filter .14s ease}
 .start-btn:active,.start-btn[data-pressed="true"]{transform:scale(.985);filter:brightness(.98)}.start-btn:focus-visible{outline:3px solid #126fab;outline-offset:3px}
-.slogan{position:absolute;left:16%;bottom:1.7%;width:70%;text-align:center;transform:rotate(-1deg)}.slogan p{margin:0}.slogan p:first-child{font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(4.2vw,18px);font-weight:700;letter-spacing:.03em}.slogan p:last-child{margin-top:.7%;font-size:min(3.5vw,15px);font-weight:900;letter-spacing:-.02em}
+.slogan{position:absolute;left:15%;bottom:1.45%;width:72%;text-align:center;transform:rotate(-1deg)}.slogan p{margin:0}.slogan p:first-child{font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(4.2vw,18px);font-weight:700;letter-spacing:.03em}.slogan p:last-child{margin-top:.7%;font-size:min(3.5vw,15px);font-weight:900;letter-spacing:-.02em}
 @media(prefers-reduced-motion:reduce){.start-btn{transition:none}}
