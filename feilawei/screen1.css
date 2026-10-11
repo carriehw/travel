@@ -15,16 +15,10 @@ button{font:inherit}.app{width:100%;min-height:100vh}
 .blob-purple{right:-12%;bottom:3%;width:28%;height:12%;background:var(--purple);border-radius:50%}
 .face:before,.face:after{content:"";position:absolute;top:42%;width:5%;aspect-ratio:1;background:#2f2a2a;border-radius:50%}
 .face:before{left:38%}.face:after{left:55%}.face{position:absolute;inset:0}
-.brand{position:absolute;top:1.5%;left:30.5%;width:47%;text-align:left}
-.brand-line{display:flex;align-items:center;gap:4%;white-space:nowrap}
-.brand-name{color:#0d6ba8;font-family:"Hannotate TC","HanziPen TC","PingFang TC","PingFang HK",sans-serif;font-weight:900;font-size:min(8.6vw,37px);letter-spacing:-.09em;line-height:1;transform:rotate(-1deg)}
-.brand p{margin:.4% 0 0;font-weight:700;font-size:min(3.25vw,14px);letter-spacing:.02em;color:#4b4350;white-space:nowrap}
-.planet{position:relative;width:13%;aspect-ratio:1;display:inline-block;border-radius:50%;background:#8edfcf;border:2px solid #176ca9;flex:0 0 auto}
-.planet:before{content:"";position:absolute;left:-27%;top:42%;width:155%;height:15%;border:2px solid #176ca9;border-radius:50%;transform:rotate(-8deg)}
-.planet i{position:absolute;inset:33% 40%;border-radius:50%;background:#ffd661}
-.hero-title{position:absolute;left:11.5%;top:9.8%;width:80%;margin:0;font-size:min(15vw,64.5px);font-weight:900;line-height:.95;letter-spacing:-.085em;color:var(--ink);font-family:"Hannotate TC","HanziPen TC","PingFang TC","PingFang HK","Noto Sans TC","Microsoft JhengHei",sans-serif}
-.hero-title>span{display:block;white-space:nowrap;transform-origin:left center}.hero-title>span:first-child{transform:scaleX(1.08) rotate(-1deg)}.hero-title>span:nth-child(2){margin-top:1%;transform:scaleX(1.07) rotate(-1.5deg)}.q-blue,.dot-blue{color:var(--blue)}.coral{color:var(--coral)}
-.scribble{position:absolute;left:56%;top:29.3%;width:29%;height:1.4%;border-bottom:4px solid #ffd12f;border-radius:50%;transform:rotate(-6deg)}
+.brand{position:absolute;top:1.4%;left:29.3%;width:49.5%;text-align:left}
+.brand-art{display:block;width:100%;height:auto}
+.brand p{margin:-2.2% 0 0 4%;font-weight:700;font-size:min(3.25vw,14px);letter-spacing:.02em;color:#4b4350;white-space:nowrap}
+.hero-title-art{position:absolute;left:7.6%;top:9.5%;width:84.6%;height:auto;display:block}
 .mascot-window{position:absolute;left:14.5%;top:32.7%;width:59%;aspect-ratio:355/370;overflow:hidden;mix-blend-mode:multiply}
 .mascot-window img{position:absolute;width:316.056%;max-width:none;left:-102.817%;top:-58.108%;user-select:none;-webkit-user-drag:none}
 .lets-go{position:absolute;right:6.3%;top:34.2%;color:#37a8ef;font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(7.2vw,31px);font-weight:700;line-height:.86;transform:rotate(-8deg);text-align:center}
@@ -37,3 +31,4 @@ button{font:inherit}.app{width:100%;min-height:100vh}
 .start-btn:active,.start-btn[data-pressed="true"]{transform:scale(.985);filter:brightness(.98)}.start-btn:focus-visible{outline:3px solid #126fab;outline-offset:3px}
 .slogan{position:absolute;left:15%;bottom:1.45%;width:72%;text-align:center;transform:rotate(-1deg)}.slogan p{margin:0}.slogan p:first-child{font-family:"Marker Felt","Comic Sans MS",cursive;font-size:min(4.2vw,18px);font-weight:700;letter-spacing:.03em}.slogan p:last-child{margin-top:.7%;font-size:min(3.5vw,15px);font-weight:900;letter-spacing:-.02em}
 @media(prefers-reduced-motion:reduce){.start-btn{transition:none}}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
