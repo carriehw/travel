@@ -194,3 +194,18 @@ Screen 1 internal QA has PASSED and is deployed to GitHub Pages staging.
 
 **Current task: wait for user real-device UAT.**
 Do not implement Screen 2 before user signs off Screen 1.
+
+
+## Screen 1 renderer update — 2026-10-11
+Real-device UAT showed that the previous full-screen raster implementation is too blurry, and AI-rendered Chinese glyphs are not reliable Traditional Chinese.
+
+New locked rule:
+- Golden Master remains composition/style authority.
+- Confirmed copy files are text authority.
+- Visible Chinese must be real zh-HK DOM text.
+- Icons/decorations should be SVG/CSS where practical.
+- Mascot must use approved artwork.
+- Do not reintroduce screen01_golden@2x.webp as the live full-screen renderer.
+- Pixel equality against AI glyph shapes is no longer a pass/fail criterion.
+
+Read docs/14_SCREEN1_TEXT_INTEGRITY_SHARPNESS.md and docs/15_TASK_PRIORITY.md before changing Screen 1.
