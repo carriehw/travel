@@ -58,7 +58,7 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 - [x] Approved high-resolution mascot source used
 - [x] Browser/text-integrity QA PASS on Chromium + WebKit, 375/390/393/430
 - [x] Manual visual alignment against Golden Master — PASS WITH MINOR
-- [ ] GitHub Pages redeploy for user re-UAT
+- [x] GitHub Pages redeploy for user re-UAT
 - [ ] Screen 1 final PASS
 
 ### Screen 2+
@@ -120,4 +120,12 @@ Manual 390px review:
 
 Minor differences remain in small decorative details / exact hand-drawn type personality. These do not justify another internal rewrite before user UAT because the user must decide whether this fidelity level is acceptable.
 
-Decision: promote to GitHub Pages staging for visual UAT. Screen 2 remains blocked.
+Decision completed: promoted to GitHub Pages staging for visual UAT.
+
+Staging deploy:
+- gh-pages commit: 845ca1413135aab4a712cca79f991d23268d2bf4
+- Pages run: 38137321297
+- result: SUCCESS
+- URL: https://carriehw.github.io/travel/
+
+Current gate: user real-device UAT. Screen 2 remains blocked until sign-off.
