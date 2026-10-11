@@ -62,7 +62,7 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 No implementation should begin.
 
 ## Current task
-**Fix Screen 1 asset sharpness only — do not redesign or rebuild layout.**
+**Screen 1 P0 correction: real Traditional Chinese + sharp native renderer.**
 
 Real-device UAT on 2026-10-11 exposed a Major issue:
 - visual composition matches the locked Golden Master;
@@ -70,16 +70,19 @@ Real-device UAT on 2026-10-11 exposed a Major issue:
 - automated overlay/pixel-similarity QA passed because it measured fidelity to the same low-resolution source, not native display sharpness.
 
 ### Root-cause classification
-**Asset-resolution QA gap**, not layout/architecture failure.
+**Raster-production strategy + text-integrity QA gap.**
+The composition is still the visual authority; AI-generated glyphs are not copy authority.
 
 ### Corrective action
-1. keep the canonical-artboard + semantic-hotspot architecture;
-2. keep all approved coordinates and copy locked;
-3. replace only the visual artboard with a genuinely high-resolution reconstruction/export;
-4. use exact approved artwork/character identity — no redesign;
-5. add a native-resolution/sharpness gate before browser QA;
-6. redeploy Screen 1 to GitHub Pages;
-7. ask user to re-UAT only after internal sharpness QA passes.
+1. keep the approved composition / palette / mascot identity locked;
+2. render all important Traditional Chinese as real DOM text;
+3. render icons/decorations as SVG/CSS where possible;
+4. source mascot from approved artwork;
+5. remove the full-screen low-resolution raster renderer from live production;
+6. run text-integrity + browser geometry QA;
+7. manually inspect Reference / Live / Overlay for composition;
+8. redeploy Screen 1 to GitHub Pages only after internal QA;
+9. ask user to re-UAT only after internal QA passes.
 
 Screen 2 remains blocked.
 
