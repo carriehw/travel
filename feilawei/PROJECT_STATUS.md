@@ -51,7 +51,10 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 - [x] GitHub Actions QA workflow created
 - [x] Automated browser QA PASS
 - [x] GitHub Pages staging deploy
-- [ ] User real-device UAT
+- [x] User real-device UAT attempted
+- [ ] **UAT FAIL — artwork visibly blurry on real device**
+- [ ] High-resolution production artboard replacement
+- [ ] Sharpness/native-resolution QA
 - [ ] Screen 1 final PASS
 
 ### Screen 2+
@@ -59,28 +62,26 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 No implementation should begin.
 
 ## Current task
-**User real-device UAT for Screen 1.**
+**Fix Screen 1 asset sharpness only — do not redesign or rebuild layout.**
 
-Staging:
-https://carriehw.github.io/travel/
+Real-device UAT on 2026-10-11 exposed a Major issue:
+- visual composition matches the locked Golden Master;
+- production artwork is visibly blurry because the canonical reference is only 345×712 and the current 780×1610 WebP was created by Lanczos enlargement from that low-resolution raster;
+- automated overlay/pixel-similarity QA passed because it measured fidelity to the same low-resolution source, not native display sharpness.
 
-Internal automated QA has already passed and staging deployment succeeded.
+### Root-cause classification
+**Asset-resolution QA gap**, not layout/architecture failure.
 
-User UAT only needs to confirm:
-1. visual matches approved Screen 1;
-2. no crop / blur / broken artwork on real phone;
-3. CTA works;
-4. Safari / ChatGPT in-app browser feels correct.
+### Corrective action
+1. keep the canonical-artboard + semantic-hotspot architecture;
+2. keep all approved coordinates and copy locked;
+3. replace only the visual artboard with a genuinely high-resolution reconstruction/export;
+4. use exact approved artwork/character identity — no redesign;
+5. add a native-resolution/sharpness gate before browser QA;
+6. redeploy Screen 1 to GitHub Pages;
+7. ask user to re-UAT only after internal sharpness QA passes.
 
-If FAIL:
-- log the exact measured failure;
-- fix only that failure;
-- do not redesign or reopen passed architecture.
-
-If PASS:
-- mark Screen 1 PASSED;
-- freeze it;
-- move to the next screen/design gate without rebuilding Screen 1.
+Screen 2 remains blocked.
 
 ## Rule for every future update
 Each session should:
