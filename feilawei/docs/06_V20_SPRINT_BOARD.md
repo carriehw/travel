@@ -22,8 +22,8 @@ Single source of truth: [PROJECT_STATUS](../PROJECT_STATUS.md)
 - [x] Update asset/pixel QA
 - [x] Update browser QA
 - [x] Add GitHub Actions automation
-- [ ] Automated QA PASS
-- [ ] gh-pages staging
+- [x] Automated QA PASS
+- [x] gh-pages staging
 - [ ] Real-device/user UAT
 - [ ] Screen 1 PASS
 
