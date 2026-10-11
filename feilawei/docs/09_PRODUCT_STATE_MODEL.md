@@ -105,3 +105,47 @@ If fewer than 6 credible destinations remain:
 - explain which constraints are too tight
 - offer “放寬一個條件再抽”
 - preserve the user's current answers
+
+
+---
+
+# v20 Gameplay Extension
+
+## Party mode state
+```js
+{
+  partyMode: "single-device",
+  players: [
+    {
+      id: null,
+      nickname: null,
+      mustHave: null,
+      veto: null
+    }
+  ],
+  wildCards: [],
+  mysteryCandidates: [],
+  eliminatedDestinationIds: [],
+  finalThree: [],
+  lockedBlindBoxDestinationId: null
+}
+```
+
+## Recommendation pipeline
+1. Apply hard excludes.
+2. Remove visited destinations for MVP.
+3. Apply base travel filters.
+4. Add Must-have score boosts.
+5. Apply Veto hard/strong penalties.
+6. Apply Wild Card modifier.
+7. Apply anti-repeat penalties.
+8. Generate top 6 candidates.
+9. Precompute truthful clue metadata.
+10. Player group eliminates 6 → 4 → 3.
+11. Shuffle final 3 behind blind boxes.
+12. Lock destination mapping before tap.
+13. Reveal selected destination.
+14. Generate explanation from actual recorded choices only.
+
+## Integrity rule
+Gameplay cannot secretly override recommendation logic after a box is selected.
