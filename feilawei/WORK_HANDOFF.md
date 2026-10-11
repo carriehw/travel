@@ -139,3 +139,25 @@ Ask only if:
 
 ## Expected working style
 Work autonomously, log progress in Markdown checkpoints, keep GitHub issues updated, and only surface to the user when approval is genuinely needed.
+
+
+## Gameplay update — LOCKED
+User approved the recommended core gameplay combination:
+- Privilege Cards: Must-have / Veto / Wild Card
+- Mystery Candidate Elimination
+- 小天線隊長 as Game Master
+
+Important compatibility decision:
+- Keep the approved 12 Blind Boxes Golden Master.
+- After elimination, 3 final destinations remain.
+- The 12 boxes are pre-mapped to those 3 destinations (4 boxes per destination) before the user taps.
+- Never change the destination after a box is chosen.
+
+Read:
+- feilawei/docs/11_CORE_GAME_LOOP.md
+- feilawei/docs/12_SCREEN_FLOW_GOLDEN_MASTER_MAP.md
+
+MVP implementation should remain cost-effective:
+- single-device Party Mode first
+- no real-time multiplayer backend yet
+- Room Mode is Phase 2
