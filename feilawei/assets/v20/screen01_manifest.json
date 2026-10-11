@@ -25,7 +25,7 @@
   "approval": {
     "assetsReady": true,
     "strategy": "canonical-artboard",
-    "note": "Locked Golden Master rendered as a single verified artboard for fidelity and cost/time efficiency. The production WebP is a standard Lanczos technical resample only; no AI redraw, recolouring, relayout or invented detail."
+    "note": "Locked Golden Master rendered as one verified artboard for fidelity and cost/time efficiency. The production WebP is a standard lossless Lanczos technical resample only; no AI redraw, recolouring, relayout or invented detail."
   },
   "artboard": {
     "id": "golden-master",
@@ -34,12 +34,12 @@
     "height": 1610,
     "kind": "raster",
     "source": "assets/reference/home_master_complete_footer.png",
-    "sha256": "625363bd728df4419242cc5519d9310f27aaf2bd1ca33313add8b79251b5fe7e",
+    "sha256": "591b47506a968c12516d141f3875b569873d03a7a89a65d6a594f24a3fea7fc9",
     "derivation": {
       "resize": "780x1610",
       "resample": "Lanczos",
       "format": "WebP",
-      "quality": 96
+      "lossless": true
     }
   },
   "hotspots": [
