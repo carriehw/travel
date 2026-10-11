@@ -1,153 +1,60 @@
-"""Validate the locked Screen 1 Golden Master artboard and its provenance."""
-import argparse
-import hashlib
-import json
-import math
+"""Validate Screen 1 native-text renderer inputs and copy integrity."""
+import argparse, json, hashlib
 from pathlib import Path
+from PIL import Image
 
-from PIL import Image, ImageChops, ImageStat
+ROOT=Path(__file__).resolve().parents[1]
+REQUIRED=[
+"飛啦喂！","外星旅人・地球導遊","想去邊？","抽咗先算。","揀條件","話你知想點玩",
+"揀盲盒","揀你心儀嘅盒","揭曉下一站","睇吓去邊！","開始飛啦",
+"You only live once","人生得一次，仲等咩？飛啦喂！"
+]
 
-ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_DESIGN = {"width": 390, "height": 804.87, "maxWidth": 430}
-
-
-def sha256(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def local_file(value):
-    if not isinstance(value, str):
-        return None
-    path = (ROOT / value).resolve()
-    return path if path.is_relative_to(ROOT) and path.is_file() else None
-
+def sha256(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def validate():
-    manifest = json.loads((ROOT / "assets/v20/screen01_manifest.json").read_text())
-    issues = []
-    evidence = {}
+    issues=[]; evidence={}
+    html=(ROOT/"index.html").read_text(encoding="utf-8")
+    css=(ROOT/"screen1.css").read_text(encoding="utf-8")
+    js=(ROOT/"screen1.js").read_text(encoding="utf-8")
 
-    def fail(code, detail):
-        issues.append({"severity": "Major", "code": code, "detail": detail})
+    def fail(code,detail): issues.append({"severity":"Major","code":code,"detail":detail})
 
-    if manifest.get("schemaVersion") != 2:
-        fail("MANIFEST_SCHEMA", "Expected schemaVersion 2")
-    for key, value in EXPECTED_DESIGN.items():
-        if manifest.get("design", {}).get(key) != value:
-            fail("DESIGN_SPEC_CHANGED", f"{key}: expected {value}")
+    if 'lang="zh-HK"' not in html: fail("LANG_MISSING","html lang must be zh-HK")
+    for text in REQUIRED:
+        if text not in html:
+            fail("COPY_MISSING",text)
 
-    reference = manifest.get("reference", {})
-    reference_path = local_file(reference.get("path"))
-    if reference_path is None:
-        fail("CANONICAL_REFERENCE_MISSING", str(reference.get("path")))
+    if "screen01_golden@2x.webp" in html+css+js:
+        fail("LOW_RES_ARTBOARD_STILL_LIVE","full-screen raster artboard must not render in v20.4")
+
+    if "native-text-hybrid-art" not in js or "real-zh-HK-dom" not in js:
+        fail("RENDERER_STRATEGY_NOT_LOCKED","screen1.js strategy marker missing")
+
+    mascot=ROOT/"assets/reference/小天線隊長旅行角色設定圖.png"
+    if not mascot.is_file():
+        fail("MASCOT_SOURCE_MISSING",str(mascot))
     else:
-        with Image.open(reference_path) as image:
-            image.load()
-            if image.size != (reference.get("width"), reference.get("height")):
-                fail("REFERENCE_DIMENSIONS", str(image.size))
-        actual = sha256(reference_path)
-        if actual != reference.get("sha256"):
-            fail("REFERENCE_HASH", actual)
+        with Image.open(mascot) as im:
+            im.load()
+            evidence["mascotSource"]={"pixels":list(im.size),"sha256":sha256(mascot)}
+            if im.width < 1000 or im.height < 1200:
+                fail("MASCOT_SOURCE_TOO_SMALL",str(im.size))
 
-    provenance_path = local_file(reference.get("provenance"))
-    if provenance_path is None:
-        fail("PROVENANCE_MISSING", str(reference.get("provenance")))
-    elif reference_path:
-        try:
-            provenance = json.loads(provenance_path.read_text())
-            records = {item["id"]: item for item in provenance["assets"]}
-            complete = records["home_master_complete_footer"]
-            master = records["six_screen_master"]
-            complete_path = local_file(complete["path"])
-            master_path = local_file(master["path"])
-            if complete_path != reference_path:
-                raise ValueError("Manifest reference differs from provenance record")
-            for record, path in [(complete, complete_path), (master, master_path)]:
-                if path is None or sha256(path) != record["sha256"]:
-                    raise ValueError("Source hash mismatch: " + record["id"])
-                with Image.open(path) as image:
-                    image.load()
-                    if image.size != (record["width"], record["height"]):
-                        raise ValueError("Source dimensions changed: " + record["id"])
-            with Image.open(master_path) as source, Image.open(complete_path) as restored:
-                crop = source.crop(tuple(complete["crop"])).convert("RGB")
-                restored_rgb = restored.convert("RGB")
-                if crop.size != restored_rgb.size or crop.tobytes() != restored_rgb.tobytes():
-                    raise ValueError("Complete-footer reference is not pixel-identical to master crop")
-            evidence["provenanceVerified"] = True
-        except Exception as error:
-            fail("PROVENANCE_INVALID", str(error))
-
-    if manifest.get("approval", {}).get("assetsReady") is not True:
-        fail("ASSET_NOT_APPROVED", "assetsReady must be true")
-    if manifest.get("approval", {}).get("strategy") != "canonical-artboard":
-        fail("WRONG_STRATEGY", "Screen 1 must use the locked canonical artboard strategy")
-
-    art = manifest.get("artboard", {})
-    art_path = local_file(art.get("file"))
-    if art_path is None:
-        fail("PRODUCTION_ART_MISSING", str(art.get("file")))
-    else:
-        actual = sha256(art_path)
-        if actual != art.get("sha256"):
-            fail("PRODUCTION_ART_HASH", actual)
-        try:
-            with Image.open(art_path) as image:
-                image.load()
-                if image.size != (art.get("width"), art.get("height")):
-                    fail("PRODUCTION_ART_DIMENSIONS", str(image.size))
-                production = image.convert("RGB")
-            if reference_path:
-                with Image.open(reference_path) as image:
-                    canonical = image.convert("RGB")
-                back = production.resize(canonical.size, Image.Resampling.LANCZOS)
-                diff = ImageChops.difference(canonical, back)
-                stats = ImageStat.Stat(diff)
-                mae = sum(stats.mean) / len(stats.mean)
-                mse = sum(value * value for value in stats.rms) / len(stats.rms)
-                psnr = float("inf") if mse == 0 else 10 * math.log10((255 * 255) / mse)
-                evidence["pixelFidelity"] = {
-                    "mae": round(mae, 4),
-                    "psnr": round(psnr, 3),
-                    "canonicalPixels": list(canonical.size),
-                    "productionPixels": list(production.size),
-                }
-                if mae > 2.0 or psnr < 37:
-                    fail("PIXEL_FIDELITY", f"MAE={mae:.3f}, PSNR={psnr:.2f}")
-        except Exception as error:
-            fail("PRODUCTION_ART_CORRUPT", str(error))
-
-    hotspots = manifest.get("hotspots", [])
-    start = next((item for item in hotspots if item.get("id") == "start"), None)
-    if not start:
-        fail("START_HOTSPOT_MISSING", "start")
-    else:
-        box = start.get("box")
-        if not isinstance(box, list) or len(box) != 4 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in box):
-            fail("START_HOTSPOT_INVALID", str(box))
-        else:
-            x, y, width, height = box
-            if min(x, y) < 0 or min(width, height) <= 0 or x + width > 390.1 or y + height > 804.97:
-                fail("START_HOTSPOT_OUTSIDE", str(box))
-            evidence["startHotspot"] = box
+    evidence["requiredCopyCount"]=len(REQUIRED)
+    evidence["allCopyIsDOM"]=all(text in html for text in REQUIRED)
+    evidence["fullScreenRasterRenderer"]=False
 
     return {
-        "status": "FAIL" if issues else "READY_FOR_BROWSER_QA",
-        "strategy": "canonical-artboard",
-        "note": "Asset integrity + pixel fidelity only. Browser geometry and real-device UAT remain separate gates.",
-        "issues": issues,
-        "evidence": evidence,
+        "status":"READY_FOR_BROWSER_QA" if not issues else "FAIL",
+        "strategy":"native-text-hybrid-art",
+        "issues":issues,
+        "evidence":evidence
     }
 
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path)
-    args = parser.parse_args()
-    result = validate()
-    body = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+if __name__=="__main__":
+    ap=argparse.ArgumentParser();ap.add_argument("--output",type=Path);args=ap.parse_args()
+    result=validate();body=json.dumps(result,ensure_ascii=False,indent=2)+"\n"
     if args.output:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(body)
-    print(body, end="")
-    raise SystemExit(1 if result["status"] == "FAIL" else 0)
+        args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(body,encoding="utf-8")
+    print(body,end="");raise SystemExit(1 if result["status"]=="FAIL" else 0)
