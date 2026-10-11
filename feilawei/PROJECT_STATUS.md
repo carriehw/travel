@@ -57,7 +57,7 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 - [x] Important visible copy converted to real zh-HK DOM text
 - [x] Approved high-resolution mascot source used
 - [x] Browser/text-integrity QA PASS on Chromium + WebKit, 375/390/393/430
-- [ ] Manual visual alignment against Golden Master
+- [x] Manual visual alignment against Golden Master — PASS WITH MINOR
 - [ ] GitHub Pages redeploy for user re-UAT
 - [ ] Screen 1 final PASS
 
@@ -66,7 +66,7 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 No implementation should begin.
 
 ## Current task
-**Screen 1 P1 visual alignment after P0 text/sharpness QA PASS.**
+**Screen 1 ready for staging redeploy / user re-UAT.**
 
 Latest CI:
 - GitHub Actions run 38135102111: PASS
@@ -106,3 +106,18 @@ Each session should:
 3. update checkboxes;
 4. create a checkpoint only when a real milestone changes;
 5. never repeat completed work unless a QA failure requires it.
+
+
+## Latest internal visual gate — 2026-10-11
+GitHub Actions run 38137008094: PASS.
+
+Manual 390px review:
+- real Traditional Chinese: PASS
+- sharp vector title / brand / icons: PASS
+- approved mascot identity retained: PASS
+- major decorative shapes traced from Golden Master: PASS
+- composition / hierarchy / CTA: PASS WITH MINOR
+
+Minor differences remain in small decorative details / exact hand-drawn type personality. These do not justify another internal rewrite before user UAT because the user must decide whether this fidelity level is acceptable.
+
+Decision: promote to GitHub Pages staging for visual UAT. Screen 2 remains blocked.
