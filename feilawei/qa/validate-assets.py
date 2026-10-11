@@ -1,5 +1,5 @@
 """Validate Screen 1 native-text renderer inputs and copy integrity."""
-import argparse, json, hashlib
+import argparse, json, hashlib, re, html as html_lib
 from pathlib import Path
 from PIL import Image
 
@@ -14,7 +14,7 @@ def sha256(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def validate():
     issues=[]; evidence={}
-    html=(ROOT/"index.html").read_text(encoding="utf-8")
+    html=(ROOT/"index.html").read_text(encoding="utf-8")\n    dom_text=html_lib.unescape(re.sub(r"<[^>]+>", "", html))
     css=(ROOT/"screen1.css").read_text(encoding="utf-8")
     js=(ROOT/"screen1.js").read_text(encoding="utf-8")
 
@@ -42,7 +42,7 @@ def validate():
                 fail("MASCOT_SOURCE_TOO_SMALL",str(im.size))
 
     evidence["requiredCopyCount"]=len(REQUIRED)
-    evidence["allCopyIsDOM"]=all(text in html for text in REQUIRED)
+    evidence["allCopyIsDOM"]=all(text in dom_text for text in REQUIRED)
     evidence["fullScreenRasterRenderer"]=False
 
     return {
