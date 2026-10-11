@@ -8,7 +8,6 @@ on:
       - "feilawei/index.html"
       - "feilawei/screen1.css"
       - "feilawei/screen1.js"
-      - "feilawei/assets/v20/**"
       - "feilawei/assets/reference/**"
       - "feilawei/qa/**"
       - ".github/workflows/feilawei-v20-screen1-qa.yml"
@@ -25,44 +24,26 @@ jobs:
   screen1:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
           cache-dependency-path: feilawei/qa/package-lock.json
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Install Python QA dependency
-        run: python -m pip install "Pillow>=11,<12"
-
-      - name: Install Node QA dependencies
-        run: npm ci --prefix feilawei/qa
-
-      - name: Install Playwright browsers
-        run: npx --prefix feilawei/qa playwright install --with-deps chromium webkit
-
-      - name: Prepare QA output
-        run: mkdir -p feilawei/docs/qa/latest
-
-      - name: Validate canonical artboard and provenance
+      - run: python -m pip install "Pillow>=11,<12"
+      - run: npm ci --prefix feilawei/qa
+      - run: npx --prefix feilawei/qa playwright install --with-deps chromium webkit
+      - run: mkdir -p feilawei/docs/qa/latest
+      - name: Validate real Traditional Chinese renderer inputs
         run: python feilawei/qa/validate-assets.py --output feilawei/docs/qa/latest/asset-validation.json
-
-      - name: Run browser geometry and interaction QA
+      - name: Run browser geometry, copy and interaction QA
         run: node feilawei/qa/capture-screen1.cjs feilawei/docs/qa/latest
-
-      - name: Build Reference / Live / Overlay review
+      - name: Build Reference / Live / Overlay evidence
         run: python feilawei/qa/build-review.py feilawei/docs/qa/latest
-
       - name: Upload QA evidence
         if: always()
         uses: actions/upload-artifact@v4
