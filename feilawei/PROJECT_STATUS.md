@@ -26,6 +26,10 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 ## Progress
 
 ### Foundation
+- [x] Anti-rework decision log added
+- [x] Pure gameplay engine added (separate from UI)
+- [x] Core engine smoke tests PASS: ranking / 6→4 elimination / 12-box mapping / grounded reasons
+
 - [x] Product purpose clarified
 - [x] Core game loop locked
 - [x] Screen flow mapped
@@ -55,17 +59,28 @@ Branch: `chatgpt/feilawei-v20-golden-master`
 No implementation should begin.
 
 ## Current task
-Wait for / inspect automated Screen 1 GitHub Actions QA.
+**User real-device UAT for Screen 1.**
+
+Staging:
+https://carriehw.github.io/travel/
+
+Internal automated QA has already passed and staging deployment succeeded.
+
+User UAT only needs to confirm:
+1. visual matches approved Screen 1;
+2. no crop / blur / broken artwork on real phone;
+3. CTA works;
+4. Safari / ChatGPT in-app browser feels correct.
 
 If FAIL:
-- fix only the measured failure
-- do not redesign
-- rerun
+- log the exact measured failure;
+- fix only that failure;
+- do not redesign or reopen passed architecture.
 
 If PASS:
-- promote Screen 1 to GitHub Pages
-- ask user to test on phone
-- only after user pass, start the next screen
+- mark Screen 1 PASSED;
+- freeze it;
+- move to the next screen/design gate without rebuilding Screen 1.
 
 ## Rule for every future update
 Each session should:
