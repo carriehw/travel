@@ -2,175 +2,41 @@
 <html lang="zh-HK">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fbfaf7">
-<title>飛啦喂！Production v21</title>
+<title>飛啦喂！</title>
 <style>
-:root{--paper:#fbfaf7}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;width:100%;height:100%;background:var(--paper);overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"PingFang HK","Noto Sans HK","Noto Sans TC",sans-serif}
-body{display:flex;align-items:center;justify-content:center}
-#app{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--paper)}
-.stage{position:relative;width:min(100vw,calc(100dvh * 390 / 844));aspect-ratio:390/844;overflow:hidden;background:var(--paper);box-shadow:0 0 0 1px rgba(0,0,0,.02)}
-.screen{position:absolute;inset:0;display:none}
-.screen.active{display:block}
-.screen img{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;pointer-events:none}
-.hotspot{position:absolute;border:0;background:transparent!important;padding:0;margin:0;outline:0;appearance:none;-webkit-appearance:none;cursor:pointer;touch-action:manipulation}
-.hotspot:focus,.hotspot:active{outline:0;background:transparent!important;box-shadow:none}
-.sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
-.toast{position:absolute;left:50%;bottom:18px;transform:translate(-50%,8px);background:rgba(35,40,46,.9);color:white;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:700;opacity:0;transition:.18s;z-index:20;pointer-events:none}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+html,body{margin:0;width:100%;height:100%;background:#fbfaf7}
+#boot{position:fixed;inset:0;background:#fbfaf7}
+#error{display:none;font-family:-apple-system,BlinkMacSystemFont,"PingFang HK",sans-serif;padding:24px;color:#282221}
 </style>
-<!-- v21 mobile web build; approved artwork only; externalized assets -->
 </head>
 <body>
-<div id="app">
-<main class="stage" aria-live="polite">
-  <section class="screen active" id="home" aria-label="首頁">
-    <img id="homeImg" src="assets/home.png" alt="飛啦喂！首頁">
-    <button class="hotspot" aria-label="幫我 Match" style="left:4.6%;top:75.0%;width:90.8%;height:8.0%" onclick="startMatch()"></button>
-    <button class="hotspot" aria-label="直接交俾命運" style="left:4.6%;top:83.0%;width:90.8%;height:13.5%" onclick="startFate()"></button>
-  </section>
-
-  <section class="screen" id="question" aria-label="旅行問題">
-    <img id="questionImg" alt="">
-    <button class="hotspot" aria-label="返回" style="left:4.6%;top:2.6%;width:13.8%;height:6.6%" onclick="questionBack()"></button>
-    <div id="qHotspots"></div>
-  </section>
-
-  <section class="screen" id="boxes" aria-label="旅行盲盒">
-    <img id="boxesImg" src="assets/boxes.png" alt="揀一個旅行盲盒">
-    <button class="hotspot" aria-label="自然放空盒" style="left:4.6%;top:29.6%;width:90.8%;height:14.0%" onclick="pickBox('nature')"></button>
-    <button class="hotspot" aria-label="城市散心盒" style="left:4.6%;top:49.8%;width:44.1%;height:17.8%" onclick="pickBox('city')"></button>
-    <button class="hotspot" aria-label="海島 Chill 盒" style="left:51.3%;top:49.8%;width:44.1%;height:17.8%" onclick="pickBox('island')"></button>
-    <button class="hotspot" aria-label="美食暴走盒" style="left:4.6%;top:68.7%;width:44.1%;height:17.7%" onclick="pickBox('food')"></button>
-    <button class="hotspot" aria-label="打卡靚景盒" style="left:51.3%;top:68.7%;width:44.1%;height:17.7%" onclick="pickBox('photo')"></button>
-    <button class="hotspot" aria-label="文化漫遊盒" style="left:4.6%;top:87.4%;width:44.1%;height:12.6%" onclick="pickBox('culture')"></button>
-    <button class="hotspot" aria-label="玩樂刺激盒" style="left:51.3%;top:87.4%;width:44.1%;height:12.6%" onclick="pickBox('play')"></button>
-  </section>
-
-  <section class="screen" id="openbox" aria-label="開盒">
-    <img id="openboxImg" alt="">
-    <button class="hotspot" aria-label="開盒" style="left:4.6%;top:68.2%;width:90.8%;height:7.1%" onclick="openSelectedBox()"></button>
-    <button class="hotspot" aria-label="我想揀過另一盒" style="left:4.6%;top:75.5%;width:90.8%;height:7.2%" onclick="go('boxes')"></button>
-  </section>
-
-  <section class="screen" id="analysis" aria-label="配對分析中">
-    <img id="analysisImg" alt="目的地配對分析中">
-  </section>
-
-  <section class="screen" id="result" aria-label="旅行結果">
-    <img id="resultImg" alt="旅行結果示範：台北">
-    <button class="hotspot" aria-label="返回盲盒" style="left:4.6%;top:2.6%;width:13.8%;height:6.6%" onclick="go('boxes')"></button>
-    <button class="hotspot" aria-label="整張分享卡" style="left:4.6%;top:95.5%;width:50.6%;height:4.5%" onclick="go('share')"></button>
-    <button class="hotspot" aria-label="再抽一次" style="left:57.9%;top:95.5%;width:37.5%;height:4.5%" onclick="go('boxes')"></button>
-  </section>
-
-  <section class="screen" id="share" aria-label="分享卡">
-    <img id="shareImg" alt="旅行分享卡">
-    <button class="hotspot" aria-label="返回結果" style="left:4.6%;top:2.6%;width:13.8%;height:6.6%" onclick="go('result')"></button>
-    <button class="hotspot" aria-label="分享到 IG Story" style="left:4.6%;top:89.8%;width:29.5%;height:5.2%" onclick="nativeShare('IG Story')"></button>
-    <button class="hotspot" aria-label="分享到 Facebook" style="left:35.6%;top:89.8%;width:28.5%;height:5.2%" onclick="nativeShare('Facebook')"></button>
-    <button class="hotspot" aria-label="分享到 WhatsApp" style="left:66.1%;top:89.8%;width:29.3%;height:5.2%" onclick="nativeShare('WhatsApp')"></button>
-    <button class="hotspot" aria-label="再玩一次" style="left:4.6%;top:96.1%;width:90.8%;height:3.9%" onclick="resetApp()"></button>
-  </section>
-
-  <div id="toast" class="toast"></div>
-  <div class="sr" id="status"></div>
-</main>
-</div>
-
+<div id="boot" aria-hidden="true"></div>
+<div id="error"></div>
 <script>
-const ASSETS={"home":"assets/home.png","q1":"assets/q1.png","q2":"assets/q2.png","q3":"assets/q3.png","q4":"assets/q4.png","q5":"assets/q5.png","q6":"assets/q6.png","q7":"assets/q7.png","q8":"assets/q8.png","boxes":"assets/boxes.png","open_nature":"assets/open_nature.png","analysis_nature":"assets/analysis_nature.png","open_city":"assets/open_city.png","analysis_city":"assets/analysis_city.png","open_island":"assets/open_island.png","analysis_island":"assets/analysis_island.png","open_food":"assets/open_food.png","analysis_food":"assets/analysis_food.png","open_photo":"assets/open_photo.png","analysis_photo":"assets/analysis_photo.png","open_culture":"assets/open_culture.png","analysis_culture":"assets/analysis_culture.png","open_play":"assets/open_play.png","analysis_play":"assets/analysis_play.png","result":"assets/result.png","share":"assets/share.png"};
-const boxNames={
-  nature:'自然放空盒', city:'城市散心盒', island:'海島 Chill 盒',
-  food:'美食暴走盒', photo:'打卡靚景盒', culture:'文化漫遊盒', play:'玩樂刺激盒'
-};
-const questionCounts=[4,4,4,4,6,4,6,4];
-const state={mode:'match',q:1,answers:[],selectedBox:'nature',startedAt:null};
-let analysisTimer=null;
-
-function setAssets(){
-  document.getElementById('homeImg').src=ASSETS.home;
-  document.getElementById('boxesImg').src=ASSETS.boxes;
-  document.getElementById('resultImg').src=ASSETS.result;
-  document.getElementById('shareImg').src=ASSETS.share;
-}
-function go(id){
-  clearTimeout(analysisTimer);
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.getElementById('status').textContent=id;
-}
-function startMatch(){state.mode='match';state.q=1;state.answers=[];state.startedAt=Date.now();renderQuestion();go('question')}
-function startFate(){state.mode='fate';state.q=1;state.answers=[];state.startedAt=Date.now();renderQuestion();go('question')}
-function renderQuestion(){
-  document.getElementById('questionImg').src=ASSETS['q'+state.q];
-  document.getElementById('questionImg').alt=`第 ${state.q} 題`;
-  const wrap=document.getElementById('qHotspots');
-  wrap.innerHTML='';
-  const count=questionCounts[state.q-1];
-  const boxes = count===4
-    ? [[4.6,39.7,44.1,13.5],[51.3,39.7,44.1,13.5],[4.6,54.6,44.1,13.6],[51.3,54.6,44.1,13.6]]
-    : [[4.6,39.0,44.1,11.4],[51.3,39.0,44.1,11.4],[4.6,51.5,44.1,11.4],[51.3,51.5,44.1,11.4],[4.6,64.0,44.1,11.4],[51.3,64.0,44.1,11.4]];
-  boxes.forEach((b,i)=>{
-    const btn=document.createElement('button');
-    btn.className='hotspot';
-    btn.setAttribute('aria-label',`選項 ${i+1}`);
-    btn.style.left=b[0]+'%';btn.style.top=b[1]+'%';btn.style.width=b[2]+'%';btn.style.height=b[3]+'%';
-    btn.onclick=()=>answer(i);
-    wrap.appendChild(btn);
-  });
-}
-function answer(i){
-  state.answers[state.q-1]=i;
-  const max=state.mode==='fate'?4:8;
-  if(state.q<max){state.q++;renderQuestion();return}
-  if(state.mode==='fate'){state.selectedBox='nature';renderOpenBox();go('openbox');return}
-  go('boxes');
-}
-function questionBack(){
-  if(state.q>1){state.q--;renderQuestion();return}
-  go('home');
-}
-function pickBox(key){state.selectedBox=key;renderOpenBox();go('openbox')}
-function renderOpenBox(){
-  const key=state.selectedBox||'nature';
-  document.getElementById('openboxImg').src=ASSETS['open_'+key]||ASSETS.open_nature;
-  document.getElementById('openboxImg').alt=boxNames[key]||'旅行盲盒';
-}
-function openSelectedBox(){
-  const key=state.selectedBox||'nature';
-  document.getElementById('analysisImg').src=ASSETS['analysis_'+key]||ASSETS.analysis_nature;
-  go('analysis');
-  analysisTimer=setTimeout(()=>{saveRun();go('result')},1450);
-}
-function saveRun(){
+(async()=>{
+  const count=24, expectedLength=9977709;
   try{
-    const log=JSON.parse(localStorage.getItem('flw_runs')||'[]');
-    log.unshift({mode:state.mode,answers:state.answers,box:state.selectedBox,at:new Date().toISOString()});
-    localStorage.setItem('flw_runs',JSON.stringify(log.slice(0,20)));
-  }catch(e){}
-}
-function resetApp(){
-  state.mode='match';state.q=1;state.answers=[];state.selectedBox='nature';state.startedAt=null;go('home');
-}
-function toast(msg){
-  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),1300);
-}
-async function nativeShare(channel){
-  const data={title:'飛啦喂！',text:'我喺「飛啦喂！」抽到下一站：台北 ✈️ 下一站，等你一齊抽！'};
-  if(navigator.share){
-    try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}
+    const urls=Array.from({length:count},(_,i)=>'native/chunk-'+String(i).padStart(3,'0')+'.txt?v=21.1');
+    const parts=await Promise.all(urls.map(async u=>{
+      const r=await fetch(u,{cache:'no-store'});
+      if(!r.ok) throw new Error(u+' '+r.status);
+      return r.text();
+    }));
+    const source=parts.join('');
+    if(source.length!==expectedLength) throw new Error('SOURCE_LENGTH_MISMATCH '+source.length);
+    document.open();
+    document.write(source);
+    document.close();
+  }catch(err){
+    document.getElementById('boot')?.remove();
+    const el=document.getElementById('error');
+    el.style.display='block';
+    el.textContent='載入失敗，請重新整理。';
+    console.error('[飛啦喂 v21.1]',err);
   }
-  try{await navigator.clipboard.writeText(data.text);toast('分享文字已複製')}catch(e){toast(channel+' 分享準備好')}
-}
-function preload(){
-  Object.values(ASSETS).forEach(src=>{const i=new Image();i.src=src});
-}
-setAssets();preload();
+})();
 </script>
 </body>
 </html>
